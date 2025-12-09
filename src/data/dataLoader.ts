@@ -4,33 +4,39 @@ import { Country, Winery, WineDetail } from "./types";
 const WINE_DATA: Country[] = MOCK_DATA as Country[];
 
 // get all countries data
-export function getAllCountries(): Country[] {
-    return WINE_DATA;
+export async function getAllCountries(): Promise<Country[]> {
+    return Promise.resolve(WINE_DATA);
 }
 
 // getting specific country's data
-export function getCountryData(countrySlug: string): Country | undefined {
-    return WINE_DATA.find(c => c.countrySlug === countrySlug);
+export async function getCountryData(countrySlug: string): Promise<Country | undefined> {
+    return Promise.resolve(WINE_DATA.find(c => c.countrySlug === countrySlug));
 }
 
 // get all the combs for winery slugs (for generateStaticParams)
-export function getAllWineriesPaths(): { countrySlug: string; winerySlug: string }[] {
-    const paths: { countrySlug: string; winerySlug: string }[] = [];
+export async function getAllWineriesPaths(): Promise<{ countrySlug: string; winerySlug: string }[]> {
+    // const paths: { countrySlug: string; winerySlug: string }[] = [];
     
-    WINE_DATA.forEach(country => {
-        country.wineries.forEach(winery => {
-            paths.push({
-                countrySlug: country.countrySlug,
-                winerySlug: winery.winerySlug,
-            });
-        });
-    });
-    return paths;
+    // WINE_DATA.forEach(country => {
+    //     country.wineries.forEach(winery => {
+    //         paths.push({
+    //             countrySlug: country.countrySlug,
+    //             winerySlug: winery.winerySlug,
+    //         });
+    //     });
+    // });
+    // return paths;
+    return Promise.resolve(WINE_DATA.flatMap(country =>
+      country.wineries.map(winery => ({
+        countrySlug: country.countrySlug,
+        winerySlug: winery.winerySlug,
+      }))
+    ));
 }
 
 // get specific winery's data
-export function getWineryData(countrySlug: string, winerySlug: string): Winery | undefined {
-    const country = getCountryData(countrySlug);
+export async function getWineryData(countrySlug: string, winerySlug: string): Promise<Winery | undefined> {
+    const country = await getCountryData(countrySlug);
     if (!country) return undefined;
     return country.wineries.find(w => w.winerySlug === winerySlug);
 }
@@ -53,9 +59,9 @@ export async function getAllWinePaths(): Promise<{ countrySlug: string; winerySl
 }
 
 // get specific wine data
-export function getWineDetail(countrySlug: string, winerySlug: string, wineSlug: string): WineDetail | undefined {
-    const country = getCountryData(countrySlug);
-    const winery = getWineryData(countrySlug, winerySlug);
+export async function getWineDetail(countrySlug: string, winerySlug: string, wineSlug: string): Promise<WineDetail | undefined> {
+    const country = await getCountryData(countrySlug);
+    const winery = await getWineryData(countrySlug, winerySlug);
     if (!country || !winery) return undefined;
 
     const wine = winery.wines.find(w => w.wineSlug === wineSlug);

@@ -14,7 +14,7 @@ interface Props {
 
 // 1. 빌드 시점에 생성할 모든 국가 경로 정의
 export async function generateStaticParams() {
-    const countries = getAllCountries();
+    const countries = await getAllCountries();
     return countries.map(country => ({
         countrySlug: country.countrySlug,
     }));
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 export default async function CountryDetailPage({ params }: Props) {
     const { countrySlug } = await params;
 
-    const countryData: Country | undefined = getCountryData(countrySlug);
+    const countryData: Country | undefined = await getCountryData(countrySlug);
 
     // 추후에 다른나라 와인도 추가되면 그냥 getAllCountries()써서 거기있는 나라들 활용
     // 지금은 그냥 Spain, Japan, France만. Japan, France는 지금 데이터 없으니 추가예정입니다정도 추가

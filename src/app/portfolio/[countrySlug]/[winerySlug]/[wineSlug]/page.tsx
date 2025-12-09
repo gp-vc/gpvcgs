@@ -18,7 +18,7 @@ interface Props {
 // 1. 메타데이터 (SEO) 정의
 export async function generateMetadata({ params }: Props) {
     const { countrySlug, winerySlug, wineSlug } = await params;
-    const wine = getWineDetail(countrySlug, winerySlug, wineSlug);
+    const wine = await getWineDetail(countrySlug, winerySlug, wineSlug);
 
     if (!wine) {
         return { title: 'Not Found' };
@@ -40,7 +40,7 @@ export default async function WineDetailPage({ params }: Props) {
     const { countrySlug, winerySlug, wineSlug } = await params;
 
     // 컴포넌트 내부에서 데이터 로드
-    const wine = getWineDetail(countrySlug, winerySlug, wineSlug);
+    const wine = await getWineDetail(countrySlug, winerySlug, wineSlug);
 
     if (!wine) {
         notFound();

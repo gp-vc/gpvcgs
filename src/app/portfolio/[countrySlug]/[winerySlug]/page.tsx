@@ -15,7 +15,7 @@ interface Props {
 // 1. 메타데이터 정의 (for SEO)
 export async function generateMetaData({ params }: Props) {
     const { countrySlug, winerySlug } = params;
-    const wineryData = getWineryData(countrySlug, winerySlug);
+    const wineryData = await getWineryData(countrySlug, winerySlug);
     if (!wineryData) {
         return { title: 'Not Found' };
     }
@@ -28,13 +28,13 @@ export async function generateMetaData({ params }: Props) {
 // 2. 빌드 시점에 생성할 모든 와이너리 경로 정의
 export async function generateStaticParams() {
     // [{ countrySlug: 'spain', winerySlug: 'Costers del Siurana}, ...]
-    return getAllWineriesPaths();
+    return await getAllWineriesPaths();
 }
 
 // 3. 서버 컴포넌트로 데이터 로드 및 랜더링
 export default async function WineryDetailPage({ params }: Props) {
     const { countrySlug, winerySlug } = await params;
-    const wineryData = getWineryData(countrySlug, winerySlug);
+    const wineryData = await getWineryData(countrySlug, winerySlug);
 
     if (!wineryData) {
         notFound();
