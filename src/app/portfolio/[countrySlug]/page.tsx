@@ -108,7 +108,7 @@ export default async function CountryDetailPage({ params }: Props) {
             <h2 className="text-3xl font-serif text-gray-900 mb-2">{winery.wineryName}</h2>
             <p className="text-gray-600 mb-4 flex items-center">
                 <MapPin className="w-4 h-4 mr-2 text-amber-600" /> 
-                {winery.region} ({countryData.countryName})
+                {winery.region} ({winery.regionKR})
             </p>
             {/* 3단계 와인 목록 페이지로 이동 */}
             <Link 

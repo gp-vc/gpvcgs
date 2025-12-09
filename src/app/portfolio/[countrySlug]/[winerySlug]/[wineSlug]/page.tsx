@@ -65,11 +65,6 @@ export default async function WineDetailPage({ params }: Props) {
                     sizes="(max-width: 1024px) 100vw, 33vw" // 반응형 사이즈 힌트
                 />
             </div>
-            <div className="flex space-x-4">
-                 <span className="text-xl font-bold text-amber-500 flex items-center">
-                    <Star className="w-5 h-5 mr-1 fill-amber-500" /> {wine.rating}
-                 </span>
-            </div>
           </div>
           
           {/* -------------------- 2. 상세 설명 및 노트 (2/3) -------------------- */}
