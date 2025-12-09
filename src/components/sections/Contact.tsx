@@ -134,8 +134,8 @@ return (
 				{/* Main Content */}
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16'>
 					{/* Contact Form */}
-                    <div className='bg-white p-8 rounded-xl shadow-xl border border-gray-200'>
-                        <h3 className='text-2xl font-serif text-gray-800 mb-6 border-b border-amber-100 pb-3'>
+                    <div className='bg-gray-100 p-8 rounded-xl shadow-xl border border-gray-200'>
+                        <h3 className='text-2xl font-sans text-gray-700 mb-6 border-b border-amber-400 pb-3'>
 							문의하기
 						</h3>
 
@@ -145,7 +145,7 @@ return (
 								<div>
 									<label
 										htmlFor='firstName'
-										className='block text-sm font-medium text-white/90 mb-2 drop-shadow'
+										className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
 									>
 										{t.firstName}
 									</label>
@@ -164,7 +164,7 @@ return (
 								<div>
 									<label
 										htmlFor='lastName'
-										className='block text-sm font-medium text-white/90 mb-2 drop-shadow'
+										className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
 									>
 										{t.lastName}
 									</label>
@@ -186,7 +186,7 @@ return (
 							<div>
 								<label
 									htmlFor='email'
-									className='block text-sm font-medium text-white/90 mb-2 drop-shadow'
+									className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
 								>
 									{t.email}
 								</label>
@@ -198,7 +198,7 @@ return (
 									// value={formData.email}
 									onChange={handleInputChange}
 									placeholder='you@email.com'
-									className='w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-[#bdb9dc] focus:border-transparent transition-all duration-200 hover:border-[#bdb9dc]/50 bg-white/10 backdrop-blur-sm text-white placeholder-white/60'
+                                        className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
 									required
 								/>
 							</div>
@@ -207,7 +207,7 @@ return (
 							<div>
 								<label
 									htmlFor='message'
-									className='block text-sm font-medium text-white/90 mb-2 drop-shadow'
+									className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
 								>
 									{t.message}
 								</label>
@@ -219,7 +219,7 @@ return (
 									// value={formData.message}
 									onChange={handleInputChange}
 									placeholder={t.messagePlaceholder}
-                                    className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 resize-vertical bg-white text-gray-900 placeholder-gray-400 shadow-sm'
+                                        className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
 									required
 								/>
 							</div>
@@ -279,7 +279,7 @@ return (
 													Office Location
 												</span>
 											</div>
-											<p className='text-white/90 text-sm leading-relaxed drop-shadow'>
+											<p className='text-gray-500 text-sm leading-relaxed drop-shadow'>
 												{t.address}
 											</p>
 
