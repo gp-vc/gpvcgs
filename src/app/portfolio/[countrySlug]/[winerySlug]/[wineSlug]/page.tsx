@@ -2,6 +2,8 @@ import { getAllWinePaths, getWineDetail } from "@/src/data/dataLoader";
 import { notFound } from "next/navigation";
 import { Leaf, FlaskConical, Gauge, Calendar, Star } from 'lucide-react';
 import Image from "next/image";
+import WineTasteProfile from "@/src/components/sections/WineTasteProfile";
+
 
 interface Params {
     countrySlug: string;
@@ -30,7 +32,7 @@ export async function generateMetadata({ params }: Props) {
 
 // 2. 빌드 시점에 생성할 모든 페이지의 경로를 정의 (SSG)
 export async function generateStaticParams() {
-    return getAllWinePaths();
+    return await getAllWinePaths();
 }
 
 // 3. 와인 상세 페이지 컴포넌트 (서버 컴포넌트)
@@ -82,7 +84,7 @@ export default async function WineDetailPage({ params }: Props) {
              <section className="bg-amber-50/70 p-6 rounded-lg border-l-4 border-amber-600">
                 <h2 className="text-2xl font-bold text-gray-900 mb-3 flex items-center">
                     <Leaf className="w-5 h-5 mr-2 text-amber-600" />
-                    테이스팅 노트 (Tasting Note)
+                    테이스팅 노트
                 </h2>
                 <p className="text-gray-700 whitespace-pre-line leading-relaxed">{wine.tastingNote}</p>
              </section>
@@ -96,6 +98,10 @@ export default async function WineDetailPage({ params }: Props) {
                 </div>
              </section>
              
+             <div className="pt-4">
+                <WineTasteProfile profile={wine.tasteProfile} />
+             </div>
+
              {/* B2B 자료 다운로드 버튼 */}
              {/* <div className="mt-8">
                  <a href="/downloads/wine_portfolio.pdf" download className="bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg inline-flex items-center">
