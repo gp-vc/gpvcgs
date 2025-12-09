@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans_KR, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const notoSansKr = Noto_Sans_KR({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  variable: '--font-noto-sans-kr',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-playfair-display',
+})
 
 export const metadata: Metadata = {
   title: "GPVC Wine Webpage",
@@ -26,7 +28,7 @@ export default function RootLayout({
 }>) {
       return (
         // ⚡ Light Mode: 기본 배경색을 흰색 계열로 변경
-        <html lang="ko" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <html lang="ko" className={`${notoSansKr.variable} ${playfairDisplay.variable} antialiased`}>
           <head>
             <title>GPVC Wine Website</title>
               <meta
