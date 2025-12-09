@@ -36,7 +36,7 @@ export function getWineryData(countrySlug: string, winerySlug: string): Winery |
 }
 
 // get all the combs for wine slugs (for generateStaticParams)
-export function getAllWinePaths(): { countrySlug: string; winerySlug: string; wineSlug: string }[] {
+export async function getAllWinePaths(): Promise<{ countrySlug: string; winerySlug: string; wineSlug: string }[]> {
   const paths: { countrySlug: string; winerySlug: string; wineSlug: string }[] = [];
   WINE_DATA.forEach(country => {
     country.wineries.forEach(winery => {

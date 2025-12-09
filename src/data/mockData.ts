@@ -9,7 +9,7 @@ export const MOCK_DATA: Country[] = [
                 winerySlug: 'Costers%20del%20Siurana',
                 wineryName: 'Costers del Siurana',
                 region: 'Priorat',
-                bgImageUrl:'/images/closdelobacbg.jpg',
+                bgImageUrl:'/images/closdelobacbg.webp',
                 wines: [
                     {
                         wineSlug: "Clos%20de%20l'Obac",
