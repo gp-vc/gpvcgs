@@ -6,13 +6,13 @@ export const MOCK_DATA: Country[] = [
         countryName: '스페인',
         wineries: [
             {
-                winerySlug: 'Costers%20del%20Siurana',
+                winerySlug: 'costers-del-siurana',
                 wineryName: 'Costers del Siurana',
                 region: 'Priorat',
                 bgImageUrl:'/images/closdelobacbg.webp',
                 wines: [
                     {
-                        wineSlug: "Clos%20de%20l'Obac",
+                        wineSlug: "clos-de-lobac",
                         name: "Clos de l'Obac",
                         vintage: "2003, 2006~15",
                         grape: '35% 그르나슈, 35% 카베르네 소비뇽, 10% 시라, 10% 메를로, 10% 까리녜냐',
@@ -29,7 +29,7 @@ export const MOCK_DATA: Country[] = [
                         }
                     },
                     {
-                        wineSlug: "Miserere",
+                        wineSlug: "miserere",
                         name: "Miserere",
                         vintage: "2005~2014",
                         grape: "27% 그르나슈, 27% 카베르네 소비뇽, 26% 템프라니요, 10% 메를로, 10% 까리녜냐",
@@ -46,7 +46,7 @@ export const MOCK_DATA: Country[] = [
                         }
                     },
                     {
-                        wineSlug: "Kyrie",
+                        wineSlug: "kyrie",
                         name: "Kyrie",
                         vintage: "2023, 2024",
                         grape: "35% 그르나슈 블랑카, 30% 마카부, 30% 샤렐로, 5% 알렉산드리아 무스캇",
@@ -63,7 +63,7 @@ export const MOCK_DATA: Country[] = [
                         }
                     },
                     {
-                        wineSlug: "Usatges%20Negre",
+                        wineSlug: "usatges-negre",
                         name: "Usatges Negre",
                         vintage: "2024",
                         grape: "그르나슈, 카베르네 소비뇽, 시라, 메를로, 까리녜냐, 템프라니요 (*매해 비율이 다름)",
@@ -80,7 +80,7 @@ export const MOCK_DATA: Country[] = [
                         }
                     },
                     {
-                        wineSlug: "Usatges%20Blanc",
+                        wineSlug: "usatges-blanc",
                         name: "Usatges Blanc",
                         vintage: '2024',
                         grape: "60% 마카부, 20% 샤렐로, 15% 알렉산드리아 무스캇, 5% 그르나슈 블랑카",
@@ -97,7 +97,7 @@ export const MOCK_DATA: Country[] = [
                         }
                     },
                     {
-                        wineSlug: "L'Escarpart",
+                        wineSlug: "lescarpart",
                         name: "L'Escarpart",
                         vintage: '2024',
                         grape: "샤렐로, 미카부",
@@ -116,13 +116,13 @@ export const MOCK_DATA: Country[] = [
                 ]
             },
             {
-                winerySlug: "Bodega%20El%20Capricho",
+                winerySlug: "bodega-el-capricho",
                 wineryName: "Bodega El Capricho",
                 region: "Leon",
                 bgImageUrl:"/images/elcaprichobg.jpg",
                 wines: [
                     {
-                        wineSlug: "Valdecedin",
+                        wineSlug: "valdecedin",
                         name: "Valdecedin",
                         vintage: '2020',
                         grape: "100% 멘시아",
@@ -139,7 +139,7 @@ export const MOCK_DATA: Country[] = [
                         }
                     },
                     {
-                        wineSlug: "Vino%20Blanco",
+                        wineSlug: "vino-blanco",
                         name: "Vino Blanco",
                         vintage: '2020',
                         grape: "Palomino, Dona Blanca",
@@ -156,7 +156,7 @@ export const MOCK_DATA: Country[] = [
                         }
                     },
                     {
-                        wineSlug: "El%20Chano",
+                        wineSlug: "el-chano",
                         name: "El Chano",
                         vintage: '2020',
                         grape: "Mencia, Garnacha Tintoera, Prieto Picudo, Palomino",
