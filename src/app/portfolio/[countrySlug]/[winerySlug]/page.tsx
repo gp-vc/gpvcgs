@@ -49,7 +49,7 @@ export default async function WineryDetailPage({ params }: Props) {
         style={{ backgroundImage: `url(${wineryData.bgImageUrl})` }}
       >
         {/* 밝은 모드 배경에 텍스트 가독성을 위한 오버레이 */}
-        <div className="absolute inset-0 bg-white/70 backdrop-blur-none"></div>
+        <div className="absolute backdrop-blur-none"></div>
         
         <div className="relative z-10 p-4 max-w-4xl mx-auto">
           {/* ⚡ 제목: {wineryData.wineryName} 포트폴리오 */}
