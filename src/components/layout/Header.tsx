@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 import { usePathname } from 'next/navigation';
@@ -38,15 +38,6 @@ export default function Header() {
 
     const isMainPage = pathname === '/';
 
-    useEffect(() => {
-        setMounted(true);
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     const handleNavClick = (href: string) => {
         // TODO: 네비게이션바 버튼 클릭시 그 페이지로 리디렉트
         setIsMenuOpen(false);
@@ -56,7 +47,9 @@ export default function Header() {
     }
 
     return (
-    <header className="sticky top-0 z-50 bg-white backdrop-blur-md shadow-lg border-b border-amber-600/30">
+    <header
+      className="sticky top-0 z-50 bg-transparent border-b border-transparent"
+    >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         
         {/* 로고 / 회사명 */}
