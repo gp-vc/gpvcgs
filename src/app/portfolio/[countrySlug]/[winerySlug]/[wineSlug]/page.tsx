@@ -50,12 +50,12 @@ export default async function WineDetailPage({ params }: Props) {
     <div className="max-w-6xl mx-auto p-4 md:p-8 mt-12 mb-24 bg-gray-50">
       <div className="bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-200/50">
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
           
           {/* -------------------- 1. 와인 이미지 및 메인 정보 (1/3) -------------------- */}
           <div className="lg:col-span-1 flex flex-col items-center">
             {/* ⚡ Image 컴포넌트 적용을 위해 부모 div 크기를 명시 */}
-            <div className="relative w-full max-w-xs h-[400px] p-4 bg-gray-100 rounded-lg shadow-md mb-6">
+            <div className="relative w-full max-w-xs flex-grow p-4 bg-gray-100 rounded-lg shadow-md mb-6 flex items-center justify-center">
                 <Image 
                     src={wine.imageUrl || `/images/placeholder-bottle.png`} 
                     alt={`${wine.name} bottle shot`} 
@@ -93,7 +93,7 @@ export default async function WineDetailPage({ params }: Props) {
                 </div>
              </section>
              
-             <div className="pt-4">
+             <div className="pt-1">
                 <WineTasteProfile profile={wine.tasteProfile} />
              </div>
 
