@@ -35,8 +35,8 @@ const ProfileSlider: React.FC<{ labelLeft: string; labelRight: string; value: nu
 export default function WineTasteProfile({ profile }: TasteProfileProps) {
   return (
     <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-lg mt-8">
-      <h3 className="text-2xl font-serif text-gray-900 font-semibold mb-6 border-b border-gray-200 pb-3">
-        와인 Taste Profile
+      <h3 className="text-2xl font-sans text-gray-900 font-semibold mb-6 border-b border-gray-200 pb-3">
+        팔레트
       </h3>
       
       <div className="space-y-6">

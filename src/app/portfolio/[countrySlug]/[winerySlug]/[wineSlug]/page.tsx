@@ -1,9 +1,9 @@
 import { getAllWinePaths, getWineDetail } from "@/src/data/dataLoader";
 import { notFound } from "next/navigation";
-import { Leaf, FlaskConical, Gauge, Calendar, Star } from 'lucide-react';
+import { Leaf, UtensilsCrossed, Gauge, Calendar, Star } from 'lucide-react';
 import Image from "next/image";
 import WineTasteProfile from "@/src/components/sections/WineTasteProfile";
-
+import Link from "next/link";
 
 interface Params {
     countrySlug: string;
@@ -55,7 +55,7 @@ export default async function WineDetailPage({ params }: Props) {
           {/* -------------------- 1. 와인 이미지 및 메인 정보 (1/3) -------------------- */}
           <div className="lg:col-span-1 flex flex-col items-center">
             {/* ⚡ Image 컴포넌트 적용을 위해 부모 div 크기를 명시 */}
-            <div className="relative w-full max-w-xs flex-grow p-4 bg-gray-100 rounded-lg shadow-md mb-6 flex items-center justify-center">
+            <div className="relative w-full max-w-xs flex-grow p-4 bg-gray-100 rounded-lg shadow-md mb-6 flex items-center justify-center max-h-[90vh]">
                 <Image 
                     src={wine.imageUrl || `/images/placeholder-bottle.png`} 
                     alt={`${wine.name} bottle shot`} 
@@ -70,30 +70,45 @@ export default async function WineDetailPage({ params }: Props) {
           {/* -------------------- 2. 상세 설명 및 노트 (2/3) -------------------- */}
           <div className="lg:col-span-2 space-y-6">
              <hgroup className="border-b border-gray-200 pb-4">
-                <p className="text-sm uppercase text-amber-700 font-semibold tracking-widest">{wine.winery} ({wine.country})</p>
+                <Link href={`/portfolio/${countrySlug}/${winerySlug}`}><p className="text-sm uppercase text-amber-700 font-semibold tracking-widest">{wine.winery} ({wine.country})</p></Link>
                 <h1 className="text-5xl font-playfair-display text-gray-900 mb-2">{wine.name}</h1>
-                    <p className="text-gray-400">빈티지: {wine.vintage} | 품종: {wine.grape}</p>
+                    <p className="text-gray-400">빈티지: {wine.vintage} <br /> 품종: {wine.grape}</p>
              </hgroup>
-            
+
+             <section className="p-6 rounded-lg bg-gray-50 border border-gray-200">
+                {/* <h2 className="text-2xl font-bold text-gray-900 mb-3 flex items-center">
+                    <Info className="w-5 h-5 mr-2 text-amber-600" />
+                    와인 소개
+                </h2> */}
+                <p className="text-gray-700 whitespace-pre-line leading-relaxed italic">
+                    "{wine.description}"
+                </p>
+             </section>
+
              {/* 테이스팅 노트 섹션 */}
              <section className="bg-amber-50/70 p-6 rounded-lg border-l-4 border-amber-600">
                 <h2 className="text-2xl font-bold text-gray-900 mb-3 flex items-center">
                     <Leaf className="w-5 h-5 mr-2 text-amber-600" />
-                    테이스팅 노트
+                    Tasting note
                 </h2>
                 <p className="text-gray-700 whitespace-pre-line leading-relaxed">{wine.tastingNote}</p>
              </section>
 
              {/* 와인 상세 스펙 (B2B 정보) */}
-             <section className="grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-gray-200 pt-4">
+             <section className="grid grid-cols-1 sm:grid-cols-1 gap-4 border-t border-gray-200 pt-2">
                 <div className="flex items-center space-x-2 text-gray-700">
                     <Gauge className="w-5 h-5 text-amber-600" />
                     <span className="font-semibold">알코올:</span>
                     <span>{wine.alcohol}</span>
                 </div>
+                <div className="flex items-center space-x-2 text-gray-700 sm:col-span-2 col-span-1"> 
+                    <UtensilsCrossed className="w-5 h-5 text-amber-600" />
+                    <span className="font-semibold">페어링:</span>
+                    <span className="font-medium text-gray-800">{wine.recommendedPairing || '해당 없음'}</span>
+                </div>
              </section>
              
-             <div className="pt-1">
+             <div>
                 <WineTasteProfile profile={wine.tasteProfile} />
              </div>
 

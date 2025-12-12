@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllCountries, getCountryData } from "@/src/data/dataLoader";
 import { Briefcase, MapPin, Info, Loader2 } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Country } from "@/src/data/types";
+
 
 interface Params {
     countrySlug: string;
@@ -102,23 +104,49 @@ export default async function CountryDetailPage({ params }: Props) {
             </Link>
         </div>        
       ) : (
-      <div className="space-y-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {countryData.wineries.map(winery => (
-          <div key={winery.winerySlug} className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
-            <h2 className="text-3xl font-serif text-gray-900 mb-2">{winery.wineryName}</h2>
-            <p className="text-gray-600 mb-4 flex items-center">
-                <MapPin className="w-4 h-4 mr-2 text-amber-600" /> 
-                {winery.region} ({winery.regionKR})
-            </p>
-            {/* 3단계 와인 목록 페이지로 이동 */}
             <Link 
+              key={winery.winerySlug} 
               href={`/portfolio/${countrySlug}/${winery.winerySlug}`}
-              className="mt-3 inline-flex items-center text-amber-700 hover:text-amber-600 font-semibold transition duration-150"
+              className="block bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 text-center group"
             >
-              <Briefcase className="w-5 h-5 mr-2" />
-              와이너리 와인 목록 보기
+              {/* ⚡ 와이너리 로고 (Image 컴포넌트 사용) */}
+              <div className="relative h-24 w-full mb-4 flex justify-center items-center">
+                <Image
+                  src={winery.logoUrl || '/images/logos/placeholder.png'}
+                  alt={`${winery.wineryName} logo`}
+                  fill
+                  className="object-contain transition duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                />
+              </div>
+
+              {/* ⚡ 와이너리 이름 및 지역 정보 */}
+              <h2 className="text-xl font-serif text-gray-900 font-bold mt-4 mb-1">
+                {winery.wineryName}
+              </h2>
+              <p className="text-gray-600 flex items-center justify-center text-sm">
+                  <MapPin className="w-4 h-4 mr-2 text-amber-600" /> 
+                  {winery.region} ({countryData!.countryName})
+              </p>
             </Link>
-          </div>
+
+
+        //   <div key={winery.winerySlug} className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
+        //     <h2 className="text-3xl font-serif text-gray-900 mb-2">{winery.wineryName}</h2>
+        //     <p className="text-gray-600 mb-4 flex items-center">
+        //         <MapPin className="w-4 h-4 mr-2 text-amber-600" /> 
+        //         {winery.region} ({winery.regionKR})
+        //     </p>
+        //     {/* 3단계 와인 목록 페이지로 이동 */}
+        //     <Link 
+        //       href={`/portfolio/${countrySlug}/${winery.winerySlug}`}
+        //       className="mt-3 inline-flex items-center text-amber-700 hover:text-amber-600 font-semibold transition duration-150"
+        //     >
+        //       <Briefcase className="w-5 h-5 mr-2" />
+        //       와이너리 와인 목록 보기
+        //     </Link>
         ))}
       </div>        
       )}  

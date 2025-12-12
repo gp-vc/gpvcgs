@@ -45,21 +45,29 @@ export default async function WineryDetailPage({ params }: Props) {
     return (
     <>
       <section 
-        className="relative h-[40vh] md:h-[50vh] flex items-center justify-center text-center overflow-hidden bg-cover bg-center" 
+        className="relative h-[50vh] md:h-[50vh] flex items-center justify-center text-center overflow-hidden bg-cover bg-center" 
         style={{ backgroundImage: `url(${wineryData.bgImageUrl})` }}
       >
         {/* 밝은 모드 배경에 텍스트 가독성을 위한 오버레이 */}
-        <div className="absolute backdrop-blur-none"></div>
+        <div className="absolute inset-0 bg-black/30 backdrop-brightness-90"></div>
         
         <div className="relative z-10 p-4 max-w-4xl mx-auto">
           {/* ⚡ 제목: {wineryData.wineryName} 포트폴리오 */}
-          <h1 className="text-5xl md:text-6xl font-playfair-display text-amber-700 font-bold mb-4 drop-shadow-lg">
-            {wineryData.wineryName} 포트폴리오
+          <h1 className="text-5xl md:text-6xl font-serif text-white font-semibold mb-4 drop-shadow-lg">
+            {wineryData.wineryTitle}
           </h1>
           {/* ⚡ 부제목: {wineryData.region}의 {wineryData.wineryName}이 선보이는 와인입니다. */}
-          <p className="text-lg md:text-xl text-gray-800 font-sans tracking-wide">
-            {wineryData.region}에서 온 <span className="font-semibold">{wineryData.wineryName}</span>이 엄선한 와인 컬렉션입니다.
-          </p>
+          {
+            wineryData.wineryDescription.split('\n').map((paragraph, index) => (
+              paragraph.trim() && (
+                <p key={index} className="text-lg md:text-sm text-white font-sans tracking-normal">
+                  <span className="font-semibold">
+                    {paragraph}
+                  </span>
+                </p>
+              )
+            ))
+          }
           
           {/* 와이너리 정보 더보기 버튼 (옵션) */}
         </div>
