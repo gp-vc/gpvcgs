@@ -7,6 +7,7 @@ export interface Wine {
     description: string;
     tastingNote: string;
     imageUrl: string; // 와인병 path (public 기준)
+    recommendedPairing: string;
     productionVolume?: number;
     tasteProfile: {
         body: number; // (1: light -> 5: bold)
@@ -19,9 +20,12 @@ export interface Wine {
 export interface Winery {
     winerySlug: string;
     wineryName: string;
+    wineryTitle: string;
+    wineryDescription: string;
     region: string;
     regionKR: string;
     bgImageUrl: string;
+    logoUrl: string;
     wines: Wine[];
 }
 
