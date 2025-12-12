@@ -15,8 +15,8 @@ export default function Hero() {
       >
         
         {/* 오버레이 (텍스트 가독성 향상) */}
-        {/* <div className="absolute inset-0 bg-white/70 backdrop-brightness-90"></div> */}
-        <div className="absolute backdrop-blur-none"></div> 
+        <div className="absolute inset-0 bg-black/10 backdrop-brightness-90"></div>
+        {/* <div className="absolute bg-black/50 backdrop-brightness-90 backdrop-blur-none"></div>  */}
         <div className="relative z-10 p-4 max-w-5xl mx-auto">
           <hgroup>
             {/* ⚡ 슬로건: Part 1 */}
