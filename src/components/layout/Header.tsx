@@ -48,7 +48,7 @@ export default function Header() {
 
     return (
     <header
-      className="sticky top-0 z-50 bg-transparent border-b border-transparent"
+      className="absolute top-0 left-0 right-0 z-50 bg-transparent border-none"
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         

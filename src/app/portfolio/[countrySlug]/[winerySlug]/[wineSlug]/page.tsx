@@ -113,7 +113,7 @@ export default async function WineDetailPage({ params }: Props) {
                     <span className="font-semibold flex-shrink-0">알코올:</span>
                     <span className="font-medium text-gray-800 flex-grow">{wine.alcohol}</span>
                 </div>
-                <div className="flex items-center space-x-2 text-gray-700">
+                <div className="flex items-start space-x-2 text-gray-700">
                     <UtensilsCrossed className="w-5 h-5 text-amber-600" />
                     <span className="font-semibold flex-shrink-0">페어링:</span>
                     <span className="ffont-medium text-gray-800 flex-grow">{wine.recommendedPairing || '해당 없음'}</span>
