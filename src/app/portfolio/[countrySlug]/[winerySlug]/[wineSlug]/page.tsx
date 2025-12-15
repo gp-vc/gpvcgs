@@ -1,6 +1,6 @@
 import { getAllWinePaths, getWineDetail } from "@/src/data/dataLoader";
 import { notFound } from "next/navigation";
-import { Leaf, UtensilsCrossed, Gauge, Calendar, Star } from 'lucide-react';
+import { Leaf, UtensilsCrossed, Gauge, Grape, Calendar } from 'lucide-react';
 import Image from "next/image";
 import WineTasteProfile from "@/src/components/sections/WineTasteProfile";
 import Link from "next/link";
@@ -72,7 +72,6 @@ export default async function WineDetailPage({ params }: Props) {
              <hgroup className="border-b border-gray-200 pb-4">
                 <Link href={`/portfolio/${countrySlug}/${winerySlug}`}><p className="text-sm uppercase text-amber-700 font-semibold tracking-widest">{wine.winery} ({wine.country})</p></Link>
                 <h1 className="text-5xl font-playfair-display text-gray-900 mb-2">{wine.name}</h1>
-                    <p className="text-gray-400">빈티지: {wine.vintage} <br /> 품종: {wine.grape}</p>
              </hgroup>
 
              <section className="p-6 rounded-lg bg-gray-50 border border-gray-200">
@@ -81,7 +80,7 @@ export default async function WineDetailPage({ params }: Props) {
                     와인 소개
                 </h2> */}
                 <p className="text-gray-700 whitespace-pre-line leading-relaxed italic">
-                    "{wine.description}"
+                    {wine.description}
                 </p>
              </section>
 
@@ -95,16 +94,29 @@ export default async function WineDetailPage({ params }: Props) {
              </section>
 
              {/* 와인 상세 스펙 (B2B 정보) */}
-             <section className="grid grid-cols-1 sm:grid-cols-1 gap-4 border-t border-gray-200 pt-2">
-                <div className="flex items-center space-x-2 text-gray-700">
-                    <Gauge className="w-5 h-5 text-amber-600" />
-                    <span className="font-semibold">알코올:</span>
-                    <span>{wine.alcohol}</span>
+             <section className="grid grid-cols-1 gap-2 border-t border-gray-200 pt-4 text-sm md:text-base">
+             {/* <section className="grid grid-cols-1 sm:grid-cols-1 gap-4 border-t border-gray-200 pt-2"> */}
+                <div className="flex items- space-x-2 text-gray-700">
+                    <Calendar className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <span className="font-semibold flex-shrink-0">빈티지:</span>
+                    <span className="font-medium text-gray-800 flex-grow">{wine.vintage}</span>
                 </div>
-                <div className="flex items-center space-x-2 text-gray-700 sm:col-span-2 col-span-1"> 
+
+                <div className="flex items-center space-x-2 text-gray-700">
+                    <Grape className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <span className="font-semibold flex-shrink-0">품종:</span>
+                    <span className="font-medium text-gray-800 flex-grow">{wine.grape}</span>
+                </div>
+
+                <div className="flex items-center space-x-2 text-gray-700">
+                    <Gauge className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <span className="font-semibold flex-shrink-0">알코올:</span>
+                    <span className="font-medium text-gray-800 flex-grow">{wine.alcohol}</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-700">
                     <UtensilsCrossed className="w-5 h-5 text-amber-600" />
-                    <span className="font-semibold">페어링:</span>
-                    <span className="font-medium text-gray-800">{wine.recommendedPairing || '해당 없음'}</span>
+                    <span className="font-semibold flex-shrink-0">페어링:</span>
+                    <span className="ffont-medium text-gray-800 flex-grow">{wine.recommendedPairing || '해당 없음'}</span>
                 </div>
              </section>
              

@@ -19,10 +19,10 @@ export default function Contact() {
         title: 'Contact Us',
         subtitle: '연락처',
         firstName: '이름',
-        lastName: '성',
+        lastName: '회사명',
         email: '이메일 주소',
         message: '메시지',
-        messagePlaceholder: '질문이나 메세지를 입력하세요',
+        messagePlaceholder: '문의 내용',
         submit: 'Submit',
         address: '서울특별시 강남구 언주로157길 6, 3층',
         viewOnMaps: '지도에서 보기',
@@ -144,38 +144,38 @@ return (
 							<div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
 								<div>
 									<label
-										htmlFor='firstName'
+										htmlFor='name'
 										className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
 									>
 										{t.firstName}
 									</label>
 									<input
 										type='text'
-										id='firstName'
-										name='firstName'
+										id='name'
+										name='name'
                                         // TODO: formdata 정의
 										// value={formData.firstName}
 										onChange={handleInputChange}
-										placeholder='Jane'
+										placeholder='이름'
                                         className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
 										required
 									/>
 								</div>
 								<div>
 									<label
-										htmlFor='lastName'
+										htmlFor='company'
 										className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
 									>
 										{t.lastName}
 									</label>
 									<input
 										type='text'
-										id='lastName'
-										name='lastName'
+										id='company'
+										name='company'
                                         // TODO: formdata 정의
 										// value={formData.lastName}
 										onChange={handleInputChange}
-										placeholder='Doe'
+										placeholder='회사명'
                                         className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
 										required
 									/>
@@ -197,7 +197,7 @@ return (
                                     // TODO: formdata 정의
 									// value={formData.email}
 									onChange={handleInputChange}
-									placeholder='you@email.com'
+									placeholder='이메일 주소'
                                         className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
 									required
 								/>
@@ -228,7 +228,7 @@ return (
 							<button
 								type='submit'
 								disabled={isSubmitting}
-								className='w-full bg-[#bdb9dc]/80 hover:bg-[#bdb9dc] backdrop-blur-sm text-white py-4 px-6 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 group hover:shadow-xl hover:scale-[1.02]'
+								className='w-full bg-[#bdb9dc] hover:bg-[#bdb9dc] backdrop-blur-sm text-white py-4 px-6 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 group hover:shadow-xl hover:scale-[1.02]'
 							>
 								<span>{isSubmitting ? '전송 중...' : t.submit}</span>
 								<Send

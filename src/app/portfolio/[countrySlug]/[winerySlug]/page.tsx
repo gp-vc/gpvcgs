@@ -51,16 +51,21 @@ export default async function WineryDetailPage({ params }: Props) {
         {/* 밝은 모드 배경에 텍스트 가독성을 위한 오버레이 */}
         <div className="absolute inset-0 bg-black/30 backdrop-brightness-90"></div>
         
-        <div className="relative z-10 p-4 max-w-4xl mx-auto">
-          {/* ⚡ 제목: {wineryData.wineryName} 포트폴리오 */}
-          <h1 className="text-5xl md:text-6xl font-serif text-white font-semibold mb-4 drop-shadow-lg">
-            {wineryData.wineryTitle}
-          </h1>
+        <div className="relative z-10 p-4 max-w-7xl mx-auto">
+          {
+            wineryData.wineryTitle.split('\n').map((paragraph, index) => (
+              paragraph.trim() && (
+                <h1 className="text-5xl md:text-6xl font-seif text-white font-semibold mb-6 drop-shadow-lg">
+                  {paragraph}
+                </h1>
+              )
+            ))
+          }
           {/* ⚡ 부제목: {wineryData.region}의 {wineryData.wineryName}이 선보이는 와인입니다. */}
           {
             wineryData.wineryDescription.split('\n').map((paragraph, index) => (
               paragraph.trim() && (
-                <p key={index} className="text-lg md:text-sm text-white font-sans tracking-normal">
+                <p key={index} className="text-lg md:text-sm text-white text-left font-sans tracking-normal">
                   <span className="font-semibold">
                     {paragraph}
                   </span>
