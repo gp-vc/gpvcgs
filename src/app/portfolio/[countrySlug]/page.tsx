@@ -94,7 +94,7 @@ export default async function CountryDetailPage({ params }: Props) {
                 포트폴리오 준비 중입니다.
             </h2>
             <p className="text-gray-600 max-w-lg mx-auto">
-                {currentCountryName} 와인은 곧 입고될 예정입니다. 최고의 품질을 위해 신중하게 선별하고 있으니 잠시만 기다려주세요! B2B 선주문 문의는 Contact 페이지를 이용해주세요.
+                {countryData.countryName} 와인은 곧 입고될 예정입니다. 최고의 품질을 위해 신중하게 선별하고 있으니 잠시만 기다려주세요! B2B 선주문 문의는 Contact 페이지를 이용해주세요.
             </p>
             <Link 
                 href="/contact"
@@ -105,52 +105,41 @@ export default async function CountryDetailPage({ params }: Props) {
         </div>        
       ) : (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {countryData.wineries.map(winery => (
-            <Link 
-              key={winery.winerySlug} 
-              href={`/portfolio/${countrySlug}/${winery.winerySlug}`}
-              className="block bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 text-center group"
-            >
-              {/* ⚡ 와이너리 로고 (Image 컴포넌트 사용) */}
-              <div className="relative h-24 w-full mb-4 flex justify-center items-center">
-                <Image
-                  src={winery.logoUrl || '/images/logos/placeholder.png'}
-                  alt={`${winery.wineryName} logo`}
-                  fill
-                  className="object-contain transition duration-300 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
-              </div>
+          {countryData!.wineries.map(winery => {
+            // ⚡ 조건부 클래스: 로고 URL이 'elcaprichologo.svg'를 포함하는 경우에만 'filter invert' 적용
+            const isWhiteLogo = winery.logoUrl && winery.logoUrl.includes('elcaprichologo.svg');
+            const logoClasses = `object-contain transition duration-300 group-hover:scale-105 ${isWhiteLogo ? 'filter invert' : ''}`;
+            
+            return (
+              <Link 
+                key={winery.winerySlug} 
+                href={`/portfolio/${countrySlug}/${winery.winerySlug}`}
+                className="block bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 text-center group"
+              >
+                {/* ⚡ 와이너리 로고 (Image 컴포넌트 사용) */}
+                <div className="relative h-24 w-full mb-4 flex justify-center items-center border border-gray-300/50 rounded-lg p-2"> 
+                  <Image
+                    src={winery.logoUrl || '/images/logos/placeholder.png'}
+                    alt={`${winery.wineryName} logo`}
+                    fill
+                    className={logoClasses} // ⚡ 조건부 클래스 적용
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                  />
+                </div>
 
-              {/* ⚡ 와이너리 이름 및 지역 정보 */}
-              <h2 className="text-xl font-serif text-gray-900 font-bold mt-4 mb-1">
-                {winery.wineryName}
-              </h2>
-              <p className="text-gray-600 flex items-center justify-center text-sm">
-                  <MapPin className="w-4 h-4 mr-2 text-amber-600" /> 
-                  {winery.region} ({countryData!.countryName})
-              </p>
-            </Link>
-
-
-        //   <div key={winery.winerySlug} className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
-        //     <h2 className="text-3xl font-serif text-gray-900 mb-2">{winery.wineryName}</h2>
-        //     <p className="text-gray-600 mb-4 flex items-center">
-        //         <MapPin className="w-4 h-4 mr-2 text-amber-600" /> 
-        //         {winery.region} ({winery.regionKR})
-        //     </p>
-        //     {/* 3단계 와인 목록 페이지로 이동 */}
-        //     <Link 
-        //       href={`/portfolio/${countrySlug}/${winery.winerySlug}`}
-        //       className="mt-3 inline-flex items-center text-amber-700 hover:text-amber-600 font-semibold transition duration-150"
-        //     >
-        //       <Briefcase className="w-5 h-5 mr-2" />
-        //       와이너리 와인 목록 보기
-        //     </Link>
-        ))}
-      </div>        
-      )}  
-    </div>
+                {/* ⚡ 와이너리 이름 및 지역 정보 */}
+                <h2 className="text-xl font-serif text-gray-900 font-bold mt-4 mb-1">
+                  {winery.wineryName}
+                </h2>
+                <p className="text-gray-600 flex items-center justify-center text-sm">
+                    <MapPin className="w-4 h-4 mr-2 text-amber-600" /> 
+                    {winery.region} ({countryData!.countryName})
+                </p>
+              </Link>
+            );
+          })}
+          </div>
+      )}
+      </div>
     );
-    
 }
