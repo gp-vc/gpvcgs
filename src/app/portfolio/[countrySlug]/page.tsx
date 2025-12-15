@@ -117,7 +117,7 @@ export default async function CountryDetailPage({ params }: Props) {
                 className="block bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 text-center group"
               >
                 {/* ⚡ 와이너리 로고 (Image 컴포넌트 사용) */}
-                <div className="relative h-24 w-full mb-4 flex justify-center items-center border border-gray-300/50 rounded-lg p-2"> 
+                <div className="relative h-24 w-full mb-4 flex justify-center items-center rounded-lg p-2"> 
                   <Image
                     src={winery.logoUrl || '/images/logos/placeholder.png'}
                     alt={`${winery.wineryName} logo`}

@@ -127,7 +127,7 @@ export const MOCK_DATA: Country[] = [
                 region: "Jiménez de Jamuz (León)",
                 regionKR: "레온",
                 bgImageUrl:"/images/elcaprichobg.jpg",
-                logoUrl: '/images/elcaprichologo.svg',
+                logoUrl: '/images/elcaprichologo.jpg',
                 wines: [
                     {
                         wineSlug: "valdecedin",
