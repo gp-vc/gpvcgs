@@ -1,6 +1,6 @@
-import { getAllWinePaths, getWineDetail } from "@/src/data/dataLoader";
+import { getAllWinePaths, getWineDetail, getWineryData } from "@/src/data/dataLoader";
 import { notFound } from "next/navigation";
-import { Leaf, UtensilsCrossed, Gauge, Grape, Calendar } from 'lucide-react';
+import { Leaf, UtensilsCrossed, Gauge, Grape, Calendar, ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
 import Image from "next/image";
 import WineTasteProfile from "@/src/components/sections/WineTasteProfile";
 import Link from "next/link";
@@ -46,8 +46,58 @@ export default async function WineDetailPage({ params }: Props) {
         notFound();
     }
 
+    const wineryData = await getWineryData(countrySlug, winerySlug);
+    if (!wineryData){
+        notFound();
+    }
+
+    const wineList = wineryData.wines.map(w => w.wineSlug);
+    const currentIndex = wineList.findIndex(slug => slug === wineSlug);
+
+    const prevWineSlug = currentIndex > 0 ? wineList[currentIndex - 1] : null;
+    const nextWineSlug = currentIndex < wineList.length - 1 ? wineList[currentIndex + 1] : null;
+
+    const basePath = `/portfolio/${countrySlug}/${winerySlug}`;
+    const prevWinePath = prevWineSlug ? `${basePath}/${prevWineSlug}` : null;
+    const nextWinePath = nextWineSlug ? `${basePath}/${nextWineSlug}` : null;
+
+
+
     return (
     <div className="max-w-6xl mx-auto p-4 md:p-8 mt-12 mb-24 bg-gray-50">
+      <div className="relative mb-6 md:mb-10 flex justify-between items-center px-4 pt-4 md:pt-0">
+        <Link
+            href={basePath}
+            className="inline-flex items-center text-amber-600 hover:text-amber-800 transition duration-150 font-semibold text-sm md:text-base p-2 rounded-lg bg-white shadow-md hover:shadow-lg"
+        >
+            <ArrowLeft className="w-5 h-5 mr-1" />
+            <span className="hidden sm:inline">와이너리 페이지로 돌아가기</span>
+            <span className="sm:hidden">뒤로</span>
+        </Link>
+
+        <div className="flex space-x-3 ml-auto">
+            {prevWinePath && (
+                <Link
+                    href={prevWinePath}
+                    className="flex items-center justify-center p-3 bg-white text-gray-700 rounded-full shadow-md hover:bg-gray-100 transition duration-150"
+                    aria-label="이전 와인 보기"
+                >
+                    <ChevronLeft className="w-5 h-5" />
+                </Link>
+            )}
+            {nextWinePath && (
+                <Link
+                    href={nextWinePath}
+                    className="flex items-center justify-center p-3 bg-white text-gray-700 rounded-full shadow-md hover:bg-gray-100 transition duration-150"
+                    aria-label="다음 와인 보기"
+                >
+                    <ChevronRight className="w-5 h-5" />
+                </Link>
+            )}
+        </div>
+      </div>
+
+
       <div className="bg-white p-8 md:p-12 rounded-xl shadow-2xl border border-gray-200/50">
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
