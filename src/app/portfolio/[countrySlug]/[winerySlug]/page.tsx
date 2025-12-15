@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllWineriesPaths, getWineryData } from "@/src/data/dataLoader";
-import { Wine, Calendar } from 'lucide-react';
+import { Wine, Calendar, ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
 interface Params {
@@ -42,6 +42,8 @@ export default async function WineryDetailPage({ params }: Props) {
 
     const isComingSoon = wineryData.wines.length === 0;
 
+    const countryBasePath = `/portfolio/${countrySlug}`;
+
     return (
     <>
       <section 
@@ -79,8 +81,17 @@ export default async function WineryDetailPage({ params }: Props) {
           {/* 와이너리 정보 더보기 버튼 (옵션) */}
         </div>
       </section>
-    <div className="max-w-6xl mx-auto px-4 py-16 bg-gray-50 min-h-screen">      
-
+    <div className="max-w-6xl mx-auto px-4 py-4 bg-gray-50 min-h-screen">      
+      <div className="max-w-7xl mx-auto px-4 pt-4 md:pt-8 flex justify-start mb-12">
+        <Link 
+            href={countryBasePath} // /portfolio/[countrySlug]
+            className="inline-flex items-center text-gray-700 hover:text-amber-600 transition duration-150 font-semibold text-sm md:text-base p-2 rounded-lg bg-white shadow-md hover:shadow-lg"
+        >
+            <ArrowLeft className="w-4 h-4 mr-1 md:mr-2" />
+            <span className="hidden sm:inline">국가별 와이너리 목록으로 돌아가기</span>
+            <span className="sm:hidden">국가 목록</span>
+        </Link>
+      </div>  
       {/* 그리드 구조: 이미지를 크게 보여주기 위해 3열 그리드로 변경 */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8">
         {wineryData.wines.map(wine => (
