@@ -53,9 +53,9 @@ export default async function WineDetailPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
           
           {/* -------------------- 1. 와인 이미지 및 메인 정보 (1/3) -------------------- */}
-          <div className="lg:col-span-1 flex flex-col items-center">
+          <div className="lg:col-span-1 flex flex-col items-center h-full">
             {/* ⚡ Image 컴포넌트 적용을 위해 부모 div 크기를 명시 */}
-            <div className="relative w-full max-w-xs flex-grow p-4 bg-gray-100 rounded-lg shadow-md mb-6 flex items-center justify-center max-h-[90vh]">
+            <div className="relative w-full max-w-xs md:max-w-none md:w-3/4 aspect-[2/3] lg:aspect-[2/3] p-4 bg-gray-100 rounded-lg shadow-md mb-6 flex items-center justify-center max-h-[90vh] lg:max-w-none flex-grow">
                 <Image 
                     src={wine.imageUrl || `/images/placeholder-bottle.png`} 
                     alt={`${wine.name} bottle shot`} 

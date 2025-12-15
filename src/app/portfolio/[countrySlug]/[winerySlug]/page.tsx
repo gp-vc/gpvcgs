@@ -62,6 +62,7 @@ export default async function WineryDetailPage({ params }: Props) {
             ))
           }
           {/* ⚡ 부제목: {wineryData.region}의 {wineryData.wineryName}이 선보이는 와인입니다. */}
+          <div className="max-w-4xl mx-auto px-4 hidden md:block">
           {
             wineryData.wineryDescription.split('\n').map((paragraph, index) => (
               paragraph.trim() && (
@@ -73,6 +74,7 @@ export default async function WineryDetailPage({ params }: Props) {
               )
             ))
           }
+          </div>
           
           {/* 와이너리 정보 더보기 버튼 (옵션) */}
         </div>
