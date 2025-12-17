@@ -179,6 +179,40 @@ export const MOCK_DATA: Country[] = [
                             acidity: 3,
                             sweetness: 1.5,
                         }
+                    },
+                    {
+                        wineSlug: "la-perla",
+                        name: "La Perla",
+                        vintage: "2020",
+                        grape: "",
+                        alcohol: "13.5%",
+                        recommendedPairing: "",
+                        description: "",
+                        tastingNote: "",
+                        imageUrl: "/images/laperla.jpg",
+                        tasteProfile: {
+                            body: 3,
+                            tannin: 3,
+                            acidity: 3,
+                            sweetness: 3,
+                        }
+                    },
+                    {
+                        wineSlug: "la-majada",
+                        name: "La Majada",
+                        vintage: "2022",
+                        grape: "멘시아, 가르나챠, 프리에토 피쿠토",
+                        alcohol: "14%",
+                        recommendedPairing: "",
+                        description: "",
+                        tastingNote: "",
+                        imageUrl: "/images/lamajada.jpg",
+                        tasteProfile: {
+                            body: 3,
+                            tannin: 3,
+                            acidity: 3,
+                            sweetness: 3,
+                        }
                     }
                 ]
             }
