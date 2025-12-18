@@ -60,8 +60,34 @@ export default async function CountryDetailPage({ params }: Props) {
 
     const isComingSoon = !countryData || countryData.wineries.length === 0;
 
-    return (
-    <div className="max-w-full mx-auto px-4 py-12 min-h-screen mt-12">
+    return (    
+    // <div className="max-w-full mx-auto px-4 py-12 min-h-screen mt-12">
+    <div className="min-h-screen flex flex-col font-sans">
+      <section className="relative h-[40vh] md:h-[60vh] w-full flex items-center justify-center overflow-hidden">
+        {/* 배경 이미지 설정 */}
+        <div 
+            className="absolute inset-0 bg-contain bg-[length:100%_100%] no-repeat transition-transform duration-1000"
+            style={{ backgroundImage: "url('/images/portfoliohero.jpg')" }}
+        >
+            {/* 오버레이: 텍스트 가시성을 위한 어두운 처리 */}
+            <div className="absolute inset-0 bg-black/40 backdrop-brightness-90"></div>
+        </div>
+        {/* 히어로 타이틀 콘텐츠 */}
+        <div className="relative z-10 text-center px-4">
+            <h1 className="text-5xl md:text-8xl font-serif text-white font-bold drop-shadow-2xl mb-6 tracking-tight uppercase">
+                {currentCountryName}
+            </h1>
+            <div className="w-24 h-1.5 bg-(--bg-text-color) mx-auto rounded-full mb-6"></div>
+            <p className="text-white/90 text-lg md:text-2xl font-light tracking-[0.2em] drop-shadow-md">
+                text
+            </p>
+        </div>                
+      </section>
+      <main 
+        className="flex-grow bg-repeat py-12 md:py-20"
+        style={{ backgroundImage: "url('/images/portfoliobg.png')" }}
+      >
+      
       <nav className="mb-6 p-3 rounded-lg shadow-sm overflow-x-auto whitespace-nowrap">
         {allCountries.map(country => (
           <Link 
@@ -115,7 +141,7 @@ export default async function CountryDetailPage({ params }: Props) {
                 key={winery.winerySlug} 
                 href={`/portfolio/${countrySlug}/${winery.winerySlug}`}
                 // ⚡ Relative block: Hero Image처럼 사용할 수 있도록 높이와 오버플로우 설정
-                className="relative block rounded-xl shadow-lg border border-gray-200 overflow-hidden h-96 md:h-80 group transition duration-300"
+                className="relative block rounded-xl shadow-lg border border-gray-200 overflow-hidden h-96 md:h-144 group transition duration-300"
               >
                 {/* 1. 배경/이미지 레이어: 컬러/흑백 전환 및 이미지 스케일 트랜지션 */}
                 <div 
@@ -160,5 +186,6 @@ export default async function CountryDetailPage({ params }: Props) {
           })}
           </div>
       )}
+      </main>
       </div>
     )}

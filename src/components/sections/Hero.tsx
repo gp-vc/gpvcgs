@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="relative z-10 p-4 max-w-9xl mx-auto">
           <hgroup>
             {/* ⚡ 슬로건: Part 1 */}
-            <p className="text-xl md:text-5xl font-bold text-slate-300 font-sans tracking-wide leading-relaxed">
+            <p className="text-xl md:text-5xl font-bold text-[#555555] font-serif italic tracking-wide leading-relaxed">
               {sloganPart1}
               <br />{sloganPart2}
             </p>
@@ -34,7 +34,7 @@ export default function Hero() {
           </hgroup>
           
           {/* 포트폴리오 진입 버튼 */}
-          <Link href="/portfolio/spain" className="inline-flex items-center space-x-3 bg-(--bg-text-color) hover:bg-amber-600 text-white font-bold py-4 px-8 rounded-full shadow-xl shadow-amber-600/40 transition duration-300 transform hover:scale-105 text-lg">
+          <Link href="/portfolio/spain" className="inline-flex items-center space-x-3 bg-(--bg-text-color) hover:bg-(--bg-text-color) text-white font-bold py-4 px-8 rounded-full shadow-xl shadow-amber-600/40 transition duration-300 transform hover:scale-105 text-lg">
             <span>엄선된 포트폴리오 바로가기</span>
             <ArrowRight className="w-6 h-6 ml-2" />
           </Link>

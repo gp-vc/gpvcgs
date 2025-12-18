@@ -56,7 +56,7 @@ export default function Header() {
         <Link href="/" className="text-2xl font-serif text-amber-500 font-bold tracking-wider hover:text-amber-400 transition duration-150">
         <div className='relative w-32 h-8 lg:w-32 lg:h-10'>
               <Image
-                  src='/branding/gpvc-text-logo-white.svg'
+                  src='/branding/gpvc-text-logo-gray.svg'
                   alt='GPVC Logo'
                   fill
                   priority

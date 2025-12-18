@@ -13,7 +13,7 @@ export const MOCK_DATA: Country[] = [
                 wineryDescription: "스페인 Catalunya(카탈루냐) 남서부 Priorat(프리오랏) 지역의 르네상스를 이끈 상징적인 와이너리입니다. 프리오랏은 스페인에서 단 두 곳 - Rioja, Priorat - 만이 획득한 최고 등급인 DOCa(혹은 DOQ)를 받은 와인 산지입니다.\n\n Costers del Siurana 또는 Clos de L`Obac 와이너리는 1987년 기자 출신 Carles Pastrana와 와인양조가인 아내 Mariona Jarque 가족에 의해 Gratallops(그라탈롭스) 마을에 설립되었습니다. 당시 황폐해져 가던 이 지역의 오래된 13세기 카르투시오 수도원 포도밭을 되찾고, 국제 시장에 내놓을 만한 고품질 와인을 생산하겠다는 거의 불가능해 보이는 목표를 가지고 프리오랏 르네상스를 주도한 Pioneers(개척자들) 중 한 곳으로 참여했습니다.\n\n소량 생산의 테루아 중심 대표 와인이자 진정한 프리오랏 개척자이자 현대적 부흥을 이끈 주역 중 대표자로 꼽히며 프리오랏 지역의 대지주입니다. 첫 빈티지 이후 단 한 번도 변하지 않은 블렌딩 비율과 험준한 리코렐라 슬레이트 토양에서 비롯된 개성을 병에 담아냅니다. 매년 극히 한정된 수량으로만 출시되며, 전세계 컬렉터들에게 컬트와인으로 손꼽히고, 세계 정상급 소믈리에와 미슐랭 스타 및 파인 다이닝 레스토랑에서 인정받고 있습니다.",
                 region: 'Priorat',
                 regionKR: '프리오랏',
-                bgImageUrl:'/images/closdelobacbg.webp',
+                bgImageUrl:'/images/closdelobacbg.png',
                 logoUrl: "/images/clos-de-lobac.svg",
                 wines: [
                     {

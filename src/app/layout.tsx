@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR, Playfair_Display } from "next/font/google";
+import { Noto_Sans_KR, Playfair_Display, Sacramento } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
@@ -13,7 +13,14 @@ const notoSansKr = Noto_Sans_KR({
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-playfair-display',
+})
+
+const sacramento = Sacramento({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-sacramento',
 })
 
 export const metadata: Metadata = {
@@ -28,7 +35,7 @@ export default function RootLayout({
 }>) {
       return (
         // ⚡ Light Mode: 기본 배경색을 흰색 계열로 변경
-        <html lang="ko" className={`${notoSansKr.variable} ${playfairDisplay.variable} antialiased`}>
+        <html lang="ko" className={`${notoSansKr.variable} ${playfairDisplay.variable} ${sacramento.variable} antialiased`}>
           <head>
             <link rel="stylesheet" href="https://use.typekit.net/avl7ajc.css"></link>
             <title>GPVC Wine Website</title>

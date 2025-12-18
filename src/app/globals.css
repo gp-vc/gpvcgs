@@ -8,6 +8,7 @@
     --font-sans-kr: var(--font-noto-sans-kr);
     --font-serif-display: var(--font-playfair-display);
     --font-adobe-brim: "brim-narrow-combined-1", sans-serif;
+    --font-sacramento: var(--font-sacramento);
 
     /* Light mode Colors */
     --background: #F9FAFB;
@@ -26,6 +27,10 @@
 
   .font-adobe-brim {
     font-family: var(--font-adobe-brim), sans-serif;
+  }
+
+  .font-sacramento {
+    font-family: var(--font-sacramento), serif;
   }
 }
 
