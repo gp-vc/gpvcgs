@@ -105,7 +105,7 @@ export default async function WineryDetailPage({ params }: Props) {
                 <img 
                     src={wine.imageUrl || `https://placehold.co/120x300/8B4513/FFFFFF?text=Bottle`} 
                     alt={`${wine.name} bottle shot`} 
-                    className="h-full w-auto object-contain transition duration-300 group-hover:scale-105"
+                    className="h-full w-auto object-cover transition duration-300 group-hover:scale-105"
                 />
             </div>
             
