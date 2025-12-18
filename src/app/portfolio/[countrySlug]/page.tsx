@@ -61,7 +61,7 @@ export default async function CountryDetailPage({ params }: Props) {
     const isComingSoon = !countryData || countryData.wineries.length === 0;
 
     return (
-    <div className="max-w-6xl mx-auto px-4 py-12 min-h-screen mt-12">
+    <div className="max-w-full mx-auto px-4 py-12 min-h-screen mt-12">
       <nav className="mb-6 p-3 rounded-lg shadow-sm overflow-x-auto whitespace-nowrap">
         {allCountries.map(country => (
           <Link 
@@ -69,8 +69,8 @@ export default async function CountryDetailPage({ params }: Props) {
             href={`/portfolio/${country.countrySlug}`}
             className={`inline-block py-2 px-4 text-lg font-semibold transition duration-200 rounded-md
               ${country.countrySlug === countrySlug 
-                ? 'bg-amber-600 text-white shadow-md' // 현재 활성화된 국가
-                : 'text-gray-700 hover:bg-gray-100' // 비활성화된 국가
+                ? 'bg-(--bg-text-color) text-white shadow-md' // 현재 활성화된 국가
+                : 'text-[#555555] hover:bg-gray-100' // 비활성화된 국가
               }
             `}
           >
@@ -104,7 +104,7 @@ export default async function CountryDetailPage({ params }: Props) {
             </Link>
         </div>        
       ) : (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-10">
           {countryData!.wineries.map(winery => {
             // ⚡ 로고 색상 반전을 위한 조건부 클래스
             const isWhiteLogo = winery.logoUrl && winery.logoUrl.includes('clos-de-lobac.svg');
@@ -115,7 +115,7 @@ export default async function CountryDetailPage({ params }: Props) {
                 key={winery.winerySlug} 
                 href={`/portfolio/${countrySlug}/${winery.winerySlug}`}
                 // ⚡ Relative block: Hero Image처럼 사용할 수 있도록 높이와 오버플로우 설정
-                className="relative block rounded-xl shadow-lg border border-gray-200 overflow-hidden h-64 md:h-80 group transition duration-300"
+                className="relative block rounded-xl shadow-lg border border-gray-200 overflow-hidden h-96 md:h-80 group transition duration-300"
               >
                 {/* 1. 배경/이미지 레이어: 컬러/흑백 전환 및 이미지 스케일 트랜지션 */}
                 <div 

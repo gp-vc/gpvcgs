@@ -12,6 +12,8 @@
     /* Light mode Colors */
     --background: #F9FAFB;
     --foreground: #171717;
+
+    --bg-text-color: #A04632;
   }
 
   .font-sans {
@@ -25,7 +27,6 @@
   .font-adobe-brim {
     font-family: var(--font-adobe-brim), sans-serif;
   }
-
 }
 
 body {

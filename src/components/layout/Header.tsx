@@ -72,7 +72,7 @@ export default function Header() {
             // relative group: 드롭다운을 위한 부모 요소
             <div key={item.name} className="relative group">
               {/* 메인 메뉴 항목 */}
-              <Link href={item.href} className="text-gray-300 hover:text-amber-500 transition duration-150 font-sans flex items-center py-2">
+              <Link href={item.href} className="text-[#555555] hover:text-amber-500 transition duration-150 font-sans flex items-center py-2">
                 {item.name}
                 {/* 드롭다운이 있을 경우에만 화살표 아이콘 표시 */}
                 {item.dropdown && (
