@@ -1,3 +1,4 @@
+import { wineryLogos } from "../assets/logos";
 import { Country } from "./types";
 
 export const MOCK_DATA: Country[] = [
@@ -13,7 +14,7 @@ export const MOCK_DATA: Country[] = [
                 region: 'Priorat',
                 regionKR: '프리오랏',
                 bgImageUrl:'/images/closdelobacbg.webp',
-                logoUrl: '/images/costersdelsiuranalogo.png',
+                logoUrl: "/images/clos-de-lobac.svg",
                 wines: [
                     {
                         wineSlug: "clos-de-lobac",
@@ -127,7 +128,7 @@ export const MOCK_DATA: Country[] = [
                 region: "Jiménez de Jamuz (León)",
                 regionKR: "레온",
                 bgImageUrl:"/images/elcaprichobg.jpg",
-                logoUrl: '/images/elcaprichologo.jpg',
+                logoUrl: '/images/el-capricho.png',
                 wines: [
                     {
                         wineSlug: "valdecedin",

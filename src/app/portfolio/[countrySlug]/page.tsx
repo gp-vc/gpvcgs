@@ -61,7 +61,7 @@ export default async function CountryDetailPage({ params }: Props) {
     const isComingSoon = !countryData || countryData.wineries.length === 0;
 
     return (
-    <div className="max-w-6xl mx-auto px-4 py-12 min-h-screen">
+    <div className="max-w-6xl mx-auto px-4 py-12 min-h-screen mt-12">
       <nav className="mb-6 p-3 rounded-lg shadow-sm overflow-x-auto whitespace-nowrap">
         {allCountries.map(country => (
           <Link 
@@ -107,7 +107,7 @@ export default async function CountryDetailPage({ params }: Props) {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8">
           {countryData!.wineries.map(winery => {
             // ⚡ 로고 색상 반전을 위한 조건부 클래스
-            const isWhiteLogo = winery.logoUrl && winery.logoUrl.includes('elcaprichologo.svg');
+            const isWhiteLogo = winery.logoUrl && winery.logoUrl.includes('clos-de-lobac.svg');
             const logoClasses = `object-contain transition duration-300 ${isWhiteLogo ? 'filter invert' : ''}`;
             
             return (
@@ -120,7 +120,7 @@ export default async function CountryDetailPage({ params }: Props) {
                 {/* 1. 배경/이미지 레이어: 흑백/컬러 전환 및 이미지 스케일 트랜지션 */}
                 <div 
                     // ⚡ 배경 이미지와 흑백 필터 적용. 호버 시 scale up 및 필터 제거
-                    className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-in-out group-hover:scale-105"
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-in-out group-hover:scale-105 bg-gray-500/60"
                     style={{ backgroundImage: `url(${winery.bgImageUrl || '/images/logos/placeholder.png'})` }} 
                 >
                     {/* ⚡ 흑백 오버레이: 기본적으로 회색빛 + 흑백 필터, 호버 시 투명 + 컬러 전환 */}
@@ -132,14 +132,14 @@ export default async function CountryDetailPage({ params }: Props) {
                     <div className='text-white space-y-2'>
                         
                         {/* ⚡ 와이너리 로고 (가시성 확보를 위해 Image와 fill 사용) */}
-                        <div className="relative h-16 w-32 mb-4 mx-auto"> 
+                        <div className="relative h-16 w-32 mx-auto"> 
                             <Image
                                 src={winery.logoUrl || '/images/logos/placeholder.png'}
                                 alt={`${winery.wineryName} logo`}
                                 fill
                                 // ⚡ 로고가 흰색으로 잘 보이도록 invert 필터를 상시 적용하거나, 로고를 흰색으로 변경해야 할 수 있습니다.
                                 className={`${logoClasses} object-contain drop-shadow-lg`} 
-                                sizes="(max-width: 640px) 100vw, 33vw"
+                                sizes='(max-width: 640px) 80px, (max-width: 768px) 96px, (max-width: 1024px) 112px, 128px'                            
                             />
                         </div>
 
@@ -163,48 +163,3 @@ export default async function CountryDetailPage({ params }: Props) {
       )}
       </div>
     )}
-//     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8">
-//           {countryData!.wineries.map(winery => {
-//             // ⚡ 조건부 클래스: 로고 URL이 'elcaprichologo.svg'를 포함하는 경우에만 'filter invert' 적용
-//             const isWhiteLogo = winery.logoUrl && winery.logoUrl.includes('elcaprichologo.svg');
-//             const logoClasses = `object-contain transition duration-300 group-hover:scale-105 ${isWhiteLogo ? 'filter invert' : ''}`;
-            
-//             return (
-//               <Link 
-//                 key={winery.winerySlug} 
-//                 href={`/portfolio/${countrySlug}/${winery.winerySlug}`}
-//                 // className="block rounded-xl shadow-lg border border-gray-200 overflow-hidden h-64 md:h-80 group transition duration-300"
-//                 className="block bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition duration-300 text-center group"
-//               >
-//                 <div
-//                   className="inset-0 object-cover bg-cover bg-center transition-all duration-500 ease-in-out grayscale group-hover:grayscale-0 group-hover:scale-105 select-none"
-//                   style={{ backgroundImage: `url(${winery.bgImageUrl || '/images/logos/placeholder.png'})` }}
-//                 >
-//                   {/* ⚡ 와이너리 로고 (Image 컴포넌트 사용) */}
-//                   <div className="relative h-24 w-full mb-4 flex justify-center items-center rounded-lg p-2"> 
-//                     <Image
-//                       src={winery.logoUrl || '/images/logos/placeholder.png'}
-//                       alt={`${winery.wineryName} logo`}
-//                       fill
-//                       className={logoClasses} // ⚡ 조건부 클래스 적용
-//                       sizes="(max-width: 640px) 100vw, 33vw"
-//                     />
-//                   </div>
-
-//                   {/* ⚡ 와이너리 이름 및 지역 정보 */}
-//                   <h2 className="text-xl font-serif text-gray-900 font-bold mt-4 mb-1">
-//                     {winery.wineryName}
-//                   </h2>
-//                   <p className="text-gray-600 flex items-center justify-center text-sm">
-//                       <MapPin className="w-4 h-4 mr-2 text-amber-600" /> 
-//                       {winery.region} ({countryData!.countryName})
-//                   </p>
-//                 </div>
-//               </Link>
-//             );
-//           })}
-//           </div>
-//       )}
-//       </div>
-//     );
-// }

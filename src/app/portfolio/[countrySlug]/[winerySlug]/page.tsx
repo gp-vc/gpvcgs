@@ -53,7 +53,7 @@ export default async function WineryDetailPage({ params }: Props) {
         {/* 밝은 모드 배경에 텍스트 가독성을 위한 오버레이 */}
         <div className="absolute inset-0 bg-black/30 backdrop-brightness-90"></div>
         
-        <div className="relative z-10 p-4 max-w-7xl mx-auto">
+        <div className="mt-16 relative z-10 p-4 max-w-7xl mx-auto">
           {
             wineryData.wineryTitle.split('\n').map((paragraph, index) => (
               paragraph.trim() && (
