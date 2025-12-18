@@ -30,6 +30,7 @@ export default function RootLayout({
         // ⚡ Light Mode: 기본 배경색을 흰색 계열로 변경
         <html lang="ko" className={`${notoSansKr.variable} ${playfairDisplay.variable} antialiased`}>
           <head>
+            <link rel="stylesheet" href="https://use.typekit.net/avl7ajc.css"></link>
             <title>GPVC Wine Website</title>
               <meta
                 name='description'

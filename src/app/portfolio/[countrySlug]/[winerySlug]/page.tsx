@@ -110,13 +110,9 @@ export default async function WineryDetailPage({ params }: Props) {
             </div>
             
             {/* ⚡ 수정: 와인명 및 빈티지 (간결하게) */}
-            <h3 className="text-lg font-serif text-gray-900 font-semibold line-clamp-2">
+            <h3 className="text-lg font-adobe-brim text-gray-400 font-normal line-clamp-2">
                 {wine.name}
             </h3>
-            <p className="text-gray-400 text-sm mt-1 flex items-center justify-center">
-                <Calendar className="w-3 h-3 mr-1 text-amber-500" />
-                {wine.vintage}
-            </p>
 
             {/* 기존의 테이스팅 노트 요약은 제거됨 */}
           </Link>

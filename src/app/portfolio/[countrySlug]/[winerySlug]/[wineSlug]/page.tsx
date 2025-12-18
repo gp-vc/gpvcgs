@@ -121,7 +121,7 @@ export default async function WineDetailPage({ params }: Props) {
           <div className="lg:col-span-2 space-y-6">
              <hgroup className="border-b border-gray-200 pb-4">
                 <Link href={`/portfolio/${countrySlug}/${winerySlug}`}><p className="text-sm uppercase text-amber-700 font-semibold tracking-widest">{wine.winery} ({wine.country})</p></Link>
-                <h1 className="text-5xl font-playfair-display text-gray-900 mb-2">{wine.name}</h1>
+                <h1 className="text-5xl font-adobe-brim text-gray-900 mb-2">{wine.name}</h1>
              </hgroup>
 
              <section className="p-6 rounded-lg bg-gray-50 border border-gray-200">

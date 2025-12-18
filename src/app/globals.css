@@ -7,6 +7,7 @@
   :root {
     --font-sans-kr: var(--font-noto-sans-kr);
     --font-serif-display: var(--font-playfair-display);
+    --font-adobe-brim: "brim-narrow-combined-1", sans-serif;
 
     /* Light mode Colors */
     --background: #F9FAFB;
@@ -20,6 +21,11 @@
   .font-serif {
     font-family: var(--font-serif-display), serif;
   }
+
+  .font-adobe-brim {
+    font-family: var(--font-adobe-brim), sans-serif;
+  }
+
 }
 
 body {

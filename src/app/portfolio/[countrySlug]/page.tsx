@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllCountries, getCountryData } from "@/src/data/dataLoader";
-import { Briefcase, MapPin, Info, Loader2 } from "lucide-react";
+import { Briefcase, MapPin, Info, Loader2, Wine } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Country } from "@/src/data/types";
 
@@ -28,6 +28,9 @@ export default async function CountryDetailPage({ params }: Props) {
 
     const countryData: Country | undefined = await getCountryData(countrySlug);
 
+    const WINE_COLOR = '%23722f37';
+    const wineCursor = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='${WINE_COLOR}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M8 22h8'/><path d='M7 10h10'/><path d='M12 15v7'/><path d='M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z'/></svg>") 16 16, auto`;
+    
     // 추후에 다른나라 와인도 추가되면 그냥 getAllCountries()써서 거기있는 나라들 활용
     // 지금은 그냥 Spain, Japan, France만. Japan, France는 지금 데이터 없으니 추가예정입니다정도 추가
     const allCountries = [
@@ -73,6 +76,7 @@ export default async function CountryDetailPage({ params }: Props) {
                 : 'text-gray-700 hover:bg-gray-100' // 비활성화된 국가
               }
             `}
+            style={{ cursor: wineCursor }}
           >
             {country.countryName}
           </Link>
@@ -80,12 +84,12 @@ export default async function CountryDetailPage({ params }: Props) {
       </nav>
       <hr className="border-t border-gray-200 mb-12" />
 
-      <h1 className="text-5xl font-playfair-display text-amber-700 mb-4">
+      {/* <h1 className="text-5xl font-playfair-display text-amber-700 mb-4">
         {countryData.countryName} 와이너리 포트폴리오
       </h1>
       <p className="text-gray-600 text-lg mb-12">
         {countryData.countryName}의 엄선된 파트너 와이너리를 소개합니다.
-      </p>
+      </p> */}
     
       {isComingSoon? (
         <div className="text-center p-16 bg-white rounded-xl shadow-xl border border-gray-200">
@@ -117,19 +121,18 @@ export default async function CountryDetailPage({ params }: Props) {
                 // ⚡ Relative block: Hero Image처럼 사용할 수 있도록 높이와 오버플로우 설정
                 className="relative block rounded-xl shadow-lg border border-gray-200 overflow-hidden h-64 md:h-80 group transition duration-300"
               >
-                {/* 1. 배경/이미지 레이어: 흑백/컬러 전환 및 이미지 스케일 트랜지션 */}
+                {/* 1. 배경/이미지 레이어: 컬러/흑백 전환 및 이미지 스케일 트랜지션 */}
                 <div 
-                    // ⚡ 배경 이미지와 흑백 필터 적용. 호버 시 scale up 및 필터 제거
-                    className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-in-out group-hover:scale-105 bg-gray-500/60"
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out 
+                    grayscale-0 group-hover:grayscale group-hover:scale-105"
                     style={{ backgroundImage: `url(${winery.bgImageUrl || '/images/logos/placeholder.png'})` }} 
                 >
-                    {/* ⚡ 흑백 오버레이: 기본적으로 회색빛 + 흑백 필터, 호버 시 투명 + 컬러 전환 */}
-                    <div className='absolute inset-0 bg-gray-500/60 group-hover:bg-transparent transition-all duration-500 backdrop-grayscale group-hover:backdrop-grayscale-0'></div>
-                </div>
+                <div className='absolute inset-0 bg-black/10 group-hover:bg-black/60 transition-all duration-500'></div>
+              </div>
 
                 {/* 2. 콘텐츠 오버레이 레이어: 로고 및 텍스트 정보 (마우스 오버 시 나타남) */}
                 <div className='absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-center items-center p-4 text-center'>
-                    <div className='text-white space-y-2'>
+                  <div className='text-white space-y-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500'>
                         
                         {/* ⚡ 와이너리 로고 (가시성 확보를 위해 Image와 fill 사용) */}
                         <div className="relative h-16 w-32 mx-auto"> 
