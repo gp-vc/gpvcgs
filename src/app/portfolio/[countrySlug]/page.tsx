@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getAllCountries, getCountryData } from "@/src/data/dataLoader";
-import { Briefcase, MapPin, Info, Loader2, Wine } from "lucide-react";
+import { MapPin, Info } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Country } from "@/src/data/types";
 
@@ -28,9 +28,6 @@ export default async function CountryDetailPage({ params }: Props) {
 
     const countryData: Country | undefined = await getCountryData(countrySlug);
 
-    const WINE_COLOR = '%23722f37';
-    const wineCursor = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='${WINE_COLOR}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M8 22h8'/><path d='M7 10h10'/><path d='M12 15v7'/><path d='M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z'/></svg>") 16 16, auto`;
-    
     // 추후에 다른나라 와인도 추가되면 그냥 getAllCountries()써서 거기있는 나라들 활용
     // 지금은 그냥 Spain, Japan, France만. Japan, France는 지금 데이터 없으니 추가예정입니다정도 추가
     const allCountries = [
@@ -76,7 +73,6 @@ export default async function CountryDetailPage({ params }: Props) {
                 : 'text-gray-700 hover:bg-gray-100' // 비활성화된 국가
               }
             `}
-            style={{ cursor: wineCursor }}
           >
             {country.countryName}
           </Link>
