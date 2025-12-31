@@ -84,10 +84,10 @@ export default async function WineryDetailPage({ params }: Props) {
           <section className="bg-white py-16 md:py-16">
         <div className="max-w-5xl mx-auto px-6">
           <div className="justify-center mb-10">
-            <Quote className="w-12 h-12 text-amber-200" />
+            <Quote className="w-12 h-12 text-(--bg-text-color)" />
           </div>
           
-          <div className="space-y-3">
+          <div className="space-y-2">
             {
               wineryData.wineryDescription.split('\n').map((paragraph, index) => (
                 paragraph.trim() && (
@@ -102,7 +102,7 @@ export default async function WineryDetailPage({ params }: Props) {
             }
           </div>
           
-          <div className="mt-16 flex items-center text-amber-800 font-serif italic text-lg md:text-xl border-l-4 border-amber-500 pl-6 py-2">
+          <div className="mt-6 flex items-center text-amber-800 font-serif italic text-lg md:text-xl border-l-4 border-(--bg-text-color) pl-6 py-2">
             {wineryData.wineryName} — {wineryData.region}, {countrySlug.toUpperCase()}
           </div>
         </div>
