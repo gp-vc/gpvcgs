@@ -57,7 +57,7 @@ export default async function WineryDetailPage({ params }: Props) {
           {
             wineryData.wineryTitle.split('\n').map((paragraph, index) => (
               paragraph.trim() && (
-                <h1 key={index} className="text-5xl md:text-6xl font-serif text-white font-semibold mb-6 drop-shadow-lg">
+                <h1 key={index} className="text-4xl md:text-5xl font-serif text-white font-semibold mb-6 drop-shadow-lg">
                   {paragraph}
                 </h1>
               )
@@ -93,7 +93,7 @@ export default async function WineryDetailPage({ params }: Props) {
                 paragraph.trim() && (
                   <p 
                     key={index} 
-                    className="text-lg md:text-lg text-gray-700 text-left font-sans tracking-tight leading-loose md:leading-extra-loose"
+                    className="text-base md:text-base text-gray-700 text-left font-sans tracking-tight leading-loose md:leading-extra-loose"
                   >
                     {paragraph}
                   </p>
