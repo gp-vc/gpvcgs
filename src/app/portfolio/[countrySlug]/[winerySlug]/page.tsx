@@ -57,7 +57,7 @@ export default async function WineryDetailPage({ params }: Props) {
           {
             wineryData.wineryTitle.split('\n').map((paragraph, index) => (
               paragraph.trim() && (
-                <h1 key={index} className="text-5xl md:text-6xl font-seif text-white font-semibold mb-6 drop-shadow-lg">
+                <h1 key={index} className="text-5xl md:text-6xl font-serif text-white font-semibold mb-6 drop-shadow-lg">
                   {paragraph}
                 </h1>
               )
@@ -102,7 +102,7 @@ export default async function WineryDetailPage({ params }: Props) {
             }
           </div>
           
-          <div className="mt-6 flex items-center text-amber-800 font-serif italic text-lg md:text-xl border-l-4 border-(--bg-text-color) pl-6 py-2">
+          <div className="mt-6 flex items-center text-amber-800 font-sacramento text-lg md:text-xl border-l-4 border-(--bg-text-color) pl-6 py-2">
             {wineryData.wineryName} — {wineryData.region}, {countrySlug.toUpperCase()}
           </div>
         </div>
