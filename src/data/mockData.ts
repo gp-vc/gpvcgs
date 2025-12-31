@@ -139,7 +139,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '',
                         description: "와이너리에서 가장 높은 고도(800m 이상)의 100년 된 구획에서 생산됩니다. 극히 제한된 생산량(연간 500~1200병 내외)을 자랑하며, 진중하고 장기 숙성 잠재력이 뛰어난 와인입니다.",
                         tastingNote: "같은 색조의 반사광을 띄는 루비 레드 색이며, 영한 붉은 과일(자두,라즈베리)과 올스파이스 같은 향신료, 그리고 바닐라 뉘앙스를 지닙니다. 미디엄 플러스의 산도와 섬세하거나 젠틀한 탄닌을 보이며, 벨벳처럼 길게 이어지는 여운으로 마무리됩니다.",
-                        imageUrl: '/images/valdecedin.png',
+                        imageUrl: '/images/valdecedin.jpg',
                         tasteProfile: {
                             body: 4,
                             tannin: 4,
@@ -156,7 +156,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '',
                         description: "엘카프리초 와이너리의 유일한 화이트 와인이며 평균 수령 80년의 포도나무에서 생산됩니다. Viña de la Uta라는 이름으로도 알려져 있으며, 이름 그대로 '우타(Uta)의 포도밭' 에서 나온 화이트 와인으로 매우 과실미가 풍부하고 즐거운 스타일의 와인입니다. 연간 1200병만 생산하며, 6개월간 프렌치 오크통에서 숙성됩니다.",
                         tastingNote: "중간 정도의 농도를 지닌 연둣빛이 도는 노란색을 띄며, 잘 익은 스톤 프루트(핵과)와 견과류 아로마가 코와 입안에서 그대로 이어지는 풍미를 보여주고, 과실미가 강렬하면서도 길게 지속되는 여운을 지녔으며, 숙성 잠재력은 5~8년입니다.",
-                        imageUrl: '/images/vinoblanco.png',
+                        imageUrl: '/images/vinoblanco.jpg',
                         tasteProfile: {
                             body: 3,
                             tannin: 1,

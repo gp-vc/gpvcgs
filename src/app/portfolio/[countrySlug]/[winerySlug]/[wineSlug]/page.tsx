@@ -64,7 +64,7 @@ export default async function WineDetailPage({ params }: Props) {
 
 
     return (
-    <div className="max-w-6xl mx-auto p-4 md:p-8 mt-12 mb-24 bg-gray-50">
+    <div className="max-w-6xl mx-auto p-4 md:p-8 mt-12 mb-24 bg-gray-50 mt-25">
       <div className="relative mb-6 md:mb-10 flex justify-between items-center px-4 pt-4 md:pt-0">
         <Link
             href={basePath}
