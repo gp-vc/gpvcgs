@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllWineriesPaths, getWineryData } from "@/src/data/dataLoader";
-import { Wine, Calendar, ArrowLeft } from 'lucide-react';
+import { Wine, Calendar, ArrowLeft, Quote } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
 interface Params {
@@ -64,7 +64,7 @@ export default async function WineryDetailPage({ params }: Props) {
             ))
           }
           {/* ⚡ 부제목: {wineryData.region}의 {wineryData.wineryName}이 선보이는 와인입니다. */}
-          <div className="max-w-4xl mx-auto px-4 hidden md:block">
+          {/* <div className="max-w-4xl mx-auto px-4 hidden md:block">
           {
             wineryData.wineryDescription.split('\n').map((paragraph, index) => (
               paragraph.trim() && (
@@ -76,9 +76,35 @@ export default async function WineryDetailPage({ params }: Props) {
               )
             ))
           }
-          </div>
+          </div> */}
           
           {/* 와이너리 정보 더보기 버튼 (옵션) */}
+        </div>
+      </section>
+          <section className="bg-white py-16 md:py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="justify-center mb-10">
+            <Quote className="w-12 h-12 text-amber-200" />
+          </div>
+          
+          <div className="space-y-3">
+            {
+              wineryData.wineryDescription.split('\n').map((paragraph, index) => (
+                paragraph.trim() && (
+                  <p 
+                    key={index} 
+                    className="text-lg md:text-lg text-gray-700 text-left font-sans tracking-tight leading-loose md:leading-extra-loose"
+                  >
+                    {paragraph}
+                  </p>
+                )
+              ))
+            }
+          </div>
+          
+          <div className="mt-16 flex items-center text-amber-800 font-serif italic text-lg md:text-xl border-l-4 border-amber-500 pl-6 py-2">
+            {wineryData.wineryName} — {wineryData.region}, {countrySlug.toUpperCase()}
+          </div>
         </div>
       </section>
     <div className="max-w-6xl mx-auto px-4 py-4 bg-gray-50 min-h-screen">      
