@@ -66,7 +66,7 @@ export default async function CountryDetailPage({ params }: Props) {
       <section className="relative h-[40vh] md:h-[60vh] w-full flex items-center justify-center overflow-hidden">
         {/* 배경 이미지 설정 */}
         <div 
-            className="absolute inset-0 bg-contain bg-[length:100%_100%] no-repeat transition-transform duration-1000"
+            className="absolute inset-0 bg-cover bg-[length:100%_auto] bg-bottom no-repeat transition-transform duration-1000"
             style={{ backgroundImage: "url('/images/portfoliohero.jpg')" }}
         >
             {/* 오버레이: 텍스트 가시성을 위한 어두운 처리 */}
