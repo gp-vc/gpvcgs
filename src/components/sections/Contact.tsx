@@ -22,7 +22,7 @@ export default function Contact() {
         lastName: '회사명',
         email: '이메일 주소',
         message: '메시지',
-        messagePlaceholder: '문의 내용',
+        messagePlaceholder: '문의 내용을 입력해 주세요.',
         submit: 'Submit',
         address: '서울특별시 강남구 언주로157길 6, 3층',
         viewOnMaps: '지도에서 보기',
@@ -122,16 +122,20 @@ export default function Contact() {
     };
 
 return (
-		<section id='contact' className='py-16 lg:py-24 relative z-10' style={{ backgroundImage: "url('/images/portfoliobg.png')"}}>
+	<>
+		<section id='contact' className="relative h-[60vh] py-16 lg:py-24 z-10 bg-cover bg-bottom bg-[url('/images/contactbg.png')] bg-no-repeat flex flex-col justify-center">
 			<div className='relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				{/* Section Header */}
 				<div className='text-center mb-12 lg:mb-16'>
-                    <h2 className='text-4xl lg:text-5xl font-playfair-display text-gray-900 font-bold mb-2'>
+                    <h2 className='text-4xl lg:text-5xl font-playfair-display text-white font-bold mb-2'>
 						{t.title}
 					</h2>
 				</div>
 
 				{/* Main Content */}
+			</div>
+		</section>
+		<section className="bg-white py-24 md:py-32 max-w-7xl mx-auto">
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16'>
 					{/* Contact Form */}
                     <div className='bg-gray-100 p-8 rounded-xl shadow-xl border border-gray-200'>
@@ -156,7 +160,7 @@ return (
                                         // TODO: formdata 정의
 										// value={formData.firstName}
 										onChange={handleInputChange}
-										placeholder='이름'
+										placeholder='이름을 입력해 주세요.'
                                         className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
 										required
 									/>
@@ -175,7 +179,7 @@ return (
                                         // TODO: formdata 정의
 										// value={formData.lastName}
 										onChange={handleInputChange}
-										placeholder='회사명'
+										placeholder='회사명을 입력해 주세요.'
                                         className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
 										required
 									/>
@@ -183,24 +187,43 @@ return (
 							</div>
 
 							{/* Email */}
-							<div>
-								<label
-									htmlFor='email'
-									className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
-								>
-									{t.email}
-								</label>
-								<input
-									type='email'
-									id='email'
-									name='email'
-                                    // TODO: formdata 정의
-									// value={formData.email}
-									onChange={handleInputChange}
-									placeholder='이메일 주소'
-                                        className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
-									required
-								/>
+							<div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+								<div>
+									<label
+										htmlFor='email'
+										className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
+									>
+										{t.email}
+									</label>
+									<input
+										type='email'
+										id='email'
+										name='email'
+										// TODO: formdata 정의
+										// value={formData.email}
+										onChange={handleInputChange}
+										placeholder='이메일을 입력해 주세요.'
+											className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
+										required
+									/>
+								</div>
+								<div>
+									<label
+										htmlFor='phone'
+										className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
+									>
+										{t.subtitle}
+									</label>
+									<input
+										type='text'
+										id='phone'
+										name='phone'
+										onChange={handleInputChange}
+										placeholder='연락처를 입력해 주세요.'
+										className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
+										required
+									/>
+								</div>
 							</div>
 
 							{/* Message */}
@@ -311,8 +334,8 @@ return (
 						</div>
 					</div>
 				</div>
-			</div>
 		</section>
+	</>
 	);
 }
 
