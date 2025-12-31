@@ -122,7 +122,7 @@ export default function Contact() {
     };
 
 return (
-		<section id='contact' className='py-16 lg:py-24 relative z-10'>
+		<section id='contact' className='py-16 lg:py-24 relative z-10' style={{ backgroundImage: "url('/images/portfoliobg.png')"}}>
 			<div className='relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				{/* Section Header */}
 				<div className='text-center mb-12 lg:mb-16'>
