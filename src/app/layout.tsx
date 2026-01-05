@@ -24,8 +24,8 @@ const sacramento = Sacramento({
 })
 
 export const metadata: Metadata = {
-  title: "GPVC Wine Webpage",
-  description: "GPVC global",
+  title: "GPVC Global Sourcing",
+  description: "GPVC global sourcing",
 };
 
 export default function RootLayout({

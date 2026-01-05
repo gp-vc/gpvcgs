@@ -40,14 +40,6 @@ export default function Hero() {
           </Link>
         </div>
       </section>
-
-      {/* -------------------- 추가 콘텐츠 섹션 (예: 회사 소개 요약 등) -------------------- */}
-      {/* <section className="py-20 max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-playfair-display text-gray-900 mb-4">Our Curation Philosophy</h2>
-        <p className="text-gray-600 max-w-3xl mx-auto">
-          저희는 단순한 수입사가 아닌, 와인 메이커의 열정과 독창성을 한국 시장에 연결하는 큐레이터입니다.
-        </p>
-      </section> */}
       
     </>
   );

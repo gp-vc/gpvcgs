@@ -74,12 +74,12 @@ export default async function CountryDetailPage({ params }: Props) {
         </div>
         {/* 히어로 타이틀 콘텐츠 */}
         <div className="relative z-10 text-center px-4">
-            <h1 className="text-5xl md:text-8xl font-serif text-white font-bold drop-shadow-2xl mb-6 tracking-tight uppercase">
+            <h1 className="text-5xl md:text-8xl font-serif text-white drop-shadow-2xl mb-6 tracking-tight uppercase">
                 {currentCountryName}
             </h1>
             <div className="w-24 h-1.5 bg-(--bg-text-color) mx-auto rounded-full mb-6"></div>
             <p className="text-white/90 text-lg md:text-2xl font-light tracking-[0.2em] drop-shadow-md">
-                text
+                
             </p>
         </div>                
       </section>

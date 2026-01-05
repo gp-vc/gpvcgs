@@ -109,7 +109,7 @@ export const MOCK_DATA: Country[] = [
                         alcohol: '14%',
                         recommendedPairing: '',
                         description: "Costers del Siurana 와이너리의 프리미엄 화이트와인으로 연간 601병만 생산됩니다. 와이너리의 특정 경사 포도밭(L'Escarpart)의 테루아를 반영한 최고급 싱글 빈야드 와인으로, 매우 농축된 파워와 응집력을 가지고 있습니다. 복합적이고 구조적인 특성, 미네랄리티와 과실 향의 환상적인 균형이 특징입니다. 전형적인 프리오랏의 우아함과 숙성력이 극대화된 마스터피스 와인으로 볼 수 있습니다.",
-                        tastingNote: "None",
+                        tastingNote: " ",
                         imageUrl: '/images/lescarpat.png',
                         tasteProfile: {
                             body: 5,

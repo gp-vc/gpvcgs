@@ -123,8 +123,8 @@ export default function Contact() {
 
 return (
 	<>
-		<section id='contact' className="relative flex flex-col justify-center h-[60vh] inset-0 bg-cover bg-[length:100%_auto] bg-bottom no-repeat transition-transform duration-1000 bg-[url('/images/contactbg.png')]">
-		{/* <section id='contact' className="relative h-[60vh] py-16 lg:py-24 z-10 bg-cover bg-bottom bg-[url('/images/contactbg.png')] bg-no-repeat flex flex-col justify-center"> */}
+		<section id='contact' className="relative md:h-[60vh] bg-[length:100%_auto] bg-cover bg-bottom bg-no-repeat overflow-hidden flex flex-col justify-center bg-[url('/images/contactbg.png')]">
+		{/* <section id='contact' className="relative flex flex-col justify-center h-[70vh] inset-0 bg-cover bg-bottom no-repeat transition-transform duration-1000 bg-[url('/images/contactbg.png')]"> */}
 			<div className='relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				{/* Section Header */}
 				<div className='text-center mb-12 lg:mb-16'>
