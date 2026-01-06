@@ -228,5 +228,37 @@ export const MOCK_DATA: Country[] = [
         countrySlug: 'japan',
         countryName: '일본',
         wineries: [],
+        // TODO: Hamada Vineyard 와인 들여오면 데이터 추가
+        // wineries: [
+        //     {
+        //         winerySlug: "hamada-vineyard",
+        //         wineryName: "Hamada Vineyard",
+        //         wineryTitle: "Hamada Vineyard (하마다 빈야드)",
+        //         wineryDescription: "",
+        //         region: "Hokkaido",
+        //         regionKR: "홋카이도",
+        //         bgImageUrl: "",
+        //         logoUrl: "",
+        //         wines: [
+        //             {
+        //                 wineSlug: "sauvignon-blanc",
+        //                 name: "Sauvignon Blanc",
+        //                 vintage: "",
+        //                 grape: "",
+        //                 alcohol: "",
+        //                 recommendedPairing: "",
+        //                 description: "",
+        //                 tastingNote: "",
+        //                 imageUrl: "",
+        //                 tasteProfile: {
+        //                     body: 3,
+        //                     tannin: 3,
+        //                     acidity: 3,
+        //                     sweetness: 1
+        //                 }
+        //             }
+        //         ]
+        //     }
+        // ]
     }
 ]
