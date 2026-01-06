@@ -103,7 +103,7 @@ export default async function WineryDetailPage({ params }: Props) {
           </div>
           
           <div className="mt-6 flex items-center text-amber-800 font-sacramento text-lg md:text-xl border-l-4 border-(--bg-text-color) pl-6 py-2">
-            {wineryData.wineryName} — {wineryData.region}, {countrySlug.toUpperCase()}
+            {wineryData.wineryName} — {wineryData.region}, {countrySlug.charAt(0).toUpperCase() + countrySlug.slice(1).toLowerCase()}
           </div>
         </div>
       </section>
