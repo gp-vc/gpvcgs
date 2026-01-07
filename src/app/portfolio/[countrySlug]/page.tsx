@@ -157,8 +157,11 @@ export default async function CountryDetailPage({ params }: Props) {
                 {/* overlay: 모바일은 탭으로 켜짐(InteractiveCard), 데스크톱은 hover */}
                 <div className="absolute inset-0 bg-black/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 focus-within:opacity-100 transition-all duration-500 flex flex-col justify-center items-center p-6 text-center">
                   <div className="text-white space-y-3 transform translate-y-4 md:group-hover:translate-y-0 focus-within:translate-y-0 transition-transform duration-500 max-w-xs">
-                    <h4 className="text-2xl font-semibold">{winery.wineryName}</h4>
-                    <p className="text-sm text-white/90">{winery.region}</p>
+                    <h4 className="text-2xl font-serif font-semibold">{winery.wineryName}</h4>
+                    <p className='text-lg text-white font-medium drop-shadow flex items-center justify-center pt-2'>
+                            <MapPin className="w-5 h-5 mr-2 text-amber-300" />
+                            {winery.region} ({countryData!.countryName})
+                    </p>
                     <div className="pt-2">
                       <span className="inline-block bg-white/10 text-white py-2 px-4 rounded-full text-sm font-medium shadow-sm">자세히 보기</span>
                     </div>
