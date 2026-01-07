@@ -143,7 +143,7 @@ export default async function CountryDetailPage({ params }: Props) {
 
                 {/* logo box (top-left) */}
                 {winery.logoUrl && (
-                  <div className="absolute top-4 left-4 z-30 w-28 h-14 bg-white/10 rounded-md flex items-center justify-center p-2">
+                  <div className="absolute top-4 left-4 z-30 w-28 h-14 rounded-md flex items-center justify-center">
                     <Image src={winery.logoUrl} alt={winery.wineryName} fill className={logoClasses} sizes="120px" />
                   </div>
                 )}  
@@ -155,7 +155,7 @@ export default async function CountryDetailPage({ params }: Props) {
                 </div> */}
 
                 {/* overlay: 모바일은 탭으로 켜짐(InteractiveCard), 데스크톱은 hover */}
-                <div className="absolute inset-0 bg-black/70 opacity-0 data-[active=true]:opacity-100 md:opacity-0 md:group-hover:opacity-100 focus-within:opacity-100 transition-all duration-500 z-20 flex flex-col justify-center items-center p-6 text-center">
+              <div className="absolute inset-0 bg-black/70 opacity-0 data-[active=true]:opacity-100 md:opacity-0 md:group-hover:opacity-100 focus-within:opacity-100 transition-all duration-500 z-20 flex flex-col justify-center items-center p-6 text-center">
                   <div className="text-white space-y-3 transform translate-y-4 md:group-hover:translate-y-0 focus-within:translate-y-0 data-[active=true]:translate-y-0 transition-transform duration-500 max-w-xs">
                     <h4 className="text-2xl font-serif font-semibold">{winery.wineryName}</h4>
                     <p className='text-lg text-white font-medium drop-shadow flex items-center justify-center pt-2'>
