@@ -11,8 +11,20 @@ type Props = {
 
 export default function InteractiveCard({ href, children, className = '' }: Props) {
   const [active, setActive] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
+
+  useEffect(() => {
+    // 터치 디바이스 감지 (SSR 안전)
+    if (typeof window !== 'undefined') {
+      const touchSupport =
+        'ontouchstart' in window ||
+        (navigator && (navigator as any).maxTouchPoints > 0) ||
+        (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+      setIsTouch(!!touchSupport);
+    }
+  }, []);
 
   useEffect(() => {
     function onPointer(e: PointerEvent) {
@@ -25,13 +37,13 @@ export default function InteractiveCard({ href, children, className = '' }: Prop
   }, []);
 
   function onLinkClick(e: React.MouseEvent) {
-    if (!active) {
-      // 첫 탭: 오버레이만 켜고 네비게이션 차단
+    // 모바일/터치 환경에서만 첫 탭을 막고 오버레이를 켬
+    if (isTouch && !active) {
       e.preventDefault();
       setActive(true);
       wrapperRef.current?.focus();
     }
-    // active 상태면 기본 동작(네비게이션) 허용
+    // 데스크톱(마우스)에서는 e.preventDefault() 하지 않아서 즉시 이동
   }
 
   function onKeyDown(e: React.KeyboardEvent) {
@@ -49,12 +61,14 @@ export default function InteractiveCard({ href, children, className = '' }: Prop
   }
 
   return (
+    // data-active 어트리뷰트로 하위에서 Tailwind data-[] variant 사용 가능
     <div
       ref={wrapperRef}
       tabIndex={0}
       onKeyDown={onKeyDown}
       aria-expanded={active}
-      className={`group ${className} ${active ? 'is-active' : ''}`}
+      data-active={active ? 'true' : 'false'}
+      className={`group ${className}`}
     >
       <Link href={href} onClick={onLinkClick} className="block">
         {children}
