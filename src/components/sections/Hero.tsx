@@ -11,27 +11,31 @@ export default function Hero() {
     <>
       {/* -------------------- HERO SECTION (와이너리 이미지 배경) -------------------- */}
       <section 
-        className="relative h-[80vh] md:h-screen flex items-center justify-center text-center overflow-hidden bg-cover bg-center" 
+        className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-cover bg-center" 
         style={{ backgroundImage: "url('/images/heroimage.jpg')" }}
       >
         
-        {/* 오버레이 (텍스트 가독성 향상) */}
-        {/* <div className="absolute inset-0 bg-black/10 backdrop-brightness-90"></div> */}
-        <div className="absolute inset-0 transition-all duration-700"></div>
+        {/* 오버레이 (텍스트 가독성 향상): 전체 약간 어둡게 + 텍스트 뒤 중앙에 밝은 그라디언트 */}
+        <div className="absolute inset-0 transition-all duration-700 pointer-events-none">
+          {/* 전체 약한 다크 레이어 (이미지 대비 안정화) */}
+          <div className="absolute inset-0 bg-black/8"></div>
+          {/* 텍스트가 위치한 중앙 영역만 밝게 만들어 하단 나무색과 경계 문제 해결 */}
+          <div className="absolute left-0 right-0 top-1/3 bottom-1/3 bg-gradient-to-b from-transparent via-white/60 to-transparent"></div>
+        </div>
         
-        <div className="relative z-10 p-4 max-w-9xl mx-auto">
+        <div className="relative z-20 p-4 max-w-9xl mx-auto">
           <hgroup>
-            {/* ⚡ 슬로건: Part 1 */}
-            <p className="text-xl md:text-5xl font-bold text-[#555555] font-serif italic tracking-wide leading-relaxed">
-              {sloganPart1}
-              <br />{sloganPart2}
-            </p>
-
-            {/* ⚡ 슬로건: Part 2 (강조) */}
-            <h1 className="text-xl mt-8 md:text-xl font-sans text-orange-200 font-bold mb-10 leading-snug drop-shadow-lg">
-              {sloganPart3}
-            </h1>
-          </hgroup>
+             {/* ⚡ 슬로건: Part 1 */}
+             <p className="text-xl md:text-5xl font-bold text-[#555555] font-serif italic tracking-wide leading-relaxed">
+               {sloganPart1}
+               <br />{sloganPart2}
+             </p>
+ 
+             {/* ⚡ 슬로건: Part 2 (강조) */}
+            <h1 className="text-xl mt-8 md:text-xl font-sans text-orange-200 font-bold mb-6 md:mb-10 leading-snug drop-shadow-lg">
+               {sloganPart3}
+             </h1>
+           </hgroup>
           
           {/* 포트폴리오 진입 버튼 */}
           <Link href="/portfolio/spain" className="inline-flex items-center space-x-3 bg-(--bg-text-color) hover:bg-(--bg-text-color) text-white font-bold py-4 px-8 rounded-full shadow-xl shadow-amber-600/40 transition duration-300 transform hover:scale-105 text-lg">
