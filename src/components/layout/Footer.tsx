@@ -1,12 +1,14 @@
 import Link from 'next/link';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Building2 } from 'lucide-react';
 
 export default function Footer() {
     const content = {
+        company: 'GPVC',
         address: '서울시 강남구 언주로157길 6, 3층',
         phone: '1600-1228',
         email: 'info@gp-vc.com',
-        copyright: '©2025 GPVC Co.,Ltd. All rights reserved.',
+        copyright: '©2026 GPVC Co.,Ltd. All rights reserved.',
+        businessInfo: '주식회사 지피브이씨 | 대표자: CHA WONIL, KIM WONWOO(김원우), 신정호 | 사업자등록번호: 466-81-03190',
         privacyPolicy: '개인정보처리방침',
     };
 
@@ -17,6 +19,9 @@ export default function Footer() {
                     {/* Contact info (moved to left when logo removed) */}
                     <div className='col-span-1'>
                          <div className='space-y-2'>
+                            <div className='flex items-start space-x-3'>
+                                <span className='text-gray-500 text-md font-serif'>{content.company}</span>
+                            </div>
                              <div className='flex items-start space-x-3'>
                                  <MapPin
                                      size={16}
@@ -32,11 +37,18 @@ export default function Footer() {
                                  <Mail size={16} className='text-[#bdb9dc] flex-shrink-0' />
                                  <span className='text-gray-500 text-sm'>{content.email}</span>
                              </div>
+                             <div className='flex items-start space-x-3'>
+                                    <Building2
+                                        size={16}
+                                        className='text-[#bdb9dc] mt-1 flex-shrink-0'
+                                    />
+                                    <span className='text-gray-500 text-sm'>{content.businessInfo}</span>
+                            </div>
                          </div>
                     </div>
  
                      {/* Divider */}
-                     <div className='md:col-span-2 border-t border-silver-800 mt-6 pt-6'>
+                     <div className='md:col-span-2 border-t border-silver-800 mt-3 pt-6'>
                          <div className='flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0'>
                              <p className='text-gray-400 text-sm'>{content.copyright}</p>
  
