@@ -7,7 +7,11 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 export default function Contact() {
     const sectionRef = useRef<HTMLDivElement>(null);
     const [formData, setFormData] = useState({
-        //TODO: contact us에 넣을 formdata 정의하기
+		name: '',
+		company: '',
+		email: '',
+		phone: '',
+		message: '',
     })
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [statusMessage, setStatusMessage] = useState('');
@@ -18,8 +22,8 @@ export default function Contact() {
     const t = {
         title: 'Contact Us',
         subtitle: '연락처',
-        firstName: '이름',
-        lastName: '회사명',
+        name: '이름',
+        company: '회사명',
         email: '이메일 주소',
         message: '메시지',
         messagePlaceholder: '문의 내용을 입력해 주세요.',
@@ -100,8 +104,7 @@ export default function Contact() {
 
             if (response.ok) {
                 setStatusMessage('✅ 문의가 성공적으로 전송되었습니다! 곧 연락드리겠습니다.');
-                // TODO:아래 formdata는 받을거 정의 하고 다시바꿔야함
-				// setFormData({ firstName: '', lastName: '', email: '', message: '' });
+				setFormData({ name: '', company: '', email: '', phone: '', message: ''});
             } else {
 				setStatusMessage(`❌ 전송 실패: ${result.message || '서버 오류가 발생했습니다.'}`);
             }
@@ -152,14 +155,13 @@ return (
 										htmlFor='name'
 										className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
 									>
-										{t.firstName}
+										{t.name}
 									</label>
 									<input
 										type='text'
 										id='name'
 										name='name'
-                                        // TODO: formdata 정의
-										// value={formData.firstName}
+										value={formData.name}
 										onChange={handleInputChange}
 										placeholder='이름을 입력해 주세요.'
                                         className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
@@ -171,14 +173,13 @@ return (
 										htmlFor='company'
 										className='block text-sm font-medium text-gray-400 mb-2 drop-shadow'
 									>
-										{t.lastName}
+										{t.company}
 									</label>
 									<input
 										type='text'
 										id='company'
 										name='company'
-                                        // TODO: formdata 정의
-										// value={formData.lastName}
+										value={formData.company}
 										onChange={handleInputChange}
 										placeholder='회사명을 입력해 주세요.'
                                         className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
@@ -200,11 +201,10 @@ return (
 										type='email'
 										id='email'
 										name='email'
-										// TODO: formdata 정의
-										// value={formData.email}
+										value={formData.email}
 										onChange={handleInputChange}
 										placeholder='이메일을 입력해 주세요.'
-											className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
+										className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
 										required
 									/>
 								</div>
@@ -219,6 +219,7 @@ return (
 										type='text'
 										id='phone'
 										name='phone'
+										value={formData.phone}
 										onChange={handleInputChange}
 										placeholder='연락처를 입력해 주세요.'
 										className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
@@ -239,11 +240,10 @@ return (
 									id='message'
 									name='message'
 									rows={6}
-                                    // TODO: formdata 정의
-									// value={formData.message}
+									value={formData.message}
 									onChange={handleInputChange}
 									placeholder={t.messagePlaceholder}
-                                        className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
+									className='w-full px-4 py-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:border-amber-600 transition-all duration-200 bg-white text-gray-900 placeholder-gray-400 shadow-sm'
 									required
 								/>
 							</div>
