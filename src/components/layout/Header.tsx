@@ -32,6 +32,7 @@ const navItems: NavItem[] = [
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
     const [isScrolled, setIsScrolled] = useState(false);
     const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
@@ -45,6 +46,10 @@ export default function Header() {
 
         }
     }
+
+    const toggleMobileDropdown = (name: string) => {
+      setMobileDropdown(prev => (prev === name ? null : name));
+    };
 
     return (
     <header
@@ -98,10 +103,59 @@ export default function Header() {
         </div>
         
         {/* 모바일 메뉴 버튼 Placeholder */}
-        <button className="md:hidden text-gray-300 hover:text-amber-500">
+        <button 
+          onClick={() => setIsMenuOpen(v => !v)}
+          aria-expanded={isMenuOpen}
+          aria-label="Toggle menu"
+          className="md:hidden text-gray-300 hover:text-amber-500"
+        >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
       </nav>
+
+      {/* 모바일 드랍다운 메뉴 (토글 방식) */}
+<div className={`md:hidden px-4 pb-6 ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <div className="flex flex-col space-y-1 bg-white/5 rounded-lg p-3">
+          {navItems.map(item => (
+            <div key={item.name} className="w-full">
+              {item.dropdown ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => toggleMobileDropdown(item.name)}
+                    aria-expanded={mobileDropdown === item.name}
+                    className="w-full flex items-center justify-between px-3 py-2 text-left text-base font-medium text-gray-800 hover:bg-gray-100 rounded-md"
+                  >
+                    <span>{item.name}</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdown === item.name ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  <div className={`${mobileDropdown === item.name ? 'max-h-96 opacity-100 py-2' : 'max-h-0 opacity-0 py-0'} overflow-hidden transition-all duration-300`}>
+                    {item.dropdown.map(sub => (
+                      <Link
+                        key={sub.name}
+                        href={sub.href}
+                        onClick={() => { setIsMenuOpen(false); setMobileDropdown(null); }}
+                        className="block px-6 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <Link
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-100 rounded-md"
+                >
+                  {item.name}
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </header>
   );
 }
