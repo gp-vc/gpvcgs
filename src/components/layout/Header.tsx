@@ -113,47 +113,51 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* 모바일 드랍다운 메뉴 (토글 방식) */}
-<div className={`md:hidden px-4 pb-6 ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <div className="flex flex-col space-y-1 bg-white/5 rounded-lg p-3">
-          {navItems.map(item => (
-            <div key={item.name} className="w-full">
-              {item.dropdown ? (
-                <>
-                  <button
-                    type="button"
-                    onClick={() => toggleMobileDropdown(item.name)}
-                    aria-expanded={mobileDropdown === item.name}
-                    className="w-full flex items-center justify-between px-3 py-2 text-left text-base font-medium text-gray-800 hover:bg-gray-100 rounded-md"
-                  >
-                    <span>{item.name}</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdown === item.name ? 'rotate-180' : ''}`} />
-                  </button>
-
-                  <div className={`${mobileDropdown === item.name ? 'max-h-96 opacity-100 py-2' : 'max-h-0 opacity-0 py-0'} overflow-hidden transition-all duration-300`}>
-                    {item.dropdown.map(sub => (
-                      <Link
-                        key={sub.name}
-                        href={sub.href}
-                        onClick={() => { setIsMenuOpen(false); setMobileDropdown(null); }}
-                        className="block px-6 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+      {/* 모바일 드랍다운 메뉴 (토글 방식, 데스크탑 드롭다운 스타일과 통일) */}
+      <div className={`md:hidden px-4 pb-6 ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gray-800 rounded-lg shadow-xl overflow-hidden border border-gray-700 p-3">
+            <div className="flex flex-col space-y-1">
+              {navItems.map(item => (
+                <div key={item.name} className="w-full">
+                  {item.dropdown ? (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => toggleMobileDropdown(item.name)}
+                        aria-expanded={mobileDropdown === item.name}
+                        className="w-full flex items-center justify-between px-3 py-2 text-left text-base font-medium text-gray-300 hover:bg-amber-600 hover:text-white rounded-md transition"
                       >
-                        {sub.name}
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <Link
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-100 rounded-md"
-                >
-                  {item.name}
-                </Link>
-              )}
+                        <span>{item.name}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdown === item.name ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      <div className={`${mobileDropdown === item.name ? 'max-h-96 opacity-100 py-2' : 'max-h-0 opacity-0 py-0'} overflow-hidden transition-all duration-300`}>
+                        {item.dropdown.map(sub => (
+                          <Link
+                            key={sub.name}
+                            href={sub.href}
+                            onClick={() => { setIsMenuOpen(false); setMobileDropdown(null); }}
+                            className="block px-6 py-2 text-sm text-gray-300 hover:bg-amber-600 hover:text-white rounded-md"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-amber-600 hover:text-white rounded-md"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </header>
