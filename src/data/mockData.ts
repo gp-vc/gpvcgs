@@ -25,7 +25,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '랍스터, 정어리, 고등어과 소고기, 양고기, 오리, 닭, 그릴하거나 진하고 스파이시한 소스를 곁들인 육류, 숙성된 하드 치즈',
                         description: '와이너리의 시그니처 와인. 전통적인 프리오랏의 품종과 국제 품종을 매해 같은 비율로 블렌딩해서 만든 와인이며, 포도밭의 다양한 고도와 방향의 특성을 모두 담아냅니다. 비범한 힘, 구조, 복합성을 지녀 긴 숙성 잠재력을 가집니다. 프렌치 오크 배럴에서 12개월간 숙성 후, 병에서 장기간 숙성 되어 출시됩니다. 와이너리의 이름을 대표하며, 프리오랏 르네상스의 상징과도 같은 와인입니다.',
                         tastingNote: '체리, 블루베리, 블랙커런트, 허브, 스모크, 초콜릿 노트가 어우러진 스파이시 플로럴 아로마',
-                        imageUrl: '/images/closdelobac.png',
+                        imageUrl: '/images/closdelobac.svg',
                         tasteProfile: {
                             body: 5,
                             tannin: 5,
@@ -42,7 +42,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '고급 스테이크등의 육류, 버섯 리조또나 트러플이 가미된 요리, 단단한 치즈(체다, 만체고), 진한 소스의 파스타, 푸아그라',
                         description: "Miserere - '자비를 베푸소서' \n D.O.Q. 전체에서 가장 훌륭한 리코레야(Llicorella) 토양 중 하나에 심어진 이 다섯가지 품종은 Miserere에게 진정한 프리오랏 와인을 정의하는 강력한 구조감과 힘을 희생하지 않으면서도, 국제 시장에서 접할 수 있는 숙성 가능한 와인 중 가장 우아한 와인 중 하나라는 영예를 선사합니다.",
                         tastingNote: '레드와 다크베리, 카시스, 리코리스, 초콜릿, 허브, 스파이스의 프로럴하고 프루티한 노트',
-                        imageUrl: '/images/miserere.png',
+                        imageUrl: '/images/miserere.svg',
                         tasteProfile: {
                             body: 4.5,
                             tannin: 4,
@@ -59,7 +59,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '캐비아, 랍스터, 크랩, 크림소스 요리, 로스트 치킨, 해산물, 콤테 치즈',
                         description: "Kyrie - '주님' \n Clos de L'Obac 와이너리의 시그니처 화이트입니다. Mas d'en Bruno 밭의 낮은 지대에 남향으로 위치한 작은 Kyrie 포도밭은 카탈루냐의 네 가지 클래식 화이트 품종으로 구성되어 있습니다. 네 가지 품종의 최적의 숙성 상태와 가벼운 침용을 거쳐 뛰어난 구조감, 복합성, 그리고 절묘한 섬세함을 갖춘 와인입니다. 새 프렌치 오크 베럴에서 발효 및 6개월간의 숙성을 거치며, 알코올 도수가 높고 산도가 낮아 장기 숙성 잠재력이 뛰어난 헤비한 화이트 와인으로 연간 약 3,500병 정도만 생산되는 컬렉터 와인입니다.",
                         tastingNote: "골든 옐로우/엠버 컬러, 배, 노란 사과, 견과류, 짚, 마지판, 꿀, 버터 터치, 달콤한 스파이스의 아로마",
-                        imageUrl: '/images/kyrie.png',
+                        imageUrl: '/images/kyrie.svg',
                         tasteProfile: {
                             body: 4,
                             tannin: 1,
@@ -76,7 +76,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '모든 육류와 간단한 그릴요리, 초리소 타파스, 토마토 파스타, 피자',
                         description: "Usatges Negre - 카탈루냐의 법도 \n 순수하고 집중적인 과일 풍미를 제공하며, 복합적인 프리오랏 와인의 특징인 단단한 구조감과 우아한 타닌을 지니고 있는 와인입니다. 이는 전통적인 카탈루냐 법처럼, 시대를 초월하는 프리오랏 레드 와인의 고전적인 표준을 제시합니다.",
                         tastingNote: "미디움 가넷 레드 컬러, 카시스 블랙체리 베리류의 과실향과 약간의 미네랄리티, 신선한 산미",
-                        imageUrl: '/images/usatges%20negre.png',
+                        imageUrl: '/images/usatgesnegre.svg',
                         tasteProfile: {
                             body: 3.5,
                             tannin: 3,
@@ -93,7 +93,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '해산물(조개, 오징어), 가벼운 생선 요리, 샐러드, 부드러운 치즈(브리, 카망베르), 가벼운 가금유 요리',
                         description: "Usatges Blanc - 카탈루냐의 법도 \n Usatges Blanc은 프리오랏의 전통적인 화이트 와인 생산 방식을 계승하고 그 가치를 기리는 와인입니다. 이 지역에서 화이트 와인 생산은 상대적으로 희소하며, 품질에 대한 와이너리의 헌신을 보여줍니다. 새 오크를 사용하여 복합성을 더하는 다른 와인들과 달리, 이 와인은 순수함과 신선함에 초점을 맞추어 양조됩니다. 와인은 균형 잡힌 산도와 섬세한 아로마, 그리고 긴 여운을 가지며, 프리오랏의 떼루아가 만들어내는 희귀하고 우아한 화이트 와인의 매력을 선사합니다.",
                         tastingNote: "화이트 시트러스 컬러, 화이트 피치, 사과, 배, 플라워, 그린 허브, 오렌지 껍질, 페이스트리 아로마",
-                        imageUrl: '/images/usatges%20blanc.png',
+                        imageUrl: '/images/usatgesblanc.svg',
                         tasteProfile: {
                             body: 3.5,
                             tannin: 1,
@@ -110,7 +110,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '',
                         description: "Costers del Siurana 와이너리의 프리미엄 화이트와인으로 연간 601병만 생산됩니다. 와이너리의 특정 경사 포도밭(L'Escarpart)의 테루아를 반영한 최고급 싱글 빈야드 와인으로, 매우 농축된 파워와 응집력을 가지고 있습니다. 복합적이고 구조적인 특성, 미네랄리티와 과실 향의 환상적인 균형이 특징입니다. 전형적인 프리오랏의 우아함과 숙성력이 극대화된 마스터피스 와인으로 볼 수 있습니다.",
                         tastingNote: " ",
-                        imageUrl: '/images/lescarpat.png',
+                        imageUrl: '/images/lescarpat.svg',
                         tasteProfile: {
                             body: 5,
                             tannin: 5,
@@ -139,7 +139,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '',
                         description: "와이너리에서 가장 높은 고도(800m 이상)의 100년 된 구획에서 생산됩니다. 극히 제한된 생산량(연간 500~1200병 내외)을 자랑하며, 진중하고 장기 숙성 잠재력이 뛰어난 와인입니다.",
                         tastingNote: "같은 색조의 반사광을 띄는 루비 레드 색이며, 영한 붉은 과일(자두,라즈베리)과 올스파이스 같은 향신료, 그리고 바닐라 뉘앙스를 지닙니다. 미디엄 플러스의 산도와 섬세하거나 젠틀한 탄닌을 보이며, 벨벳처럼 길게 이어지는 여운으로 마무리됩니다.",
-                        imageUrl: '/images/valdecedin.jpg',
+                        imageUrl: '/images/valdecedin.svg',
                         tasteProfile: {
                             body: 4,
                             tannin: 4,
@@ -156,7 +156,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '',
                         description: "엘카프리초 와이너리의 유일한 화이트 와인이며 평균 수령 80년의 포도나무에서 생산됩니다. Viña de la Uta라는 이름으로도 알려져 있으며, 이름 그대로 '우타(Uta)의 포도밭' 에서 나온 화이트 와인으로 매우 과실미가 풍부하고 즐거운 스타일의 와인입니다. 연간 1200병만 생산하며, 6개월간 프렌치 오크통에서 숙성됩니다.",
                         tastingNote: "중간 정도의 농도를 지닌 연둣빛이 도는 노란색을 띄며, 잘 익은 스톤 프루트(핵과)와 견과류 아로마가 코와 입안에서 그대로 이어지는 풍미를 보여주고, 과실미가 강렬하면서도 길게 지속되는 여운을 지녔으며, 숙성 잠재력은 5~8년입니다.",
-                        imageUrl: '/images/vinoblanco.jpg',
+                        imageUrl: '/images/vinoblanco.svg',
                         tasteProfile: {
                             body: 3,
                             tannin: 1,
@@ -173,7 +173,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: '붉은 육류의 스테이크',
                         description: "100년 이상된 포도나무에서 수확된 포도로 제작되며, 붉은 과실미와 야생의 아로마가 돋보이는 섬세하고 우아한 스타일의 와인입니다. 새 프렌치 오크통에서 12개월간 숙성됩니다. 연간 약 15,000병만 생산하며 엘 카프리초의 스테이크와 같은 붉은 육류와 완벽한 페어링을 이룹니다.",
                         tastingNote: "루비 레드에 옅은 림(rim)을 띄며, 잘익은 레드 및 블랙베리 아로마와 함께 클로브와 바닐라 같은 스파이스 뉘앙스가 느껴지고, 중간정도의 산도와 라운드한 타닌을 지녔으며, 미디움 길이의 프루티한 피니쉬로 끝납니다.",
-                        imageUrl: '/images/elchano.png',
+                        imageUrl: '/images/elchano.svg',
                         tasteProfile: {
                             body: 3,
                             tannin: 3,
@@ -190,7 +190,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: "",
                         description: "",
                         tastingNote: "",
-                        imageUrl: "/images/laperla.jpg",
+                        imageUrl: "/images/laperla.svg",
                         tasteProfile: {
                             body: 3,
                             tannin: 3,
@@ -207,7 +207,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: "",
                         description: "",
                         tastingNote: "",
-                        imageUrl: "/images/lamajada.jpg",
+                        imageUrl: "/images/lamajada.svg",
                         tasteProfile: {
                             body: 3,
                             tannin: 3,

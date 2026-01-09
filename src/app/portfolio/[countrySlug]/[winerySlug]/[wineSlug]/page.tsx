@@ -111,7 +111,7 @@ export default async function WineDetailPage({ params }: Props) {
                     alt={`${wine.name} bottle shot`} 
                     fill // ⚡ 부모 div 크기(h-[400px])를 채우도록 설정
                     priority // 상세 페이지의 핵심 이미지이므로 우선 로딩
-                    className="object-cover" // 비율 유지하며 컨테이너에 맞춤
+                    className="object-contain" // 비율 유지하며 컨테이너에 맞춤
                     sizes="(max-width: 1024px) 100vw, 33vw" // 반응형 사이즈 힌트
                 />
             </div>
