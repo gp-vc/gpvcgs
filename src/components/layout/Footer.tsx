@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Building2 } from 'lucide-react';
 
 export default function Footer() {
     const content = {
-        company: 'GPVC',
+        company: '주식회사 지피브이씨',
         address: '서울시 강남구 언주로157길 6, 3층',
         phone: '1600-1228',
         email: 'info@gp-vc.com',
@@ -37,13 +37,13 @@ export default function Footer() {
                                  <Mail size={16} className='text-[#bdb9dc] flex-shrink-0' />
                                  <span className='text-gray-500 text-sm'>{content.email}</span>
                              </div>
-                             <div className='flex items-start space-x-3'>
+                             {/* <div className='flex items-start space-x-3'>
                                     <Building2
                                         size={16}
                                         className='text-[#bdb9dc] mt-1 flex-shrink-0'
                                     />
                                     <span className='text-gray-500 text-sm whitespace-normal md:whitespace-nowrap'>{content.businessInfo}</span>
-                            </div>
+                            </div> */}
                          </div>
                     </div>
  
