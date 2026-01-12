@@ -188,7 +188,7 @@ export const MOCK_DATA: Country[] = [
                         grape: "",
                         alcohol: "13.5%",
                         recommendedPairing: "",
-                        description: "",
+                        description: "'그 타르타르를 긁어내지 마라!', 호두나무 오크통 작업을 할 때면 아버지는 늘 제게 말씀하시곤 했습니다. 오크통 안으로 기어 들어가 보면, 마치 맑은 여름밤의 우주를 관찰하는 것만 같았죠. 타르타르 때문인지 얇게 형성된 그 층은 아주 특별한 빛을 내뿜으며 오크통의 나무로부터 와인을 섬세하게 격리해 주었습니다.\n 그 통은 할아버지 세군도 고르돈(Segundo Gordón)이 일군 가장 높은 지대의 포도밭에서 수확한 프리에토 피쿠도와 멘시아 품종들로 채워졌습니다. 발효는 천천히, 그러나 강렬하게 일어났고, 그 결과 신선하고 가벼우면서도 벨벳 같은 우아함을 지닌, 마시기 편한 와인이 탄생했습니다.\n 아마도 아버지가 그 오크통에 La Perla(진주)라는 이름을 붙이신 건, 그 통이 우리의 가장 큰 희망이었기 때문일 것입니다.",
                         tastingNote: "",
                         imageUrl: "/images/laperla.svg",
                         tasteProfile: {
@@ -205,7 +205,7 @@ export const MOCK_DATA: Country[] = [
                         grape: "멘시아, 가르나챠, 프리에토 피쿠토",
                         alcohol: "14%",
                         recommendedPairing: "",
-                        description: "",
+                        description: "이 와인은 대부분 100년이 넘는 오래된 포도밭을 되살려 만든 결과물입니다. 전통적인 유기농법으로 재배된 이 포도밭에서는 멘시아, 가르나차, 프리도 피쿠도 품종의 포도가 생산됩니다. 그 결과, 잘 익은 붉은 과일과 야생적인 향이 돋보이는 섬세하고 과일향이 풍부한 와인이 탄생했습니다. 프랑스산 오크통에서 12개월 동안 숙성된 이 와인은 육류 요리와 완벽한 조화를 이룹니다.",
                         tastingNote: "",
                         imageUrl: "/images/lamajada.svg",
                         tasteProfile: {
