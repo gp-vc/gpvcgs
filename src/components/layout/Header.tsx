@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 import { usePathname } from 'next/navigation';
@@ -38,6 +38,11 @@ export default function Header() {
     const pathname = usePathname();
 
     const isMainPage = pathname === '/';
+
+    useEffect(() => {
+      setIsMenuOpen(false);
+      setMobileDropdown(null);
+    }, [pathname]);
 
     const handleNavClick = (href: string) => {
         // TODO: 네비게이션바 버튼 클릭시 그 페이지로 리디렉트
