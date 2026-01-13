@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 import { usePathname } from 'next/navigation';
@@ -36,6 +36,7 @@ export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
+    const wrapperRef = useRef<HTMLDivElement>(null);
 
     const isMainPage = pathname === '/';
 
@@ -43,6 +44,18 @@ export default function Header() {
       setIsMenuOpen(false);
       setMobileDropdown(null);
     }, [pathname]);
+
+    useEffect(() => {
+      function onPointerDown(e: PointerEvent) {
+        if (!isMenuOpen) return;
+        if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+          setIsMenuOpen(false);
+          setMobileDropdown(null);
+        }
+      }
+      document.addEventListener('pointerdown', onPointerDown);
+      return() => document.removeEventListener('pointerdown', onPointerDown);
+    }, [isMenuOpen]);
 
     const handleNavClick = (href: string) => {
         // TODO: 네비게이션바 버튼 클릭시 그 페이지로 리디렉트
@@ -58,6 +71,7 @@ export default function Header() {
 
     return (
     <header
+      ref={wrapperRef}
       className="absolute top-0 left-0 right-0 z-50 bg-transparent border-none"
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
