@@ -44,6 +44,7 @@ export default function RootLayout({
                 content='GPVC wine introducing website'
               />
             <meta name='viewport' content='width=device-width, initial-scale=1' />
+            <meta name="naver-site-verification" content="a11361273ae8e4d85a1cd06f4a563b2085106d29" />
           </head>
             <body className="min-h-screen bg-gray-50 text-gray-900 antialiased">
                 <Header />
