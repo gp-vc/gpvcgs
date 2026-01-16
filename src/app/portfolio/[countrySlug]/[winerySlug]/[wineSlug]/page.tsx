@@ -24,10 +24,31 @@ export async function generateMetadata({ params }: Props) {
         return { title: 'Not Found' };
     }
 
+    const title = `${wine.name} (${wine.vintage}) - ${wine.winery} | GPVC`;
+    const description = `${wine.winery}의 대표 와인 ${wine.name}. ${wine.tastingNote.substring(0, 100)}...`;
+    const url = `https://www.gpvcgs.com/portfolio/${countrySlug}/${winerySlug}/${wineSlug}`;
+
     return {
-        title: `${wine.name} (${wine.vintage}) - ${wine.winery}`,
-        description: wine.tastingNote.substring(0, 150) + '...',
-    };
+        title: title,
+        description: description,
+        openGraph: {
+        title: title,
+        description: description,
+        url: url,
+        siteName: 'GPVC Wine',
+        images: [
+            {
+            url: wine.imageUrl || '/images/og-default.png',
+            width: 800,
+            height: 600,
+            alt: wine.name,
+            },
+        ],
+        locale: 'ko_KR',
+        type: 'website',
+        },
+        keywords: [wine.name, wine.winery, wine.country, '와인', 'GPVC', '와인 수입', wine.grape],
+    }
 }
 
 // 2. 빌드 시점에 생성할 모든 페이지의 경로를 정의 (SSG)
