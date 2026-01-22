@@ -81,7 +81,7 @@ export default function PrivacyPolicy(){
 	return (
 		<div className='min-h-screen bg-gradient-to-br from-gray-50 to-gray-100'>
 			{/* Header section with background */}
-			<div className='bg-gradient-to-r from-[#bdb9dc] to-[#a8a4d0] text-white pt-24 lg:pt-32 pb-4 lg:pb-6'>
+			<div className='bg-gradient-to-r from-gray-200 to-gray-400 text-white pt-24 lg:pt-32 pb-4 lg:pb-6'>
 				<div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
 					<h1 className='text-4xl lg:text-5xl font-thin mb-8 lg:mb-10'>
 						{content.title}
