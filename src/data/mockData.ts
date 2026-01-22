@@ -132,7 +132,7 @@ export const MOCK_DATA: Country[] = [
                 wines: [
                     {
                         wineSlug: "valdecedin",
-                        name: "Valdecedin",
+                        name: "Valdecedín",
                         vintage: '2020',
                         grape: "멘시아",
                         alcohol: "14%",
@@ -233,22 +233,107 @@ export const MOCK_DATA: Country[] = [
         //     {
         //         winerySlug: "hamada-vineyard",
         //         wineryName: "Hamada Vineyard",
-        //         wineryTitle: "Hamada Vineyard (하마다 빈야드)",
-        //         wineryDescription: "",
+        //         wineryTitle: "Hamada Vineyard",
+        //         wineryDescription: "홋카이도 미카사시의 완만한 구릉에 자리잡은 하마다 빈야드는 과학의 정밀함과 자연의 생명력이 조화를 이루는 가족 경영 와이너리입니다. 설립자 하마다 히로후미 대표는 도쿄대 의학부를 졸업하고 30년 넘게 암 신약 개발을 연구해온 의학 박사로, 평생을 바친, '생명의 탐구'를 이제 대지 위에서 와인으로 꽃피우고 있습니다.\n그는 암세포를 분석하던 치밀한 연구 정신을 포도밭에 투영하여, 미카사 테루아에 최적화된 재배 환경을 과학적으로 구축해냈습니다. 현재는 아들이자 차세대 양조가인 하마다 레오가 합류하여, 아버지가 일군 정교한 토대 위에 야생 효모 발효와 최소한의 개입이라는 자연주의 양조 철학을 더해 독창적인 와인을 빚어냅니다.\n하마다 빈야드의 와인은 홋카이도의 서늘한 기후가 선사하는 맑은 산미와 더불어, 긴 연구의 세월만큼이나 깊고 우아한 복합미를 자랑합니다. 특히 이곳의 샤르도네와 피노 누아는 포도 본연의 순수한 에너지를 정교하게 담아내어, 마시는 이에게 깊은 위로와 감동을 선사합니다.\n나아가 2026년 봄에는 빈야드 내 복합 미식 공간인 '에카라(Ekara)'를 새롭게 오픈하여, 자사 와인과 지역 식재료가 어우러진 최상의 미식 경험을 제공할 예정입니다. 세계적인 석학의 탐구 정신과 가족의 정성이 빚어낸 특별한 한 잔, 하마다 빈야드에서 사람과 대지를 향한 진심 어린 존중을 만나보시기 바랍니다.",
         //         region: "Hokkaido",
         //         regionKR: "홋카이도",
-        //         bgImageUrl: "",
+        //         bgImageUrl: "/images/IMG_2207.jpg",
         //         logoUrl: "",
         //         wines: [
         //             {
-        //                 wineSlug: "sauvignon-blanc",
-        //                 name: "Sauvignon Blanc",
-        //                 vintage: "",
-        //                 grape: "",
-        //                 alcohol: "",
+        //                 wineSlug: "hamada-blanc",
+        //                 name: "Blanc",
+        //                 vintage: "2023",
+        //                 grape: "소비뇽 블랑, 샤르도네, 피노 그리, 리슬링, 케르너, 뮐러 트루가우, 피노 블랑, 세이벨, 몬트브라이트",
+        //                 alcohol: "11.5% ~ 12.5%",
         //                 recommendedPairing: "",
-        //                 description: "",
+        //                 description: "하마다 빈야드의 포도밭인 '타푸'의 전체적인 조화를 보여주는 화이트 와인입니다. 단일 품종 와인보다 복합미가 뛰어나며, 과실의 풍부함과 꽃향기, 그리고 홋카이도 대지의 미네랄이 균형 있게 어우러져 있습니다. 빈티지에 따라 블렌딩 비율이 달라지며, 빈야드의 그해 작황을 가장 잘 대변하는 와인입니다.",
         //                 tastingNote: "",
+        //                 imageUrl: "/images/hamada-blanc-v3.png",
+        //                 tasteProfile: {
+        //                     body: 3,
+        //                     tannin: 3,
+        //                     acidity: 3,
+        //                     sweetness: 1
+        //                 }
+        //             },
+        //             {
+        //                 wineSlug: "hamada-bacchus",
+        //                 name: "Bacchus",
+        //                 vintage: "2021, 2023, 2024",
+        //                 grape: "바쿠스",
+        //                 alcohol: "10.5% ~ 11.5%",
+        //                 recommendedPairing: "해산물 요리",
+        //                 description: "하마다 빈야드가 위치한 홋카이도 소라치 지역에서 특히 빛을 발하는 품종입니다. 낮은 알코올 도수와 신선한 산미 덕분에 와인 입문자부터 전문가까지 두루 선호하는 경쾌한 화이트 와인입니다.",
+        //                 tastingNote: "머스캣, 라임, 갓 벤 풀 향",
+        //                 imageUrl: "",
+        //                 tasteProfile: {
+        //                     body: 2,
+        //                     tannin: 2,
+        //                     acidity: 2,
+        //                     sweetness: 2
+        //                 }
+        //             },
+        //             {
+        //                 wineSlug: "hamada-sauvignon-blanc",
+        //                 name: "Sauvignon Blanc",
+        //                 vintage: "2021",
+        //                 grape: "소비뇽 블랑",
+        //                 alcohol: "12.0% ~ 12.5%",
+        //                 recommendedPairing: "신선한 해산물 요리",
+        //                 description: "뉴질랜드 스타일의 강렬함보다는 미카사의 서늘한 기우를 닮은 섬세하고 정교한 와인입니다.",
+        //                 tastingNote: "자몽, 패션프루트와 같은 시트러스향과 함께 특유의 허브 향(레몬그라스), 미네랄리티",
+        //                 imageUrl: "",
+        //                 tasteProfile: {
+        //                     body: 2,
+        //                     tannin: 2,
+        //                     acidity: 2,
+        //                     sweetness: 2
+        //                 }
+        //             },
+        //             {
+        //                 wineSlug: "hamada-chardonnay",
+        //                 name: "Chardonnay",
+        //                 vintage: "2021",
+        //                 grape: "샤르도네",
+        //                 alcohol: "12.5% ~ 13.0%",
+        //                 recommendedPairing: "",
+        //                 description: "'일본의 뫼르소'라는 별칭이 가장 잘 어울리는 와인입니다. 하마다 빈야드의 모든 기술력과 테루아에 대한 해석이 응집된 시그니처 와인입니다. 묵직한 볼륨감과 우아한 질감이 특징이며, 숙성 잠재력이 매우 높은 하이엔드급 와인입니다.",
+        //                 tastingNote: "단순한 과실향에 머물지 않은, 세밀한 오크 숙성을 통해 얻은 구운 견과류, 버터, 꿀의 풍미가 압도적인 복합미를 형성",
+        //                 imageUrl: "",
+        //                 tasteProfile: {
+        //                     body: 4,
+        //                     tannin: 2,
+        //                     acidity: 3,
+        //                     sweetness: 1
+        //                 }
+        //             },
+        //             {
+        //                 wineSlug: "hamada-rouge",
+        //                 name: "Rouge",
+        //                 vintage: "2023",
+        //                 grape: "피노 누아, 츠바이겔트 등",
+        //                 alcohol: "12.0% ~ 13.0%",
+        //                 recommendedPairing: "",
+        //                 description: "하마다 빈야드에서 재배되는 모든 레드 와인용 포도를 블렌딩한 우아한 와인입니다. 피노 누아 특유의 투명하고 맑은 루비 색상과 산딸기, 체리 같은 붉은 과실 향이 중심을 잡습니다. 타닌은 매우 부드럽고 실키하며, 인위적인 힘보다는 자연스러운 깊이감과 여운을 강조한 스타일입니다",
+        //                 tastingNote: "",
+        //                 imageUrl: "",
+        //                 tasteProfile: {
+        //                     body: 3,
+        //                     tannin: 3,
+        //                     acidity: 3,
+        //                     sweetness: 1
+        //                 }
+        //             },
+        //             {
+        //                 wineSlug: "hamada-pinot-noir",
+        //                 name: "Pinot Noir",
+        //                 vintage: "2024",
+        //                 grape: "피노 누아",
+        //                 alcohol: "12.0% ~ 13.0%",
+        //                 recommendedPairing: "",
+        //                 description: "하마다 빈야드의 정체성을 상징하는 품종입니다. 인위적인 오크 터치를 절제하여 피노 누아 본연의 섬세한 산미와 부드러운 타닌을 강조합니다. 의사 부부의 세심한 포도밭 관리와 아들의 자연주의 양조가 만나, 일본 피노 누아 중에서도 손꼽히는 정교한 밸런스를 보여준다는 평을 듣습니다.",
+        //                 tastingNote: "맑고 투명한 루비 빛깔, 산딸기, 체리, 야생 딸기 같은 붉은 과실의 순수한 향",
         //                 imageUrl: "",
         //                 tasteProfile: {
         //                     body: 3,
