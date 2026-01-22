@@ -25,16 +25,16 @@ export default function Footer() {
                              <div className='flex items-start space-x-3'>
                                  <MapPin
                                      size={16}
-                                     className='text-[#bdb9dc] mt-1 flex-shrink-0'
+                                     className='text-(--bg-text-color) mt-1 flex-shrink-0'
                                  />
                                  <span className='text-gray-500 text-sm'>{content.address}</span>
                              </div>
                              <div className='flex items-center space-x-3'>
-                                 <Phone size={16} className='text-[#bdb9dc] flex-shrink-0' />
+                                 <Phone size={16} className='text-(--bg-text-color) flex-shrink-0' />
                                  <span className='text-gray-500 text-sm'>{content.phone}</span>
                              </div>
                              <div className='flex items-center space-x-3'>
-                                 <Mail size={16} className='text-[#bdb9dc] flex-shrink-0' />
+                                 <Mail size={16} className='text-(--bg-text-color) flex-shrink-0' />
                                  <span className='text-gray-500 text-sm'>{content.email}</span>
                              </div>
                              {/* <div className='flex items-start space-x-3'>

@@ -252,7 +252,7 @@ return (
 							<button
 								type='submit'
 								disabled={isSubmitting}
-								className='w-full bg-[#bdb9dc] hover:bg-[#bdb9dc] backdrop-blur-sm text-white py-4 px-6 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 group hover:shadow-xl hover:scale-[1.02]'
+								className='w-full bg-(--bg-text-color) hover:bg-(--bg-text-color) backdrop-blur-sm text-white py-4 px-6 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 group hover:shadow-xl hover:scale-[1.02]'
 							>
 								<span>{isSubmitting ? '전송 중...' : t.submit}</span>
 								<Send
