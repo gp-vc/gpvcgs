@@ -20,7 +20,7 @@ export default function Footer() {
                     <div className='w-full'>
                          <div className='space-y-2'>
                             <div className='flex items-start space-x-3'>
-                                <span className='text-gray-500 text-md font-serif'>{content.company}</span>
+                                <span className='text-gray-500 text-md'>{content.company}</span>
                             </div>
                              <div className='flex items-start space-x-3'>
                                  <MapPin

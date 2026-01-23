@@ -219,12 +219,7 @@ export const MOCK_DATA: Country[] = [
             }
         ]
     },
-    {
-        countrySlug: 'france',
-        countryName: '프랑스',
-        wineries: [],
-    },
-    {
+     {
         countrySlug: 'japan',
         countryName: '일본',
         wineries: [],
@@ -237,7 +232,7 @@ export const MOCK_DATA: Country[] = [
         //         wineryDescription: "홋카이도 미카사시의 완만한 구릉에 자리잡은 하마다 빈야드는 과학의 정밀함과 자연의 생명력이 조화를 이루는 가족 경영 와이너리입니다. 설립자 하마다 히로후미 대표는 도쿄대 의학부를 졸업하고 30년 넘게 암 신약 개발을 연구해온 의학 박사로, 평생을 바친, '생명의 탐구'를 이제 대지 위에서 와인으로 꽃피우고 있습니다.\n그는 암세포를 분석하던 치밀한 연구 정신을 포도밭에 투영하여, 미카사 테루아에 최적화된 재배 환경을 과학적으로 구축해냈습니다. 현재는 아들이자 차세대 양조가인 하마다 레오가 합류하여, 아버지가 일군 정교한 토대 위에 야생 효모 발효와 최소한의 개입이라는 자연주의 양조 철학을 더해 독창적인 와인을 빚어냅니다.\n하마다 빈야드의 와인은 홋카이도의 서늘한 기후가 선사하는 맑은 산미와 더불어, 긴 연구의 세월만큼이나 깊고 우아한 복합미를 자랑합니다. 특히 이곳의 샤르도네와 피노 누아는 포도 본연의 순수한 에너지를 정교하게 담아내어, 마시는 이에게 깊은 위로와 감동을 선사합니다.\n나아가 2026년 봄에는 빈야드 내 복합 미식 공간인 '에카라(Ekara)'를 새롭게 오픈하여, 자사 와인과 지역 식재료가 어우러진 최상의 미식 경험을 제공할 예정입니다. 세계적인 석학의 탐구 정신과 가족의 정성이 빚어낸 특별한 한 잔, 하마다 빈야드에서 사람과 대지를 향한 진심 어린 존중을 만나보시기 바랍니다.",
         //         region: "Hokkaido",
         //         regionKR: "홋카이도",
-        //         bgImageUrl: "/images/IMG_2207.jpg",
+        //         bgImageUrl: "/images/IMG_2942.jpg",
         //         logoUrl: "",
         //         wines: [
         //             {
@@ -266,7 +261,7 @@ export const MOCK_DATA: Country[] = [
         //                 recommendedPairing: "해산물 요리",
         //                 description: "하마다 빈야드가 위치한 홋카이도 소라치 지역에서 특히 빛을 발하는 품종입니다. 낮은 알코올 도수와 신선한 산미 덕분에 와인 입문자부터 전문가까지 두루 선호하는 경쾌한 화이트 와인입니다.",
         //                 tastingNote: "머스캣, 라임, 갓 벤 풀 향",
-        //                 imageUrl: "",
+        //                 imageUrl: "/images/hamada-bacchus.webp",
         //                 tasteProfile: {
         //                     body: 2,
         //                     tannin: 2,
@@ -283,7 +278,7 @@ export const MOCK_DATA: Country[] = [
         //                 recommendedPairing: "신선한 해산물 요리",
         //                 description: "뉴질랜드 스타일의 강렬함보다는 미카사의 서늘한 기우를 닮은 섬세하고 정교한 와인입니다.",
         //                 tastingNote: "자몽, 패션프루트와 같은 시트러스향과 함께 특유의 허브 향(레몬그라스), 미네랄리티",
-        //                 imageUrl: "",
+        //                 imageUrl: "/images/hamada-sauvignon-blanc.webp",
         //                 tasteProfile: {
         //                     body: 2,
         //                     tannin: 2,
@@ -300,7 +295,7 @@ export const MOCK_DATA: Country[] = [
         //                 recommendedPairing: "",
         //                 description: "'일본의 뫼르소'라는 별칭이 가장 잘 어울리는 와인입니다. 하마다 빈야드의 모든 기술력과 테루아에 대한 해석이 응집된 시그니처 와인입니다. 묵직한 볼륨감과 우아한 질감이 특징이며, 숙성 잠재력이 매우 높은 하이엔드급 와인입니다.",
         //                 tastingNote: "단순한 과실향에 머물지 않은, 세밀한 오크 숙성을 통해 얻은 구운 견과류, 버터, 꿀의 풍미가 압도적인 복합미를 형성",
-        //                 imageUrl: "",
+        //                 imageUrl: "/images/hamada-chardonnay.webp",
         //                 tasteProfile: {
         //                     body: 4,
         //                     tannin: 2,
@@ -334,7 +329,7 @@ export const MOCK_DATA: Country[] = [
         //                 recommendedPairing: "",
         //                 description: "하마다 빈야드의 정체성을 상징하는 품종입니다. 인위적인 오크 터치를 절제하여 피노 누아 본연의 섬세한 산미와 부드러운 타닌을 강조합니다. 의사 부부의 세심한 포도밭 관리와 아들의 자연주의 양조가 만나, 일본 피노 누아 중에서도 손꼽히는 정교한 밸런스를 보여준다는 평을 듣습니다.",
         //                 tastingNote: "맑고 투명한 루비 빛깔, 산딸기, 체리, 야생 딸기 같은 붉은 과실의 순수한 향",
-        //                 imageUrl: "",
+        //                 imageUrl: "/images/hamada-pinot-noir.webp",
         //                 tasteProfile: {
         //                     body: 3,
         //                     tannin: 3,
@@ -345,5 +340,10 @@ export const MOCK_DATA: Country[] = [
         //         ]
         //     }
         // ]
-    }
+    },
+    {
+        countrySlug: 'france',
+        countryName: '프랑스',
+        wineries: [],
+    },
 ]

@@ -38,13 +38,13 @@ export default async function CountryDetailPage({ params }: Props) {
         },
         {
             key: 2,
-            countrySlug: "france",
-            countryName: "France",
+            countrySlug: "japan",
+            countryName: "Japan",
         },
         {
             key: 3,
-            countrySlug: "japan",
-            countryName: "Japan",
+            countrySlug: "france",
+            countryName: "France",
         }
     ]
     // const allCountries = getAllCountries();
