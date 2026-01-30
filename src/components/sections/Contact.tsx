@@ -126,8 +126,10 @@ export default function Contact() {
 
 return (
 	<>
-		<section id='contact' className="relative md:h-[60vh] bg-[length:100%_auto] bg-cover bg-bottom bg-no-repeat overflow-hidden flex flex-col justify-center bg-[url('/images/contactbg.png')]">
-		{/* <section id='contact' className="relative flex flex-col justify-center h-[70vh] inset-0 bg-cover bg-bottom no-repeat transition-transform duration-1000 bg-[url('/images/contactbg.png')]"> */}
+		<section
+			id='contact'
+			className="relative min-h-[50vh] md:min-h-[60vh] bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col justify-center bg-[url('/images/contactbg.png')]"
+		>
 			<div className='relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				{/* Section Header */}
 				<div className='text-center mb-12 lg:mb-16'>

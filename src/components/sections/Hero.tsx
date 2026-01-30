@@ -38,7 +38,7 @@ export default function Hero() {
            </hgroup>
           
           {/* 포트폴리오 진입 버튼 */}
-          <Link href="/portfolio/spain" className="inline-flex items-center space-x-3 bg-(--bg-text-color) hover:bg-(--bg-text-color) text-white font-bold py-4 px-8 rounded-full shadow-xl shadow-amber-600/40 transition duration-300 transform hover:scale-105 text-lg">
+          <Link href="/portfolio/spain" className="inline-flex items-center space-x-3 bg-(--bg-text-color)/70 hover:bg-(--bg-text-color)/70 text-white font-bold py-4 px-8 rounded-full shadow-xl shadow-amber-600/40 transition duration-300 transform hover:scale-105 text-lg">
             <span>엄선된 포트폴리오 바로가기</span>
             <ArrowRight className="w-6 h-6 ml-2" />
           </Link>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllWineriesPaths, getWineryData } from "@/src/data/dataLoader";
 import { Wine, Calendar, ArrowLeft, Quote } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 
 interface Params {
     countrySlug: string;
@@ -47,9 +48,17 @@ export default async function WineryDetailPage({ params }: Props) {
     return (
     <>
       <section 
-        className="relative h-[50vh] md:h-[50vh] flex items-center justify-center text-center overflow-hidden bg-cover bg-center" 
-        style={{ backgroundImage: `url(${wineryData.bgImageUrl})` }}
+        className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center text-center overflow-hidden"
       >
+        {/* Next/Image 사용: fill + object-cover (또는 중요영역에 따라 object-top) */}
+        <Image
+          src={wineryData.bgImageUrl}
+          alt={`${wineryData.wineryName} cover`}
+          fill
+          priority
+          className="object-cover object-center"         // -> object-top / object-[center_top] 로 조정 가능
+        />
+
         {/* 밝은 모드 배경에 텍스트 가독성을 위한 오버레이 */}
         <div className="absolute inset-0 bg-black/30 backdrop-brightness-90"></div>
         
