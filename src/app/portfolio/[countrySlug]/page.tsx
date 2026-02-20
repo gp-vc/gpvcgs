@@ -5,6 +5,7 @@ import { Info, MapPin } from "lucide-react";
 import InteractiveCard from "@/src/components/layout/InteractiveCard";
 import { getAllCountries, getCountryData } from "@/src/data/dataLoader";
 import { Country } from "@/src/data/types";
+import ImageAspect from '@/src/components/ImageAspect';
 
 interface Params {
     countrySlug: string;
@@ -29,7 +30,6 @@ export default async function CountryDetailPage({ params }: Props) {
     const countryData: Country | undefined = await getCountryData(countrySlug);
 
     // 추후에 다른나라 와인도 추가되면 그냥 getAllCountries()써서 거기있는 나라들 활용
-    // 지금은 그냥 Spain, Japan, France만. Japan, France는 지금 데이터 없으니 추가예정입니다정도 추가
     const allCountries = [
         {
             key: 1,
@@ -63,25 +63,22 @@ export default async function CountryDetailPage({ params }: Props) {
     return (    
     // <div className="max-w-full mx-auto px-4 py-12 min-h-screen mt-12">
     <div className="min-h-screen flex flex-col font-sans">
-      <section className="relative h-[40vh] md:h-[60vh] w-full flex items-center justify-center overflow-hidden">
-        {/* 배경 이미지 설정 */}
-        <div 
-            className="absolute inset-0 bg-cover bg-[length:100%_auto] bg-bottom no-repeat transition-transform duration-1000"
-            style={{ backgroundImage: "url('/images/portfoliohero.jpg')" }}
-        >
-            {/* 오버레이: 텍스트 가시성을 위한 어두운 처리 */}
-            <div className="absolute inset-0 bg-black/40 backdrop-brightness-90"></div>
-        </div>
-        {/* 히어로 타이틀 콘텐츠 */}
-        <div className="relative z-10 text-center px-4">
-            <h1 className="text-5xl md:text-8xl font-serif text-white drop-shadow-2xl mb-6 tracking-tight uppercase">
-                {currentCountryName}
+      <section className="relative w-full overflow-hidden">
+        <div className="max-h-[70vh] overflow-hidden relative">
+          <ImageAspect
+            src='/images/212.jpg'
+            alt={currentCountryName}
+            fallbackRatio={3625 / 5438}
+            fallbackMinHeight="40vh"
+          />
+
+          <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+          <div className="absolute inset-0 flex items-center justify-center text-center px-4 z-10 pointer-events-none">
+            <h1 className="text-5xl md:text-8xl font-serif text-white drop-shadow-2xl tracking-tight uppercase">
+              {currentCountryName}
             </h1>
-            <div className="w-24 h-1.5 bg-(--bg-text-color) mx-auto rounded-full mb-6"></div>
-            <p className="text-white/90 text-lg md:text-2xl font-light tracking-[0.2em] drop-shadow-md">
-                
-            </p>
-        </div>                
+          </div>
+        </div>
       </section>
       <main 
         className="flex-grow bg-repeat py-12 md:py-20"

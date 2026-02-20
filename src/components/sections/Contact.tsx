@@ -128,7 +128,7 @@ return (
 	<>
 		<section
 			id='contact'
-			className="relative min-h-[50vh] md:min-h-[60vh] bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col justify-center bg-[url('/images/contactbg.png')]"
+			className="relative min-h-[70vh] md:min-h-[70vh] bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col justify-center bg-[url('/images/06738-2.jpg')]"
 		>
 			<div className='relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 				{/* Section Header */}
