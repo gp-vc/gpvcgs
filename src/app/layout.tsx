@@ -43,6 +43,9 @@ export default function RootLayout({
                 name='description'
                 content='GPVCGS는 수량과 타협하지 않는 부티크 와이너리의 와인, 그 희소한 가치를 수입합니다.'
               />
+            <meta property="og:title" content="GPVC Global Sourcing" />
+            <meta property="og:description" content="GPVCGS는 수량과 타협하지 않는 부티크 와이너리의 와인, 그 희소한 가치를 수입합니다." />
+            <meta property="og:url" content="https://gpvcgs.com" />
             <meta name='viewport' content='width=device-width, initial-scale=1' />
             <meta name="naver-site-verification" content="a11361273ae8e4d85a1cd06f4a563b2085106d29" />
           </head>
