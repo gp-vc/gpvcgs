@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props) {
         return { title: 'Not Found' };
     }
 
-    const title = `${wine.name} (${wine.vintage}) - ${wine.winery} | GPVC`;
+    const title = `${wine.name}  (${wine.nameKR}) - ${wine.winery} | GPVC`;
     const description = `${wine.winery}의 대표 와인 ${wine.name}. ${wine.tastingNote.substring(0, 100)}...`;
     const url = `https://www.gpvcgs.com/portfolio/${countrySlug}/${winerySlug}/${wineSlug}`;
 
