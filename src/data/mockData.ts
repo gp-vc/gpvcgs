@@ -358,6 +358,11 @@ export const MOCK_DATA: Country[] = [
         ]
     },
     {
+        countrySlug: 'newzealand',
+        countryName: '뉴질랜드',
+        wineries: [],
+    },
+    {
         countrySlug: 'france',
         countryName: '프랑스',
         wineries: [],
