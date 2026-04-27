@@ -25,6 +25,7 @@ const navItems: NavItem[] = [
             { name: 'Spain', href: '/portfolio/spain' },
             { name: 'France', href: '/portfolio/france' },
             { name: 'Japan', href: '/portfolio/japan' },
+            { name: "New Zealand", href: '/portfolio/new-zealand' },
         ]
     },
     { name: 'CONTACT', href: '/contact' },

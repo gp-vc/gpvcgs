@@ -361,6 +361,20 @@ export const MOCK_DATA: Country[] = [
         countrySlug: 'newzealand',
         countryName: '뉴질랜드',
         wineries: [],
+        // cuvar if 가져온다면 내용추가
+        // wineries: [
+        //     {
+        //         winerySlug: "cuvar-winery",
+        //         wineryName: "Cuvar Winery",
+        //         wineryTitle: "Cuvar Winery",
+        //         wineryDescription: "",
+        //         region: "Hawke's Bay, New Zealand",
+        //         regionKR: "호크스 베이",
+        //         bgImageUrl: "",
+        //         logoUrl: "",
+        //         wines: [],
+        //     }
+        // ]
     },
     {
         countrySlug: 'france',
