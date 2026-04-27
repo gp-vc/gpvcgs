@@ -19,6 +19,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "clos-de-lobac",
                         name: "Clos de l'Obac",
+                        nameKR: "클로스 데 로박",
                         vintage: "2003, 2006~15",
                         grape: '그르나슈, 카베르네 소비뇽, 시라, 메를로, 까리녜냐',
                         alcohol: '14.5%',
@@ -36,6 +37,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "miserere",
                         name: "Miserere",
+                        nameKR: "미세레레",
                         vintage: "2005~2014",
                         grape: "그르나슈, 카베르네 소비뇽, 템프라니요, 메를로, 까리녜냐",
                         alcohol: '14.5%',
@@ -53,6 +55,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "kyrie",
                         name: "Kyrie",
+                        nameKR: "끼리예",
                         vintage: "2023, 2024",
                         grape: "35% 그르나슈 블랑카, 30% 마카부, 30% 샤렐로, 5% 알렉산드리아 무스캇",
                         alcohol: "13.5%",
@@ -70,6 +73,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "usatges-negre",
                         name: "Usatges Negre",
+                        nameKR: "우삿게스 네그레",
                         vintage: "2024",
                         grape: "그르나슈, 카베르네 소비뇽, 시라, 메를로, 까리녜냐, 템프라니요 (*매해 비율이 다름)",
                         alcohol: "14%",
@@ -87,6 +91,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "usatges-blanc",
                         name: "Usatges Blanc",
+                        nameKR: "우삿게스 블랑",
                         vintage: '2024',
                         grape: "마카부, 샤렐로, 알렉산드리아 무스캇, 그르나슈 블랑카",
                         alcohol: "13.5%",
@@ -104,6 +109,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "lescarpat",
                         name: "L'Escarpat",
+                        nameKR: "레슈카르팟트",
                         vintage: '2024',
                         grape: "샤렐로, 미카부",
                         alcohol: '14%',
@@ -133,6 +139,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "valdecedin",
                         name: "Valdecedín",
+                        nameKR: "발데세딘",
                         vintage: '2020',
                         grape: "멘시아",
                         alcohol: "14%",
@@ -150,6 +157,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "vino-blanco",
                         name: "Vino Blanco",
+                        nameKR: "비노 블랑코",
                         vintage: '2020',
                         grape: "Palomino, Dona Blanca",
                         alcohol: "12.6%",
@@ -167,6 +175,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "el-chano",
                         name: "El Chano",
+                        nameKR: "엘 차노",
                         vintage: '2020',
                         grape: "Mencia, Garnacha Tintoera, Prieto Picudo, Palomino",
                         alcohol: "14%",
@@ -184,6 +193,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "la-perla",
                         name: "La Perla",
+                        nameKR: "라 페를라",
                         vintage: "2020",
                         grape: "",
                         alcohol: "13.5%",
@@ -201,6 +211,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "la-majada",
                         name: "La Majada",
+                        nameKR: "라 마하다",
                         vintage: "2022",
                         grape: "멘시아, 가르나챠, 프리에토 피쿠토",
                         alcohol: "14%",

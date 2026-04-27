@@ -1,6 +1,7 @@
 export interface Wine {
     wineSlug: string;
     name: string;
+    nameKR: string;
     vintage: string;
     grape: string;
     alcohol: string;
