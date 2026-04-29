@@ -16,40 +16,40 @@ export default function Footer() {
 
     return (
  <footer className='bg-gray-200 text-gray-600'>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10'>
-                <div className='grid grid-cols-1 gap-6 lg:gap-8'>
+            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 lg:py-10'>
+                <div className='grid grid-cols-1 gap-4 md:gap-6 lg:gap-8'>
                     
                     {/* 상단 섹션: 좌측 주소정보 / 우측 블로그아이콘 */}
-                    <div className='flex flex-col md:flex-row justify-between items-end md:items-end w-full'>
+                    <div className='flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-4 md:gap-0'>
                         
                         {/* 좌측: Contact info */}
-                        <div className='space-y-2 w-full md:w-auto'>
+                        <div className='space-y-1 md:space-y-2 w-full md:w-auto'>
                             <div className='flex items-start space-x-3'>
-                                <span className='text-gray-500 text-md font-medium'>{content.company}</span>
+                                <span className='text-gray-700 text-xs md:text-sm font-semibold'>{content.company}</span>
                             </div>
                             <div className='flex items-start space-x-3'>
-                                <MapPin size={16} className='mt-1 flex-shrink-0 opacity-70' />
-                                <span className='text-gray-500 text-sm'>{content.address}</span>
+                                <MapPin size={14} className='mt-0.5 flex-shrink-0 opacity-60 hidden sm:block' />
+                                <span className='text-gray-600 text-xs md:text-sm'>{content.address}</span>
                             </div>
                             <div className='flex items-center space-x-3'>
-                                <Phone size={16} className='flex-shrink-0 opacity-70' />
-                                <span className='text-gray-500 text-sm'>{content.phone}</span>
+                                <Phone size={14} className='flex-shrink-0 opacity-60 hidden sm:block' />
+                                <span className='text-gray-600 text-xs md:text-sm'>{content.phone}</span>
                             </div>
                             <div className='flex items-center space-x-3'>
-                                <Mail size={16} className='flex-shrink-0 opacity-70' />
-                                <span className='text-gray-500 text-sm'>{content.email}</span>
+                                <Mail size={14} className='flex-shrink-0 opacity-60 hidden sm:block' />
+                                <span className='text-gray-600 text-xs md:text-sm'>{content.email}</span>
                             </div>
                         </div>
 
                         {/* 우측: 네이버 블로그 아이콘 (Divider 위쪽) */}
-                        <div className='mt-6 md:mt-0'>
+                        <div className='mt-3 md:mt-0'>
                             <Link 
                                 href={content.blogUrl} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="group flex items-center space-x-2 transition-all duration-300"
                             >
-                                <div className="relative w-6 h-6 grayscale group-hover:grayscale-0 transition-all duration-300">
+                                <div className="relative w-5 h-5 md:w-6 md:h-6 grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300">
                                     <Image 
                                         src="/images/naver_blog.svg" 
                                         alt="Naver Blog" 
@@ -62,14 +62,14 @@ export default function Footer() {
                     </div>
  
                      {/* Divider */}
-                     <div className='md:col-span-2 border-t border-silver-800 mt-3 pt-6'>
-                         <div className='flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0'>
-                             <p className='text-gray-400 text-sm'>{content.copyright}</p>
+                     <div className='border-t border-gray-300 mt-2 md:mt-3 pt-4 md:pt-6'>
+                         <div className='flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0'>
+                             <p className='text-gray-500 text-xs md:text-sm'>{content.copyright}</p>
  
                              {/* Privacy Policy Link */}
                              <Link
                                  href='/privacy-policy'
-                                 className='text-gray-400 hover:text-[#bdb9dc] transition-colors duration-200 text-sm underline'
+                                 className='text-gray-500 hover:text-gray-700 transition-colors duration-200 text-xs md:text-sm underline'
                                  >
                                      {content.privacyPolicy}
                              </Link>
