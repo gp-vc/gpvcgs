@@ -1,0 +1,4 @@
+- Create a premium, editorial-style landing page for a wine import brand.
+- Keep the project lightweight and static-first.
+- Use Next.js with Tailwind CSS for the initial template.
+- Prioritize clear sections for Hero, Portfolio, Press, and Contact.
