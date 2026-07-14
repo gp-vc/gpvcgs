@@ -18,14 +18,14 @@ export default function PressPage() {
       <section className="mx-auto max-w-6xl border-b border-swiss-line px-6 py-16 lg:px-8">
         <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">Press</p>
         <h1 className="mt-4 max-w-2xl text-4xl font-black uppercase leading-tight tracking-tight sm:text-5xl">
-          보도·언론
+          미디어
         </h1>
         <p className="mt-5 max-w-xl text-sm leading-7 text-swiss-ink/70">
           GPVC에서 수입하는 와이너리에 대한 언론 보도 {pressArticles.length}건을 최신순으로 모았습니다.
         </p>
       </section>
 
-      <section className="mx-auto max-w-6xl">
+      <section className="mx-auto max-w-6xl border-b border-swiss-line">
         <div className="divide-y divide-swiss-line">
           {pressArticles.map((article, i) => (
             <a
@@ -49,18 +49,6 @@ export default function PressPage() {
               </p>
             </a>
           ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl border-t border-swiss-line px-6 py-16 lg:px-8">
-        <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">Contact</p>
-        <h2 className="mt-4 max-w-xl text-2xl font-black uppercase tracking-tight">
-          취재 및 협업 문의를 환영합니다.
-        </h2>
-        <div className="mt-6">
-          <Link href="/contact" className="inline-flex bg-swiss-ink px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-swiss-accent">
-            문의하기
-          </Link>
         </div>
       </section>
 
