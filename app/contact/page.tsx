@@ -27,10 +27,10 @@ export default function ContactPage() {
 
       <section className="mx-auto max-w-6xl border-b border-swiss-line px-6 py-16 lg:px-8">
         <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">Contact</p>
-        <h1 className="mt-4 text-4xl font-black uppercase leading-tight tracking-tight sm:text-5xl">
+        <h1 className="mt-4 break-keep text-4xl font-black uppercase leading-tight tracking-tight sm:text-5xl">
           레스토랑·리테일 파트너를 위한 문의
         </h1>
-        <p className="mt-5 text-pretty text-sm leading-7 text-swiss-ink/70">
+        <p className="mt-5 break-keep text-pretty text-sm leading-7 text-swiss-ink/70">
           취급을 고려 중인 채널이 있다면 편하게 연락 주세요. 원하는 스타일과 물량에 맞춰 컬렉션을 제안해드립니다.
         </p>
       </section>

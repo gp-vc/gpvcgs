@@ -19,7 +19,7 @@ export default function HomePage() {
           <h1 className="mt-6 break-words text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-6xl">
             Rare masterpieces. Timeless elegance. Exclusively served.
           </h1>
-          <p className="mt-8 max-w-md text-sm leading-7 text-swiss-ink/70">
+          <p className="mt-8 max-w-md break-keep text-pretty text-sm leading-7 text-swiss-ink/70">
             절제된 생산으로, 늘 소수의 테이블에만 오르던 세계적인 명작들, 우리는 그 특별한 가치와 품격을 흐트러짐 없이 전합니다.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 text-xs font-bold uppercase tracking-widest">
@@ -39,7 +39,7 @@ export default function HomePage() {
       <section className="mx-auto grid max-w-6xl border-b border-swiss-line lg:grid-cols-[0.4fr_0.6fr]">
         <div className="border-swiss-line px-6 py-6 lg:border-r lg:px-8 lg:py-16">
           <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">02 — Philosophy</p>
-          <h2 className="mt-6 text-pretty text-3xl font-black uppercase leading-tight tracking-tight">
+          <h2 className="mt-6 break-keep text-pretty text-3xl font-black uppercase leading-tight tracking-tight">
             숫자보다 이야기를 앞세운 선택.
           </h2>
         </div>
@@ -88,7 +88,7 @@ export default function HomePage() {
         </p>
         <div className="mt-8">
           <Link href="/contact" className="inline-flex bg-swiss-ink px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-swiss-accent">
-            파트너십 문의하기
+            문의하기
           </Link>
         </div>
       </section>

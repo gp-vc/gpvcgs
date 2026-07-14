@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAllWineryParams, getWineryBySlug, splitFirstSentence } from '@/app/lib/wine-data';
+import { getAllWineryParams, getWineryBySlug, splitFirstSentence, getWineNameJP } from '@/app/lib/wine-data';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 
@@ -48,11 +48,11 @@ export default function WineryPage({ params }: WineryPageProps) {
           <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">Producer Story</p>
         </div>
         <div className="px-6 py-16 lg:px-8">
-          <p className="text-2xl font-black uppercase leading-snug tracking-tight sm:text-3xl">
+          <p className="break-keep text-pretty text-2xl font-black uppercase leading-snug tracking-tight sm:text-3xl">
             &ldquo;{quote}&rdquo;
           </p>
           {remainder ? (
-            <p className="mt-6 whitespace-pre-line text-sm leading-7 text-swiss-ink/70">{remainder}</p>
+            <p className="mt-6 whitespace-pre-line break-keep text-pretty text-sm leading-7 text-swiss-ink/70">{remainder}</p>
           ) : null}
         </div>
       </section>
@@ -64,24 +64,27 @@ export default function WineryPage({ params }: WineryPageProps) {
 
       <section className="mx-auto max-w-6xl border-t border-swiss-line">
         <div className="grid sm:grid-cols-2">
-          {winery.wines.map((wine, i) => (
-            <Link
-              key={wine.wineSlug}
-              href={`/portfolio/${params.countrySlug}/${params.winerySlug}/${wine.wineSlug}`}
-              className={`group border-swiss-line ${i % 2 === 0 ? 'sm:border-r' : ''} ${i < winery.wines.length - (winery.wines.length % 2 === 0 ? 2 : 1) ? 'border-b' : ''}`}
-            >
-              <div className="relative h-64 overflow-hidden bg-white">
-                <Image src={wine.imageUrl} alt={wine.nameKR} fill className="object-contain p-8 grayscale-0 transition duration-500 group-hover:grayscale" />
-              </div>
-              <div className="p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">
-                  {String(i + 1).padStart(2, '0')} / {wine.nameKR}
-                </p>
-                <h3 className="mt-2 text-lg font-black uppercase tracking-tight">{wine.name}</h3>
-                <p className="mt-2 text-sm text-swiss-ink/60">{wine.vintage} · {wine.alcohol}</p>
-              </div>
-            </Link>
-          ))}
+          {winery.wines.map((wine, i) => {
+            const nameJP = getWineNameJP(wine.wineSlug);
+            return (
+              <Link
+                key={wine.wineSlug}
+                href={`/portfolio/${params.countrySlug}/${params.winerySlug}/${wine.wineSlug}`}
+                className={`group border-swiss-line ${i % 2 === 0 ? 'sm:border-r' : ''} ${i < winery.wines.length - (winery.wines.length % 2 === 0 ? 2 : 1) ? 'border-b' : ''}`}
+              >
+                <div className="relative h-64 overflow-hidden bg-white">
+                  <Image src={wine.imageUrl} alt={wine.nameKR} fill className="object-contain p-8 grayscale-0 transition duration-500 group-hover:grayscale" />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">
+                    {String(i + 1).padStart(2, '0')} / {wine.nameKR}{nameJP ? ` (${nameJP})` : ''}
+                  </p>
+                  <h3 className="mt-2 text-lg font-black uppercase tracking-tight">{wine.name}</h3>
+                  <p className="mt-2 text-sm text-swiss-ink/60">{wine.vintage} · {wine.alcohol}</p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 

@@ -3,6 +3,19 @@ import type { Country, Winery, Wine } from './gpvc-data/types';
 
 export const countries = MOCK_DATA as Country[];
 
+const WINE_NAME_JP: Record<string, string> = {
+  'hamada-blanc': 'ブラン',
+  'hamada-bacchus': 'バッカス',
+  'hamada-sauvignon-blanc': 'ソーヴィニヨン・ブラン',
+  'hamada-chardonnay': 'シャルドネ',
+  'hamada-rouge': 'ルージュ',
+  'hamada-pinot-noir': 'ピノ・ノワール',
+};
+
+export function getWineNameJP(wineSlug: string) {
+  return WINE_NAME_JP[wineSlug];
+}
+
 export function getCountryBySlug(countrySlug: string) {
   return countries.find((country) => country.countrySlug === countrySlug);
 }

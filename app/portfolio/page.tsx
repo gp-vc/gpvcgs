@@ -13,10 +13,10 @@ export default function PortfolioPage() {
 
       <section className="mx-auto max-w-6xl border-b border-swiss-line px-6 py-16 lg:px-8">
         <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">Portfolio</p>
-        <h1 className="mt-4 text-4xl font-black uppercase leading-tight tracking-tight sm:text-5xl">
+        <h1 className="mt-4 break-keep text-4xl font-black uppercase leading-tight tracking-tight sm:text-5xl">
           와이너리의 개성을 그대로 담은 컬렉션.
         </h1>
-        <p className="mt-5 text-pretty text-sm leading-7 text-swiss-ink/70">
+        <p className="mt-5 break-keep text-pretty text-sm leading-7 text-swiss-ink/70">
           생산자의 철학과 땅의 개성이 담겨 있는 와이너리와 와인을 소개합니다. 
         </p>
       </section>
