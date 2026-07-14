@@ -20,7 +20,9 @@ export default function HomePage() {
             Rare masterpieces. Timeless elegance. Exclusively served.
           </h1>
           <p className="mt-8 max-w-md break-keep text-pretty text-sm leading-7 text-swiss-ink/70">
-            절제된 생산으로, 늘 소수의 테이블에만 오르던 세계적인 명작들, 우리는 그 특별한 가치와 품격을 흐트러짐 없이 전합니다.
+            절제된 생산으로, 늘 소수의 테이블에만 오르던 세계적인 명작들,
+            <br />
+            우리는 그 특별한 가치와 품격을 흐트러짐 없이 전합니다.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 text-xs font-bold uppercase tracking-widest">
             <Link href="/contact" className="bg-swiss-ink px-6 py-3 text-white transition hover:bg-swiss-accent">
