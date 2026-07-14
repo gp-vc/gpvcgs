@@ -2,6 +2,7 @@ import { getAllWinesFlat } from '@/app/lib/wine-data';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import WinesList from '@/app/wines/WinesList';
+import { DownloadIcon } from '@/app/components/icons';
 
 const grotesk = { fontFamily: '"Helvetica Neue", Arial, "Segoe UI", sans-serif' };
 
@@ -21,6 +22,14 @@ export default function WinesPage() {
         <p className="mt-5 max-w-xl text-sm leading-7 text-swiss-ink/70">
           취급 중인 {total}종의 와인을 한 번에 확인할 수 있는 리스트입니다.
         </p>
+        <a
+          href="/catalog.pdf"
+          download
+          className="mt-8 inline-flex items-center gap-2 bg-swiss-ink px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-swiss-accent"
+        >
+          <DownloadIcon className="h-4 w-4" />
+          카탈로그 다운로드
+        </a>
       </section>
 
       <WinesList entries={entries} />

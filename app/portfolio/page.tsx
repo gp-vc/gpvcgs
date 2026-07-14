@@ -72,7 +72,7 @@ export default function PortfolioPage() {
         </h2>
         <div className="mt-6">
           <Link href="/contact" className="inline-flex bg-swiss-ink px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-swiss-accent">
-            파트너십 문의
+            문의하기
           </Link>
         </div>
       </section>

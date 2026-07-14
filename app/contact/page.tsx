@@ -59,7 +59,7 @@ export default function ContactPage() {
               href={mailtoLink}
               className="inline-flex bg-swiss-ink px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-swiss-accent"
             >
-              이메일로 문의하기
+              문의하기
             </a>
           </div>
         </div>

@@ -41,6 +41,16 @@ export function ExternalLinkIcon({ className }: IconProps) {
   );
 }
 
+export function DownloadIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className={className}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v12" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="m6.5 10.5 5.5 5.5 5.5-5.5" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 19.5h16" />
+    </svg>
+  );
+}
+
 export function NaverBlogIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 924.43 1000" className={className}>

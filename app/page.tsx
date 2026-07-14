@@ -16,7 +16,7 @@ export default function HomePage() {
       <section className="mx-auto grid max-w-6xl gap-0 border-b border-swiss-line lg:grid-cols-2">
         <div className="flex flex-col justify-center border-swiss-line px-6 py-16 lg:border-r lg:px-8 lg:py-24">
           <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">01 — GPVC Global Sourcing</p>
-          <h1 className="mt-6 break-words text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-6xl">
+          <h1 className="mt-6 text-pretty text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-6xl">
             Rare masterpieces. Timeless elegance. Exclusively served.
           </h1>
           <p className="mt-8 max-w-md break-keep text-pretty text-sm leading-7 text-swiss-ink/70">
@@ -24,7 +24,7 @@ export default function HomePage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4 text-xs font-bold uppercase tracking-widest">
             <Link href="/contact" className="bg-swiss-ink px-6 py-3 text-white transition hover:bg-swiss-accent">
-              파트너십 문의
+              문의하기
             </Link>
             <Link href="/portfolio" className="border border-swiss-ink px-6 py-3 transition hover:border-swiss-accent hover:text-swiss-accent">
               와인 컬렉션 보기
@@ -75,21 +75,6 @@ export default function HomePage() {
               </Link>
             );
           })}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
-        <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">04 — For Restaurants &amp; Retailers</p>
-        <h2 className="mt-5 max-w-2xl text-3xl font-black uppercase leading-tight tracking-tight sm:text-4xl">
-          레스토랑과 리테일 파트너를 찾습니다.
-        </h2>
-        <p className="mt-6 max-w-xl text-sm leading-7 text-swiss-ink/70">
-          취급을 고려 중인 채널이 있다면, 원하는 스타일과 물량에 맞춰 컬렉션을 제안해드립니다.
-        </p>
-        <div className="mt-8">
-          <Link href="/contact" className="inline-flex bg-swiss-ink px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-swiss-accent">
-            문의하기
-          </Link>
         </div>
       </section>
 
