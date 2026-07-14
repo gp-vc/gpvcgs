@@ -1,12 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { countries } from '@/app/lib/wine-data';
+import { countries, splitFirstSentence } from '@/app/lib/wine-data';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 
 const grotesk = { fontFamily: '"Helvetica Neue", Arial, "Segoe UI", sans-serif' };
 
+const CLOSING_STATEMENT =
+  '우리는 와인이 품고 있는 땅의 이야기와 고유한 개성, 그리고 이를 만들어온 사람들의 철학을 중요하게 생각합니다. 그 모든 것이 오래 기억되는 한 병의 경험을 완성합니다.';
+
 export default function PortfolioPage() {
+  const { quote, remainder } = splitFirstSentence(CLOSING_STATEMENT);
+
   return (
     <main style={grotesk} className="min-h-screen bg-swiss-bg text-swiss-ink">
       <Header active="portfolio" />
@@ -65,16 +70,15 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
-        <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">Selection Criteria</p>
-        <h2 className="mt-4 max-w-xl text-2xl font-black uppercase tracking-tight">
-          우리는 와인이 가진 장소성과 개성, 그리고 오래 기억되는 경험을 우선합니다.
-        </h2>
-        <div className="mt-6">
-          <Link href="/contact" className="inline-flex bg-swiss-ink px-6 py-3 text-xs font-bold uppercase tracking-widest text-white transition hover:bg-swiss-accent">
-            문의하기
-          </Link>
-        </div>
+      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
+        <p className="max-w-3xl break-keep text-pretty text-2xl font-black uppercase leading-snug tracking-tight sm:text-3xl">
+          {quote}
+        </p>
+        {remainder ? (
+          <p className="mt-4 max-w-xl break-keep text-pretty text-sm leading-7 text-swiss-ink/60">
+            {remainder}
+          </p>
+        ) : null}
       </section>
 
       <Footer />
