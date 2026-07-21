@@ -33,8 +33,8 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="relative min-h-[360px]">
-          <Image src="/images/heroimage.jpg" alt="GPVC Global Sourcing" fill className="object-cover grayscale" />
+        <div className="group relative min-h-[360px]">
+          <Image src="/images/heroimage.jpg" alt="GPVC Global Sourcing" fill className="object-cover grayscale-0 transition duration-500 group-hover:grayscale" />
         </div>
       </section>
 

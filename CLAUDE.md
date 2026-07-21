@@ -44,13 +44,13 @@ import type { ... } from '../../../gpvcgs/src/data/types';
 
 ## 이미지 흑백/컬러 처리
 
-대부분의 카드/썸네일 이미지는 `grayscale-0 transition duration-500 group-hover:grayscale` 패턴—
+카드/썸네일/배경 이미지는 전부 `grayscale-0 transition duration-500 group-hover:grayscale` 패턴—
 기본은 원래 색상, 마우스 호버 시 흑백으로 전환된다 (사용자 요청으로 원래 반대 방향에서 반전시킴).
+호버 대상은 부모 요소에 `group` 클래스가 필요하다 (하이퍼링크가 아닌 경우, 예: 홈 히어로 배경, 와이너리
+상세 배경 이미지는 이미지를 감싸는 `<div>`에 직접 `group`을 붙였다).
 
-예외적으로 항상 흑백 고정인 이미지 3곳은 호버 대상이 아니므로 건드리지 않는다:
-- `app/page.tsx` 홈 히어로 배경 이미지
-- `app/portfolio/[countrySlug]/[winerySlug]/page.tsx` 와이너리 상세 배경 이미지
-- 같은 파일의 와이너리 로고 이미지
+예외: `app/portfolio/[countrySlug]/[winerySlug]/[wineSlug]/page.tsx`의 와인병 이미지는 항상 원래
+색상 고정이며 호버 대상이 아니다 (건드리지 않는다). 와이너리 로고 이미지는 삭제되어 더 이상 존재하지 않는다.
 
 ## 스크립트
 

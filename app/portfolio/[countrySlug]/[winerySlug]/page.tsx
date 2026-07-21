@@ -38,8 +38,8 @@ export default function WineryPage({ params }: WineryPageProps) {
             {winery.wineryName}
           </h1>
         </div>
-        <div className="relative min-h-[320px]">
-          <Image src={winery.bgImageUrl} alt={winery.wineryName} fill className="object-cover grayscale" />
+        <div className="group relative min-h-[320px]">
+          <Image src={winery.bgImageUrl} alt={winery.wineryName} fill className="object-cover grayscale-0 transition duration-500 group-hover:grayscale" />
         </div>
       </section>
 
