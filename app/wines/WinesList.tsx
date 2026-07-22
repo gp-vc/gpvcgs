@@ -62,7 +62,7 @@ export default function WinesList({ entries }: { entries: Entry[] }) {
   }, {});
 
   return (
-    <>
+    <div className="pb-24">
       <section className="mx-auto max-w-6xl border-b border-swiss-line px-6 py-8 lg:px-8">
         <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
           <div className="flex flex-wrap items-center gap-2">
@@ -127,6 +127,6 @@ export default function WinesList({ entries }: { entries: Entry[] }) {
           </section>
         ))
       )}
-    </>
+    </div>
   );
 }
