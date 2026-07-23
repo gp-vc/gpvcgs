@@ -37,22 +37,30 @@ function FilterButton({
 }
 
 export default function WinesList({ entries }: { entries: Entry[] }) {
+  const countryOptions = useMemo(() => {
+    const seen = new Map<string, string>();
+    entries.forEach((entry) => seen.set(entry.country.countrySlug, entry.country.countryName));
+    return Array.from(seen, ([countrySlug, countryName]) => ({ countrySlug, countryName }));
+  }, [entries]);
+
   const wineryNames = useMemo(
     () => Array.from(new Set(entries.map((entry) => entry.winery.wineryName))),
     [entries],
   );
 
+  const [country, setCountry] = useState<string | null>(null);
   const [winery, setWinery] = useState<string | null>(null);
   const [type, setType] = useState<WineType | null>(null);
 
   const filtered = useMemo(
     () =>
       entries.filter((entry) => {
+        if (country && entry.country.countrySlug !== country) return false;
         if (winery && entry.winery.wineryName !== winery) return false;
         if (type && getWineType(entry.wine) !== type) return false;
         return true;
       }),
-    [entries, winery, type],
+    [entries, country, winery, type],
   );
 
   const groupedByCountry = filtered.reduce<Record<string, Entry[]>>((acc, entry) => {
@@ -65,6 +73,18 @@ export default function WinesList({ entries }: { entries: Entry[] }) {
     <div className="pb-24">
       <section className="mx-auto max-w-6xl border-b border-swiss-line px-6 py-8 lg:px-8">
         <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="mr-1 text-xs font-bold uppercase tracking-widest text-swiss-ink/40">Country</span>
+            <FilterButton active={country === null} onClick={() => setCountry(null)}>
+              전체
+            </FilterButton>
+            {countryOptions.map(({ countrySlug, countryName }) => (
+              <FilterButton key={countrySlug} active={country === countrySlug} onClick={() => setCountry(countrySlug)}>
+                {countryName}
+              </FilterButton>
+            ))}
+          </div>
+
           <div className="flex flex-wrap items-center gap-2">
             <span className="mr-1 text-xs font-bold uppercase tracking-widest text-swiss-ink/40">Winery</span>
             <FilterButton active={winery === null} onClick={() => setWinery(null)}>

@@ -25,32 +25,34 @@ export default function PressPage() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-6xl border-b border-swiss-line">
-        <div className="divide-y divide-swiss-line">
-          {pressArticles.map((article, i) => (
-            <a
-              key={article.url}
-              href={article.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group grid grid-cols-[2.5rem_6rem_1fr] items-center gap-4 px-6 py-6 transition hover:bg-swiss-ink hover:text-white sm:grid-cols-[2.5rem_6rem_8rem_1fr] lg:px-8"
-            >
-              <span className="text-xs font-bold uppercase tracking-widest text-swiss-accent group-hover:text-white">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <p className="text-xs font-bold uppercase tracking-widest text-swiss-ink/50 tabular-nums group-hover:text-white/70">
-                {formatDate(article.date)}
-              </p>
-              <p className="hidden text-xs font-bold uppercase tracking-widest text-swiss-ink/50 group-hover:text-white/70 sm:block">
-                {article.source}
-              </p>
-              <p className="text-sm font-bold leading-6 tracking-tight sm:text-base">
-                {article.title}
-              </p>
-            </a>
-          ))}
-        </div>
-      </section>
+      <div className="pb-24">
+        <section className="mx-auto max-w-6xl border-b border-swiss-line">
+          <div className="divide-y divide-swiss-line">
+            {pressArticles.map((article, i) => (
+              <a
+                key={article.url}
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group grid grid-cols-[2.5rem_6rem_1fr] items-center gap-4 px-6 py-6 transition hover:bg-swiss-ink hover:text-white sm:grid-cols-[2.5rem_6rem_8rem_1fr] lg:px-8"
+              >
+                <span className="text-xs font-bold uppercase tracking-widest text-swiss-accent group-hover:text-white">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <p className="text-xs font-bold uppercase tracking-widest text-swiss-ink/50 tabular-nums group-hover:text-white/70">
+                  {formatDate(article.date)}
+                </p>
+                <p className="hidden text-xs font-bold uppercase tracking-widest text-swiss-ink/50 group-hover:text-white/70 sm:block">
+                  {article.source}
+                </p>
+                <p className="text-sm font-bold leading-6 tracking-tight sm:text-base">
+                  {article.title}
+                </p>
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
 
       <Footer />
     </main>

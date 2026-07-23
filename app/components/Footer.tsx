@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { MailIcon, PhoneIcon, PinIcon, NaverBlogIcon } from '@/app/components/icons';
+import EmailNoticeModal from '@/app/components/EmailNoticeModal';
 
 const address = '서울시 강남구 언주로157길 6, 3층';
 const naverBlogUrl = 'https://blog.naver.com/gpvcgs';
@@ -38,9 +39,12 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col gap-3 border-t border-white/15 pt-6 text-[11px] font-bold uppercase tracking-widest text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 GPVC Co.,Ltd. All rights reserved.</p>
-          <Link href="/privacy" className="underline underline-offset-2 transition hover:text-swiss-accent">
-            개인정보처리방침
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="underline underline-offset-2 transition hover:text-swiss-accent">
+              개인정보처리방침
+            </Link>
+            <EmailNoticeModal />
+          </div>
         </div>
       </div>
     </footer>
