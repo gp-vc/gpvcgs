@@ -2,45 +2,48 @@
 
 Next.js 14 (App Router) + Tailwind CSS 와인 수입사 랜딩 사이트.
 
-## 프로젝트 위치 이력 (중요)
+## 이 저장소에 대해 (중요)
 
-이 프로젝트는 원래 `C:\Users\User\OneDrive\Desktop\GPVC\웹페이지\gpvc-wine`(OneDrive 동기화 폴더)에 있었으나,
-OneDrive Files-On-Demand가 `.next` 빌드 산출물을 클라우드 placeholder(reparse point)로 바꿔버려서
-`next dev` 재시작 시 `EINVAL: readlink` 에러가 반복 발생했다. 이를 근본적으로 해결하기 위해
-프로젝트 전체(소스 + node_modules)를 OneDrive 밖인 이 경로(`C:\Users\User\Projects\gpvc-wine`)로 이동했다.
-OneDrive 안의 원본 폴더는 삭제 대상이며, 더 이상 사용하지 않는다.
+이 폴더(`gp-vc/gpvcgs`)는 **실제 프로덕션 저장소이자 배포 대상**이다. `main` 브랜치가 Vercel과
+연동돼 있어서, `main`에 push하는 즉시 실제 도메인(`https://www.gpvcgs.com`)에 반영된다.
+force-push나 히스토리를 재작성하는 작업은 하지 않는다.
 
-## gpvcgs 데이터 의존성 (중요, 비직관적)
+옛 버전(세리프 헤딩, `src/app`/`src/components/sections` 구조의 이전 사이트)은 전부 삭제하고
+아래 설명하는 "Swiss Grid Editorial" 디자인으로 완전히 교체된 상태다.
 
-`app/lib/wine-data.ts`는 와인/와이너리 데이터를 이 프로젝트 소스가 아니라 **형제 프로젝트인 `gpvcgs`**
-(별도 git 저장소, 원래 `GPVC/웹페이지/gpvcgs`)에서 상대경로로 직접 import한다:
+## 와인/와이너리 데이터 (중요, 비직관적)
 
-```ts
-import { ... } from '../../../gpvcgs/src/data/mockData';
-import type { ... } from '../../../gpvcgs/src/data/types';
-```
+`app/lib/wine-data.ts`가 실제로 쓰는 데이터는 `app/lib/gpvc-data/mockData.ts`, `types.ts`다.
+이 두 파일은 원래 별도 프로젝트였던 `gpvcgs`(데이터 관리용 사이드 프로젝트, 로컬 경로
+`C:\Users\User\Projects\gpvcgs`)의 `src/data/mockData.ts`, `src/data/types.ts`를 그대로 복사해온
+**정적 스냅샷**이다. 실시간으로 연결되어 있지 않으므로, 그 프로젝트에서 와인/와이너리 정보가
+바뀌면 이 폴더의 `app/lib/gpvc-data/`로 **수동으로 다시 복사**해야 반영된다.
 
-프로젝트를 옮기면서 이 상대경로가 깨지지 않도록, `C:\Users\User\Projects\gpvcgs`에
-실제 OneDrive의 `gpvcgs` 폴더(`C:\Users\User\OneDrive\Desktop\GPVC\웹페이지\gpvcgs`)를 가리키는
-**NTFS 정션(junction)**을 만들어두었다. 이 정션을 지우거나 원본 `gpvcgs`를 다른 곳으로 옮기면
-`npx tsc`나 `next dev`에서 `Cannot find module '../../../gpvcgs/...'` 에러가 난다.
-
-`gpvcgs` 저장소 자체를 수정하는 작업이 아니라면 이 구조를 건드릴 필요는 없다.
+(`mockData.ts`를 복사해올 때 원본에 있던 미사용 `import { wineryLogos } from "../assets/logos"` 줄은
+빼야 한다 — 이 프로젝트엔 svg/png를 모듈로 import하는 설정이 없어서 그대로 두면 빌드가 깨진다.)
 
 ## 디자인
 
-사이트는 단일 디자인(코드네임 "Swiss Grid Editorial")만 운영 중이다. 원래 `/1`, `/2`, `/3` 세 가지
-디자인 톤 프리뷰를 실험했고 `/3`이 채택되어 루트(`/`)로 승격되었다. 나머지 프리뷰와 구 디자인
-(세리프 헤딩, ivory/wine 팔레트, `PageShell`/`SiteHeader`/`SiteFooter` 등 공용 컴포넌트)은 전부 삭제했다.
+사이트는 단일 디자인(코드네임 "Swiss Grid Editorial")만 운영 중이다.
 
 - 폰트: Helvetica Neue/Arial 계열 grotesk (컴포넌트마다 inline `style`로 지정)
 - 컬러: `swiss.bg`(흰색), `swiss.ink`(검정), `swiss.accent`(#8a1f1a, 딥레드), `swiss.line`(테두리)
 - 레이아웃: `border` 기반 그리드, bold uppercase, 섹션 번호 매기기
+- Footer는 전체 폭 검정 배경(`bg-swiss-ink`) + 흰 글씨 — 사이트에서 유일하게 반전된 색 블록
 
 ## 라우트
 
 `/`, `/portfolio`, `/portfolio/[countrySlug]`, `/portfolio/[countrySlug]/[winerySlug]`,
-`/portfolio/[countrySlug]/[winerySlug]/[wineSlug]`, `/press`, `/wines`, `/contact`
+`/portfolio/[countrySlug]/[winerySlug]/[wineSlug]`, `/press`, `/wines`, `/contact`, `/privacy`
+
+옛 사이트의 `/privacy-policy`는 `next.config.js`의 `redirects()`로 `/privacy`에 301 리다이렉트된다
+(검색엔진에 이미 색인된 옛 URL이 죽지 않도록).
+
+## SEO
+
+`app/layout.tsx`의 `metadata`, `app/robots.ts`, `app/sitemap.ts`는 옛 사이트에서 쓰던 네이버
+소유확인 메타태그·OG 태그·sitemap 로직을 그대로 이식한 것이다. 도메인은 `NEXT_PUBLIC_SITE_URL`
+환경변수가 없으면 `https://www.gpvcgs.com`으로 폴백한다.
 
 ## 이미지 흑백/컬러 처리
 
