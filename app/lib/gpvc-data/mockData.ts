@@ -144,7 +144,7 @@ export const MOCK_DATA: Country[] = [
                     {
                         wineSlug: "eleison",
                         name: "Eleison",
-                        nameKR: "에레이손",
+                        nameKR: "엘레이손",
                         vintage: '2025',
                         grape: "그르나슈 블랑카, 마카부, 샤렐로, 알렉산드리아 무스캇",
                         alcohol: '13.5%',
