@@ -39,7 +39,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-white/15 pt-6 text-[11px] font-bold uppercase tracking-widest text-white/40 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col gap-3 border-t border-white/15 pt-6 text-[11px] font-bold uppercase tracking-widest text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 GPVC Co.,Ltd. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="underline underline-offset-2 transition hover:text-swiss-accent">
