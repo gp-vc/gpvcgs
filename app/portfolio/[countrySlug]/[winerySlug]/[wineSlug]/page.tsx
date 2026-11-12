@@ -1,9 +1,11 @@
+import { Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllWineParams, getWineBySlug, getWineNameJP } from '@/app/lib/wine-data';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
+import WineBackLink from '@/app/components/WineBackLink';
 
 const grotesk = { fontFamily: '"Helvetica Neue", Arial, "Segoe UI", sans-serif' };
 
@@ -28,21 +30,15 @@ export default function WinePage({ params }: WinePageProps) {
     <main style={grotesk} className="min-h-screen bg-swiss-bg text-swiss-ink">
       <Header active="portfolio" />
 
-      <section className="mx-auto max-w-6xl px-6 pt-8 lg:px-8">
-        <Link
-          href={`/portfolio/${params.countrySlug}/${params.winerySlug}`}
-          className="text-xs font-bold uppercase tracking-widest text-swiss-ink/50 transition hover:text-swiss-accent"
-        >
-          ← 와이너리로 돌아가기
-        </Link>
-      </section>
-
       <section className="mx-auto grid max-w-6xl border-b border-swiss-line lg:grid-cols-2">
         <div className="relative min-h-[420px] border-swiss-line bg-white lg:border-r">
           <Image src={wine.imageUrl} alt={wine.nameKR} fill className="object-contain p-12" />
         </div>
         <div className="px-6 py-16 lg:px-8">
-          <p className="text-xs font-bold uppercase tracking-widest text-swiss-accent">{wine.grape}</p>
+          <Suspense fallback={<span className="block h-4" />}>
+            <WineBackLink wineryHref={`/portfolio/${params.countrySlug}/${params.winerySlug}`} />
+          </Suspense>
+          <p className="mt-6 text-xs font-bold uppercase tracking-widest text-swiss-accent">{wine.grape}</p>
           <h1 className="mt-4 text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl">
             {wine.name}
           </h1>

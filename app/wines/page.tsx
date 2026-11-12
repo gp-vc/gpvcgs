@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { getAllWinesFlat } from '@/app/lib/wine-data';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
@@ -32,7 +33,9 @@ export default function WinesPage() {
         </a>
       </section>
 
-      <WinesList entries={entries} />
+      <Suspense fallback={null}>
+        <WinesList entries={entries} />
+      </Suspense>
 
       <Footer />
     </main>

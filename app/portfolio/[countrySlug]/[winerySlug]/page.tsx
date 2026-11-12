@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAllWineryParams, getWineryBySlug, splitFirstSentence, getWineNameJP } from '@/app/lib/wine-data';
+import { getAllWineryParams, getCountryBySlug, getWineryBySlug, splitFirstSentence, getWineNameJP } from '@/app/lib/wine-data';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 
@@ -17,6 +17,7 @@ export function generateStaticParams() {
 
 export default function WineryPage({ params }: WineryPageProps) {
   const winery = getWineryBySlug(params.countrySlug, params.winerySlug);
+  const country = getCountryBySlug(params.countrySlug);
 
   if (!winery) {
     notFound();
@@ -31,7 +32,7 @@ export default function WineryPage({ params }: WineryPageProps) {
       <section className="mx-auto grid max-w-6xl border-b border-swiss-line lg:grid-cols-2">
         <div className="flex flex-col justify-center border-swiss-line px-6 py-16 lg:border-r lg:px-8 lg:py-20">
           <Link href={`/portfolio/${params.countrySlug}`} className="text-xs font-bold uppercase tracking-widest text-swiss-ink/50 transition hover:text-swiss-accent">
-            ← {winery.regionKR}
+            ← {country?.countryName ?? '포트폴리오'}
           </Link>
           <p className="mt-6 text-xs font-bold uppercase tracking-widest text-swiss-accent">{winery.regionKR}</p>
           <h1 className="mt-4 text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl">
