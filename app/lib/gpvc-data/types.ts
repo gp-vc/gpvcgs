@@ -21,6 +21,7 @@ export interface Wine {
 export interface Winery {
     winerySlug: string;
     wineryName: string;
+    formerName?: string; // 이전 와이너리 이름 (이름이 바뀐 경우에만)
     wineryTitle: string;
     wineryDescription: string;
     region: string;

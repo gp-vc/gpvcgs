@@ -38,6 +38,9 @@ export default function WineryPage({ params }: WineryPageProps) {
           <h1 className="mt-4 text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl">
             {winery.wineryName}
           </h1>
+          {winery.formerName ? (
+            <p className="mt-3 text-sm text-swiss-ink/50">(구 {winery.formerName})</p>
+          ) : null}
         </div>
         <div className="group relative min-h-[320px]">
           <Image src={winery.bgImageUrl} alt={winery.wineryName} fill className="object-cover grayscale-0 transition duration-500 group-hover:grayscale" />

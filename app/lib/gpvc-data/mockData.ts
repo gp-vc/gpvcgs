@@ -7,9 +7,10 @@ export const MOCK_DATA: Country[] = [
         wineries: [
             {
                 winerySlug: 'costers-del-siurana',
-                wineryName: 'Costers del Siurana',
+                wineryName: 'Clos de L’Obac',
+                formerName: 'Costers del Siurana',
                 wineryTitle: 'Clos de L’Obac (클로스 데 로박) \n 스페인의 숨겨진 보석',
-                wineryDescription: "스페인 Catalunya(카탈루냐) 남서부 Priorat(프리오랏) 지역의 르네상스를 이끈 상징적인 와이너리입니다. 프리오랏은 스페인에서 단 두 곳 - Rioja, Priorat - 만이 획득한 최고 등급인 DOCa(혹은 DOQ)를 받은 와인 산지입니다.\n\n Costers del Siurana 또는 Clos de L`Obac 와이너리는 1987년 기자 출신 Carles Pastrana와 와인양조가인 아내 Mariona Jarque 가족에 의해 Gratallops(그라탈롭스) 마을에 설립되었습니다. 당시 황폐해져 가던 이 지역의 오래된 13세기 카르투시오 수도원 포도밭을 되찾고, 국제 시장에 내놓을 만한 고품질 와인을 생산하겠다는 거의 불가능해 보이는 목표를 가지고 프리오랏 르네상스를 주도한 Pioneers(개척자들) 중 한 곳으로 참여했습니다.\n\n소량 생산의 테루아 중심 대표 와인이자 진정한 프리오랏 개척자이자 현대적 부흥을 이끈 주역 중 대표자로 꼽히며 프리오랏 지역의 대지주입니다. 첫 빈티지 이후 단 한 번도 변하지 않은 블렌딩 비율과 험준한 리코렐라 슬레이트 토양에서 비롯된 개성을 병에 담아냅니다. 매년 극히 한정된 수량으로만 출시되며, 전세계 컬렉터들에게 컬트와인으로 손꼽히고, 세계 정상급 소믈리에와 미슐랭 스타 및 파인 다이닝 레스토랑에서 인정받고 있습니다.",
+                wineryDescription: "스페인 Catalunya(카탈루냐) 남서부 Priorat(프리오랏) 지역의 르네상스를 이끈 상징적인 와이너리입니다. 프리오랏은 스페인에서 단 두 곳 - Rioja, Priorat - 만이 획득한 최고 등급인 DOCa(혹은 DOQ)를 받은 와인 산지입니다.\n\n Clos de L’Obac(구 Costers del Siurana) 와이너리는 1987년 기자 출신 Carles Pastrana와 와인양조가인 아내 Mariona Jarque 가족에 의해 Gratallops(그라탈롭스) 마을에 설립되었습니다. 당시 황폐해져 가던 이 지역의 오래된 13세기 카르투시오 수도원 포도밭을 되찾고, 국제 시장에 내놓을 만한 고품질 와인을 생산하겠다는 거의 불가능해 보이는 목표를 가지고 프리오랏 르네상스를 주도한 Pioneers(개척자들) 중 한 곳으로 참여했습니다.\n\n소량 생산의 테루아 중심 대표 와인이자 진정한 프리오랏 개척자이자 현대적 부흥을 이끈 주역 중 대표자로 꼽히며 프리오랏 지역의 대지주입니다. 첫 빈티지 이후 단 한 번도 변하지 않은 블렌딩 비율과 험준한 리코렐라 슬레이트 토양에서 비롯된 개성을 병에 담아냅니다. 매년 극히 한정된 수량으로만 출시되며, 전세계 컬렉터들에게 컬트와인으로 손꼽히고, 세계 정상급 소믈리에와 미슐랭 스타 및 파인 다이닝 레스토랑에서 인정받고 있습니다.",
                 region: 'Priorat',
                 regionKR: '프리오랏',
                 bgImageUrl:'/images/closdelobacbg.png',
@@ -17,7 +18,7 @@ export const MOCK_DATA: Country[] = [
                 wines: [
                     {
                         wineSlug: "clos-de-lobac",
-                        name: "Clos de l'Obac",
+                        name: "Clos de l’Obac",
                         nameKR: "클로스 데 로박",
                         vintage: "2003, 2006~16",
                         grape: '그르나슈, 카베르네 소비뇽, 시라, 메를로, 까리녜냐',
@@ -59,7 +60,7 @@ export const MOCK_DATA: Country[] = [
                         grape: "35% 그르나슈 블랑카, 30% 마카부, 30% 샤렐로, 5% 알렉산드리아 무스캇",
                         alcohol: "13.5%",
                         recommendedPairing: '캐비아, 랍스터, 크랩, 크림소스 요리, 로스트 치킨, 해산물, 콤테 치즈',
-                        description: "Kyrie - '주님' \n Clos de L'Obac 와이너리의 시그니처 화이트입니다. Mas d'en Bruno 밭의 낮은 지대에 남향으로 위치한 작은 Kyrie 포도밭은 카탈루냐의 네 가지 클래식 화이트 품종으로 구성되어 있습니다. 네 가지 품종의 최적의 숙성 상태와 가벼운 침용을 거쳐 뛰어난 구조감, 복합성, 그리고 절묘한 섬세함을 갖춘 와인입니다. 새 프렌치 오크 베럴에서 발효 및 6개월간의 숙성을 거치며, 알코올 도수가 높고 산도가 낮아 장기 숙성 잠재력이 뛰어난 헤비한 화이트 와인으로 연간 약 3,500병 정도만 생산되는 컬렉터 와인입니다.",
+                        description: "Kyrie - '주님' \n Clos de L’Obac 와이너리의 시그니처 화이트입니다. Mas d'en Bruno 밭의 낮은 지대에 남향으로 위치한 작은 Kyrie 포도밭은 카탈루냐의 네 가지 클래식 화이트 품종으로 구성되어 있습니다. 네 가지 품종의 최적의 숙성 상태와 가벼운 침용을 거쳐 뛰어난 구조감, 복합성, 그리고 절묘한 섬세함을 갖춘 와인입니다. 새 프렌치 오크 베럴에서 발효 및 6개월간의 숙성을 거치며, 알코올 도수가 높고 산도가 낮아 장기 숙성 잠재력이 뛰어난 헤비한 화이트 와인으로 연간 약 3,500병 정도만 생산되는 컬렉터 와인입니다.",
                         tastingNote: "골든 옐로우/엠버 컬러, 배, 노란 사과, 견과류, 짚, 마지판, 꿀, 버터 터치, 달콤한 스파이스의 아로마",
                         imageUrl: '/images/kyrie.svg',
                         tasteProfile: {
@@ -113,7 +114,7 @@ export const MOCK_DATA: Country[] = [
                         grape: "샤렐로, 미카부",
                         alcohol: '14%',
                         recommendedPairing: '',
-                        description: "Costers del Siurana 와이너리의 프리미엄 화이트와인으로 연간 601병만 생산됩니다. 와이너리의 특정 경사 포도밭(L'Escarpart)의 테루아를 반영한 최고급 싱글 빈야드 와인으로, 매우 농축된 파워와 응집력을 가지고 있습니다. 복합적이고 구조적인 특성, 미네랄리티와 과실 향의 환상적인 균형이 특징입니다. 전형적인 프리오랏의 우아함과 숙성력이 극대화된 마스터피스 와인으로 볼 수 있습니다.",
+                        description: "Clos de L’Obac 와이너리의 프리미엄 화이트와인으로 연간 601병만 생산됩니다. 와이너리의 특정 경사 포도밭(L'Escarpart)의 테루아를 반영한 최고급 싱글 빈야드 와인으로, 매우 농축된 파워와 응집력을 가지고 있습니다. 복합적이고 구조적인 특성, 미네랄리티와 과실 향의 환상적인 균형이 특징입니다. 전형적인 프리오랏의 우아함과 숙성력이 극대화된 마스터피스 와인으로 볼 수 있습니다.",
                         tastingNote: " ",
                         imageUrl: '/images/lescarpat.svg',
                         tasteProfile: {
