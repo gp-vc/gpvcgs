@@ -40,8 +40,11 @@ export default function WinePage({ params }: WinePageProps) {
       <Header active="portfolio" />
 
       <section className="mx-auto grid max-w-6xl border-b border-swiss-line lg:grid-cols-2">
-        <div className="relative min-h-[420px] border-swiss-line bg-white lg:border-r">
-          <Image src={wine.imageUrl} alt={wine.nameKR} fill className="object-contain p-12" />
+        <div className="border-swiss-line bg-white lg:border-r">
+          {/* 고정 비율 프레임: 설명 길이와 상관없이 이미지 영역 크기를 일정하게 유지한다. */}
+          <div className="relative aspect-[4/5] w-full">
+            <Image src={wine.imageUrl} alt={wine.nameKR} fill className="object-contain p-12" />
+          </div>
         </div>
         <div className="px-6 py-16 lg:px-8">
           <Suspense fallback={<span className="block h-4" />}>

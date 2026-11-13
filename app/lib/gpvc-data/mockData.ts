@@ -291,7 +291,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: "",
                         description: "하마다 빈야드의 포도밭인 '타푸'의 전체적인 조화를 보여주는 화이트 와인입니다. 단일 품종 와인보다 복합미가 뛰어나며, 과실의 풍부함과 꽃향기, 그리고 홋카이도 대지의 미네랄이 균형 있게 어우러져 있습니다. 빈티지에 따라 블렌딩 비율이 달라지며, 빈야드의 그해 작황을 가장 잘 대변하는 와인입니다.",
                         tastingNote: "누구나 편하게 마실 수 있는 이지드링킹 스타일이면서도, 다채로운 화이트 품종이 얽혀 있어 향의 레이어가 매우 복합적입니다. 입안에서 화사하고 풍부하게 퍼지는 과실 맛과 함께 상쾌한 산미가 깔끔하게 마무리해 주어 식사 내내 곁들이기 좋습니다.",
-                        imageUrl: "/images/hamada-blanc-v3.png",
+                        imageUrl: "/images/hamada-blanc-v4.webp",
                         tasteProfile: {
                             body: 3,
                             tannin: 3,
@@ -363,7 +363,7 @@ export const MOCK_DATA: Country[] = [
                         recommendedPairing: "",
                         description: "하마다 빈야드에서 재배되는 모든 레드 와인용 포도를 블렌딩한 우아한 와인입니다. 피노 누아 특유의 투명하고 맑은 루비 색상과 산딸기, 체리 같은 붉은 과실 향이 중심을 잡습니다. 타닌은 매우 부드럽고 실키하며, 인위적인 힘보다는 자연스러운 깊이감과 여운을 강조한 스타일입니다",
                         tastingNote: "피노 누아가 주는 붉은 베리류의 화사함, 부드러운 질감, 활기찬 산미가 바탕에 깔려 있습니다. 여기에 아르모누아르 등의 품종이 더해지면서 와인에 단단한 뼈대(구조감)와 떫은 탄닌을 얹어줍니다. 싱글 피노 누아보다 향과 맛의 깊이감과 묵직한 힘이 더 느껴지는 스타일입니다.",
-                        imageUrl: "/images/hamada-rouge.webp",
+                        imageUrl: "/images/hamada-rouge-v2.webp",
                         tasteProfile: {
                             body: 3,
                             tannin: 3,
