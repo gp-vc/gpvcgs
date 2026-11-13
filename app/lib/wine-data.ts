@@ -92,6 +92,8 @@ const WHITE_GRAPE_SIGNALS = [
   '몬트브라이트',
   '바쿠스',
   'palomino',
+  '팔로미노',
+  '도냐 블랑카',
   'dona blanca',
   '골든 옐로우',
   '화이트 시트러스',
