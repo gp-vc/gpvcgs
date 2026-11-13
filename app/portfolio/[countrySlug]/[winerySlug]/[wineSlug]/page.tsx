@@ -2,7 +2,8 @@ import { Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAllWineParams, getWineBySlug, getWineNameJP } from '@/app/lib/wine-data';
+import { getAllWineParams, getAllWinesFlat, getWineBySlug, getWineNameJP, getWineType } from '@/app/lib/wine-data';
+import { WineCounter, WineStepBar, type StepItem } from '@/app/components/WineStepper';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import WineBackLink from '@/app/components/WineBackLink';
@@ -25,6 +26,14 @@ export default function WinePage({ params }: WinePageProps) {
   }
 
   const nameJP = getWineNameJP(wine.wineSlug);
+  const stepItems: StepItem[] = getAllWinesFlat().map(({ wine: w, winery, country }) => ({
+    countrySlug: country.countrySlug,
+    winerySlug: winery.winerySlug,
+    wineSlug: w.wineSlug,
+    name: w.name,
+    wineryName: winery.wineryName,
+    type: getWineType(w),
+  }));
 
   return (
     <main style={grotesk} className="min-h-screen bg-swiss-bg text-swiss-ink">
@@ -36,7 +45,10 @@ export default function WinePage({ params }: WinePageProps) {
         </div>
         <div className="px-6 py-16 lg:px-8">
           <Suspense fallback={<span className="block h-4" />}>
-            <WineBackLink wineryHref={`/portfolio/${params.countrySlug}/${params.winerySlug}`} />
+            <div className="flex items-center justify-between gap-4">
+              <WineBackLink wineryHref={`/portfolio/${params.countrySlug}/${params.winerySlug}`} />
+              <WineCounter items={stepItems} current={params} />
+            </div>
           </Suspense>
           <p className="mt-6 text-xs font-bold uppercase tracking-widest text-swiss-accent">{wine.grape}</p>
           <h1 className="mt-4 text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl">
@@ -69,6 +81,10 @@ export default function WinePage({ params }: WinePageProps) {
           </p>
         </div>
       </section>
+
+      <Suspense fallback={null}>
+        <WineStepBar items={stepItems} current={params} />
+      </Suspense>
 
       <Footer />
     </main>
